@@ -101,7 +101,11 @@ function theme_get_page_url($path)
         return get_permalink($page_id);
     }
 
-    $home = function_exists('pll_home_url') ? pll_home_url() : home_url('/');
+    // Language root, not pll_home_url(): that returns the translated front page permalink
+    $prefix = '';
+    if (function_exists('pll_current_language') && pll_current_language() !== pll_default_language()) {
+        $prefix = pll_current_language() . '/';
+    }
 
-    return trailingslashit($home) . trailingslashit($path);
+    return home_url('/' . $prefix . trailingslashit($path));
 }
