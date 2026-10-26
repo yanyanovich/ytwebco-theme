@@ -47,7 +47,7 @@ function theme_scripts() {
     $scripts_main_uri = get_template_directory_uri() . '/assets/js/scripts.min.js';
 
     if (file_exists($scripts_main_path)) {
-        $theme_settings_cookieyes_site_key = get_field('keys_cookieyes', 'theme-settings');
+        $theme_settings_cookieyes_site_key = get_field('keys_cookieyes', 'scripts-metrics');
 
         $options = get_option('wpcf7');
         $site_key = null;
