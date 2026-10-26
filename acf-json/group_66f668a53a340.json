@@ -75,7 +75,7 @@
       },
       "default_value": "",
       "allow_in_bindings": 0,
-      "placeholder": "hello@ytwebco.com",
+      "placeholder": "name@example.com",
       "prepend": "",
       "append": ""
     },
