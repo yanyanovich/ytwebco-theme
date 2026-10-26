@@ -95,6 +95,14 @@ No API keys, tokens or credentials are stored in this repository. Integrations r
 
 [Conventional Commits](https://www.conventionalcommits.org/) in English, e.g. `feat(header): add sticky header with compact state`. Work happens in `feat/step-N-*` branches that are merged into an always-deployable `main`.
 
+## License
+
+The theme code (PHP, JavaScript, SCSS/CSS) is licensed under the [GNU General Public License v2 or later](LICENSE), like the WordPress starter theme it is based on.
+
+The design, texts, images, logo and case study materials are **not** covered by this license and may not be reused without permission.
+
+Fonts: Inter Tight and JetBrains Mono, [SIL Open Font License 1.1](https://openfontlicense.org).
+
 ---
 
-© 2026 Yan Tokaruk / YT Web Co. All rights reserved.
+© 2026 Yan Tokaruk / YT Web Co.
