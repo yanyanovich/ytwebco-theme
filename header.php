@@ -14,7 +14,7 @@ $menu = theme_get_menu_tree('header_menu');
 $contact_url = theme_get_page_url('contact');
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> data-overlayscrollbars-initialize>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +26,7 @@ $contact_url = theme_get_page_url('contact');
     <?php theme_print_additional_code('end_of_head'); ?>
 </head>
 
-<body id="top" <?php body_class(); ?>>
+<body id="top" <?php body_class(); ?> data-os data-overlayscrollbars-initialize>
 <?php wp_body_open(); ?>
 <?php theme_print_additional_code('start_of_body'); ?>
 
