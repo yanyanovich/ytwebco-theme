@@ -21,6 +21,23 @@ function theme_styles()
 add_action('wp_enqueue_scripts', 'theme_styles');
 
 /**
+ * Preload the Latin subsets of the two variable fonts (used above the fold on every page).
+ * Cyrillic subsets load on demand through unicode-range.
+ */
+function theme_preload_fonts()
+{
+    $fonts = array('inter-tight-latin-wght-normal', 'jetbrains-mono-latin-wght-normal');
+
+    foreach ($fonts as $font) {
+        printf(
+            '<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
+            esc_url(get_template_directory_uri() . '/fonts/' . $font . '.woff2')
+        );
+    }
+}
+add_action('wp_head', 'theme_preload_fonts', 1);
+
+/**
  * Enqueue scripts and styles.
  */
 function theme_scripts() {
@@ -30,7 +47,7 @@ function theme_scripts() {
     $scripts_main_uri = get_template_directory_uri() . '/assets/js/scripts.min.js';
 
     if (file_exists($scripts_main_path)) {
-        $theme_settings_cookieyes_site_key = get_field('keys_cookieyes', 'theme-settings');
+        $theme_settings_cookieyes_site_key = get_field('keys_cookieyes', 'scripts-metrics');
 
         $options = get_option('wpcf7');
         $site_key = null;

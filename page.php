@@ -15,7 +15,9 @@
 get_header();
 ?>
 
-<?php the_content(); ?>
+<main id="content" tabindex="-1" class="site-main">
+    <?php the_content(); ?>
+</main>
 
 <?php
 get_footer();

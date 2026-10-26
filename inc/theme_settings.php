@@ -12,3 +12,4 @@ require get_template_directory() . '/inc/theme_settings/redirects.php';
 require get_template_directory() . '/inc/theme_settings/images.php';
 require get_template_directory() . '/inc/theme_settings/plugins.php';
 require get_template_directory() . '/inc/theme_settings/scripts.php';
+require get_template_directory() . '/inc/theme_settings/performance.php';

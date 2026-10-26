@@ -1,363 +1,420 @@
 {
-    "key": "group_6780f26a86595",
-    "title": "Scripts\/metrics",
-    "fields": [
+  "key": "group_6780f26a86595",
+  "title": "Scripts/metrics",
+  "fields": [
+    {
+      "key": "field_6a1c0b2e00020",
+      "label": "Scripts",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0,
+      "selected": 0
+    },
+    {
+      "key": "field_69e8b39c96c39",
+      "label": "Project mode",
+      "name": "additional_code_proj_mode",
+      "aria-label": "",
+      "type": "radio",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "dev": "Development",
+        "prod": "Production"
+      },
+      "default_value": "dev",
+      "return_format": "value",
+      "allow_null": 0,
+      "other_choice": 0,
+      "allow_in_bindings": 0,
+      "layout": "vertical",
+      "save_other_choice": 0
+    },
+    {
+      "key": "field_67502d683c5e3",
+      "label": "Production scripts",
+      "name": "additional_code_production_scripts",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
         {
-            "key": "field_69e8b39c96c39",
-            "label": "Project mode",
-            "name": "additional_code_proj_mode",
-            "aria-label": "",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "dev": "Development",
-                "prod": "Production"
-            },
-            "default_value": "dev",
-            "return_format": "value",
-            "allow_null": 0,
-            "other_choice": 0,
-            "allow_in_bindings": 0,
-            "layout": "vertical",
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_67502d683c5e3",
-            "label": "Production scripts",
-            "name": "additional_code_production_scripts",
-            "aria-label": "",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_67502d953c5e4",
-                    "label": "End of head",
-                    "name": "end_of_head",
-                    "aria-label": "",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "block",
-                    "pagination": 0,
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
-                    "sub_fields": [
-                        {
-                            "key": "field_67502dd13c5e6",
-                            "label": "Code",
-                            "name": "code",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "rows": 10,
-                            "placeholder": "",
-                            "new_lines": "",
-                            "parent_repeater": "field_67502d953c5e4"
-                        }
-                    ]
-                },
-                {
-                    "key": "field_67502dc23c5e5",
-                    "label": "Start of body",
-                    "name": "start_of_body",
-                    "aria-label": "",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "block",
-                    "pagination": 0,
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
-                    "sub_fields": [
-                        {
-                            "key": "field_67502de93c5e7",
-                            "label": "Code",
-                            "name": "code",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "rows": 10,
-                            "placeholder": "",
-                            "new_lines": "",
-                            "parent_repeater": "field_67502dc23c5e5"
-                        }
-                    ]
-                },
-                {
-                    "key": "field_67502df53c5e8",
-                    "label": "End of body",
-                    "name": "end_of_body",
-                    "aria-label": "",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "block",
-                    "pagination": 0,
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
-                    "sub_fields": [
-                        {
-                            "key": "field_67502df53c5e9",
-                            "label": "Code",
-                            "name": "code",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "rows": 10,
-                            "placeholder": "",
-                            "new_lines": "",
-                            "parent_repeater": "field_67502df53c5e8"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "key": "field_6751c9e3cd5a7",
-            "label": "Dev scripts",
-            "name": "additional_code_dev_scripts",
-            "aria-label": "",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_6751c9e3cd5a8",
-                    "label": "End of head",
-                    "name": "end_of_head",
-                    "aria-label": "",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "block",
-                    "pagination": 0,
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
-                    "sub_fields": [
-                        {
-                            "key": "field_6751c9e3cd5a9",
-                            "label": "Code",
-                            "name": "code",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "rows": 10,
-                            "placeholder": "",
-                            "new_lines": "",
-                            "parent_repeater": "field_6751c9e3cd5a8"
-                        }
-                    ]
-                },
-                {
-                    "key": "field_6751c9e3cd5aa",
-                    "label": "Start of body",
-                    "name": "start_of_body",
-                    "aria-label": "",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "block",
-                    "pagination": 0,
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
-                    "sub_fields": [
-                        {
-                            "key": "field_6751c9e3cd5ab",
-                            "label": "Code",
-                            "name": "code",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "rows": 10,
-                            "placeholder": "",
-                            "new_lines": "",
-                            "parent_repeater": "field_6751c9e3cd5aa"
-                        }
-                    ]
-                },
-                {
-                    "key": "field_6751c9e3cd5ac",
-                    "label": "End of body",
-                    "name": "end_of_body",
-                    "aria-label": "",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "block",
-                    "pagination": 0,
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
-                    "sub_fields": [
-                        {
-                            "key": "field_6751c9e3cd5ad",
-                            "label": "Code",
-                            "name": "code",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "rows": 10,
-                            "placeholder": "",
-                            "new_lines": "",
-                            "parent_repeater": "field_6751c9e3cd5ac"
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    "location": [
-        [
+          "key": "field_67502d953c5e4",
+          "label": "End of head",
+          "name": "end_of_head",
+          "aria-label": "",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "block",
+          "pagination": 0,
+          "min": 0,
+          "max": 0,
+          "collapsed": "",
+          "button_label": "Add Row",
+          "rows_per_page": 20,
+          "sub_fields": [
             {
-                "param": "options_page",
-                "operator": "==",
-                "value": "scripts-metrics"
+              "key": "field_67502dd13c5e6",
+              "label": "Code",
+              "name": "code",
+              "aria-label": "",
+              "type": "textarea",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "allow_in_bindings": 0,
+              "rows": 10,
+              "placeholder": "",
+              "new_lines": "",
+              "parent_repeater": "field_67502d953c5e4"
             }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "",
-    "show_in_rest": 0,
-    "modified": 1776858072
+          ]
+        },
+        {
+          "key": "field_67502dc23c5e5",
+          "label": "Start of body",
+          "name": "start_of_body",
+          "aria-label": "",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "block",
+          "pagination": 0,
+          "min": 0,
+          "max": 0,
+          "collapsed": "",
+          "button_label": "Add Row",
+          "rows_per_page": 20,
+          "sub_fields": [
+            {
+              "key": "field_67502de93c5e7",
+              "label": "Code",
+              "name": "code",
+              "aria-label": "",
+              "type": "textarea",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "allow_in_bindings": 0,
+              "rows": 10,
+              "placeholder": "",
+              "new_lines": "",
+              "parent_repeater": "field_67502dc23c5e5"
+            }
+          ]
+        },
+        {
+          "key": "field_67502df53c5e8",
+          "label": "End of body",
+          "name": "end_of_body",
+          "aria-label": "",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "block",
+          "pagination": 0,
+          "min": 0,
+          "max": 0,
+          "collapsed": "",
+          "button_label": "Add Row",
+          "rows_per_page": 20,
+          "sub_fields": [
+            {
+              "key": "field_67502df53c5e9",
+              "label": "Code",
+              "name": "code",
+              "aria-label": "",
+              "type": "textarea",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "allow_in_bindings": 0,
+              "rows": 10,
+              "placeholder": "",
+              "new_lines": "",
+              "parent_repeater": "field_67502df53c5e8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "field_6751c9e3cd5a7",
+      "label": "Dev scripts",
+      "name": "additional_code_dev_scripts",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_6751c9e3cd5a8",
+          "label": "End of head",
+          "name": "end_of_head",
+          "aria-label": "",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "block",
+          "pagination": 0,
+          "min": 0,
+          "max": 0,
+          "collapsed": "",
+          "button_label": "Add Row",
+          "rows_per_page": 20,
+          "sub_fields": [
+            {
+              "key": "field_6751c9e3cd5a9",
+              "label": "Code",
+              "name": "code",
+              "aria-label": "",
+              "type": "textarea",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "allow_in_bindings": 0,
+              "rows": 10,
+              "placeholder": "",
+              "new_lines": "",
+              "parent_repeater": "field_6751c9e3cd5a8"
+            }
+          ]
+        },
+        {
+          "key": "field_6751c9e3cd5aa",
+          "label": "Start of body",
+          "name": "start_of_body",
+          "aria-label": "",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "block",
+          "pagination": 0,
+          "min": 0,
+          "max": 0,
+          "collapsed": "",
+          "button_label": "Add Row",
+          "rows_per_page": 20,
+          "sub_fields": [
+            {
+              "key": "field_6751c9e3cd5ab",
+              "label": "Code",
+              "name": "code",
+              "aria-label": "",
+              "type": "textarea",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "allow_in_bindings": 0,
+              "rows": 10,
+              "placeholder": "",
+              "new_lines": "",
+              "parent_repeater": "field_6751c9e3cd5aa"
+            }
+          ]
+        },
+        {
+          "key": "field_6751c9e3cd5ac",
+          "label": "End of body",
+          "name": "end_of_body",
+          "aria-label": "",
+          "type": "repeater",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "block",
+          "pagination": 0,
+          "min": 0,
+          "max": 0,
+          "collapsed": "",
+          "button_label": "Add Row",
+          "rows_per_page": 20,
+          "sub_fields": [
+            {
+              "key": "field_6751c9e3cd5ad",
+              "label": "Code",
+              "name": "code",
+              "aria-label": "",
+              "type": "textarea",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "allow_in_bindings": 0,
+              "rows": 10,
+              "placeholder": "",
+              "new_lines": "",
+              "parent_repeater": "field_6751c9e3cd5ac"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "field_699703091fec7",
+      "label": "License/api keys",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0,
+      "selected": 0
+    },
+    {
+      "key": "field_6997031c1fec8",
+      "label": "CookieYes",
+      "name": "keys_cookieyes",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "scripts-metrics"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1793050046
 }

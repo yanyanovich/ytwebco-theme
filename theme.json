@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": false,
+    "color": {
+      "custom": false,
+      "customGradient": false,
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "defaultDuotone": false,
+      "palette": [
+        { "slug": "bg", "name": "Background", "color": "#0E0F11" },
+        { "slug": "surface", "name": "Surface", "color": "#111214" },
+        { "slug": "surface-2", "name": "Surface 2", "color": "#1A1C20" },
+        { "slug": "line", "name": "Line", "color": "#24262B" },
+        { "slug": "text", "name": "Text", "color": "#EDEDED" },
+        { "slug": "text-2", "name": "Text 2", "color": "#B8BBC0" },
+        { "slug": "muted", "name": "Muted", "color": "#8E9196" },
+        { "slug": "accent", "name": "Accent", "color": "#C6F432" },
+        { "slug": "error", "name": "Error", "color": "#FF6B5A" }
+      ]
+    },
+    "typography": {
+      "customFontSize": false,
+      "defaultFontSizes": false,
+      "dropCap": false,
+      "fontFamilies": [
+        { "slug": "primary", "name": "Inter Tight", "fontFamily": "\"Inter Tight\", system-ui, sans-serif" },
+        { "slug": "mono", "name": "JetBrains Mono", "fontFamily": "\"JetBrains Mono\", ui-monospace, monospace" }
+      ],
+      "fontSizes": [
+        { "slug": "small", "name": "Small", "size": "16px" },
+        { "slug": "body", "name": "Body", "size": "18px" },
+        { "slug": "lead", "name": "Lead", "size": "22px" },
+        { "slug": "h4", "name": "H4", "size": "28px" },
+        { "slug": "h3", "name": "H3", "size": "40px" },
+        { "slug": "h2", "name": "H2", "size": "72px" }
+      ]
+    },
+    "spacing": {
+      "customSpacingSize": false,
+      "defaultSpacingSizes": false,
+      "units": ["px", "rem", "%"],
+      "spacingSizes": [
+        { "slug": "1", "name": "4", "size": "4px" },
+        { "slug": "2", "name": "8", "size": "8px" },
+        { "slug": "3", "name": "12", "size": "12px" },
+        { "slug": "4", "name": "16", "size": "16px" },
+        { "slug": "5", "name": "24", "size": "24px" },
+        { "slug": "6", "name": "32", "size": "32px" },
+        { "slug": "7", "name": "48", "size": "48px" },
+        { "slug": "8", "name": "64", "size": "64px" },
+        { "slug": "9", "name": "96", "size": "96px" },
+        { "slug": "10", "name": "128", "size": "128px" }
+      ]
+    },
+    "layout": {
+      "contentSize": "1280px",
+      "wideSize": "1440px"
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--bg)",
+      "text": "var(--wp--preset--color--text)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--primary)"
+    }
+  }
+}

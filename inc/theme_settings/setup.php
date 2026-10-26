@@ -11,10 +11,10 @@ function theme_setup()
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
 
+    // One menu drives the header, the mobile menu and the footer Services / Site columns
     register_nav_menus(
         array(
-            'header_menu' => esc_html__('Header menu', 'ytweb_theme'),
-            'footer_menu' => esc_html__('Footer menu', 'ytweb_theme'),
+            'header_menu' => esc_html__('Main menu (header, mobile menu, footer)', 'ytweb_theme'),
         )
     );
 
@@ -28,17 +28,6 @@ function theme_setup()
             'caption',
             'style',
             'script',
-        )
-    );
-
-    add_theme_support(
-        'custom-background',
-        apply_filters(
-            'ytweb_theme_custom_background_args',
-            array(
-                'default-color' => 'ffffff',
-                'default-image' => '',
-            )
         )
     );
 
