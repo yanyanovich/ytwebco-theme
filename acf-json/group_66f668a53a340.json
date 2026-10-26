@@ -3,8 +3,8 @@
   "title": "Theme settings",
   "fields": [
     {
-      "key": "field_66f668a48fa1f",
-      "label": "Header",
+      "key": "field_6a1c0b2e00001",
+      "label": "Contacts",
       "name": "",
       "aria-label": "",
       "type": "tab",
@@ -21,162 +21,110 @@
       "selected": 0
     },
     {
-      "key": "field_66f66a7c8fa25",
-      "label": "Logo",
-      "name": "theme_settings_header_logo",
+      "key": "field_6a1c0b2e00002",
+      "label": "Telegram username",
+      "name": "theme_settings_telegram",
       "aria-label": "",
-      "type": "image",
-      "instructions": "",
+      "type": "text",
+      "instructions": "Shown in the footer and mobile menu. Empty → [@username] placeholder.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
-        "width": "",
+        "width": "50",
         "class": "",
         "id": ""
       },
-      "return_format": "id",
-      "library": "all",
-      "min_width": "",
-      "min_height": "",
-      "min_size": "",
-      "max_width": "",
-      "max_height": "",
-      "max_size": "",
-      "mime_types": "",
+      "default_value": "",
+      "maxlength": "",
       "allow_in_bindings": 0,
-      "preview_size": "medium"
+      "placeholder": "@username",
+      "prepend": "",
+      "append": ""
     },
     {
-      "key": "field_6780fb1d3b953",
-      "label": "Mobile",
-      "name": "theme_settings_header_mobile",
+      "key": "field_6a1c0b2e00003",
+      "label": "Telegram link",
+      "name": "theme_settings_telegram_url",
       "aria-label": "",
-      "type": "group",
-      "instructions": "",
+      "type": "url",
+      "instructions": "Optional — built from the username when empty.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
-        "width": "",
+        "width": "50",
         "class": "",
         "id": ""
       },
-      "layout": "block",
-      "sub_fields": [
-        {
-          "key": "field_6780fb333b954",
-          "label": "Email",
-          "name": "email",
-          "aria-label": "",
-          "type": "email",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "",
-            "class": "",
-            "id": ""
-          },
-          "default_value": "",
-          "allow_in_bindings": 0,
-          "placeholder": "",
-          "prepend": "",
-          "append": ""
-        },
-        {
-          "key": "field_6780fb3f3b955",
-          "label": "Socials",
-          "name": "socials",
-          "aria-label": "",
-          "type": "repeater",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "",
-            "class": "",
-            "id": ""
-          },
-          "layout": "table",
-          "pagination": 0,
-          "min": 0,
-          "max": 0,
-          "collapsed": "",
-          "button_label": "Add Row",
-          "rows_per_page": 20,
-          "sub_fields": [
-            {
-              "key": "field_6780fb3f3b957",
-              "label": "Link",
-              "name": "link",
-              "aria-label": "",
-              "type": "link",
-              "instructions": "",
-              "required": 0,
-              "conditional_logic": 0,
-              "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-              },
-              "return_format": "array",
-              "allow_in_bindings": 0,
-              "parent_repeater": "field_6780fb3f3b955"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "key": "field_66f668b28fa20",
-      "label": "Footer",
-      "name": "",
-      "aria-label": "",
-      "type": "tab",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "placement": "top",
-      "endpoint": 0,
-      "selected": 0
-    },
-    {
-      "key": "field_66f669178fa24",
-      "label": "Logo",
-      "name": "theme_settings_footer_logo",
-      "aria-label": "",
-      "type": "image",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "return_format": "id",
-      "library": "all",
-      "min_width": "",
-      "min_height": "",
-      "min_size": "",
-      "max_width": "",
-      "max_height": "",
-      "max_size": "",
-      "mime_types": "",
+      "default_value": "",
       "allow_in_bindings": 0,
-      "preview_size": "medium"
+      "placeholder": "https://t.me/username"
     },
     {
-      "key": "field_66f6690c8fa23",
+      "key": "field_6a1c0b2e00004",
+      "label": "Email",
+      "name": "theme_settings_email",
+      "aria-label": "",
+      "type": "email",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "allow_in_bindings": 0,
+      "placeholder": "hello@ytwebco.com",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_6a1c0b2e00005",
+      "label": "Phone",
+      "name": "theme_settings_phone",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "+380 XX XXX XX XX",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_6a1c0b2e00006",
+      "label": "Booking link (Cal.com)",
+      "name": "theme_settings_booking_url",
+      "aria-label": "",
+      "type": "url",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "allow_in_bindings": 0,
+      "placeholder": "https://cal.com/…"
+    },
+    {
+      "key": "field_6a1c0b2e00007",
       "label": "Socials",
-      "name": "theme_settings_footer_socials",
+      "name": "theme_settings_socials",
       "aria-label": "",
       "type": "repeater",
-      "instructions": "",
+      "instructions": "Footer “Elsewhere” column (Upwork, LinkedIn, GitHub, Telegram…). Same for all languages.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -189,80 +137,55 @@
       "min": 0,
       "max": 0,
       "collapsed": "",
-      "button_label": "Add Row",
+      "button_label": "Add link",
       "rows_per_page": 20,
       "sub_fields": [
         {
-          "key": "field_66f66e3466fba",
-          "label": "Icon",
-          "name": "icon",
+          "key": "field_6a1c0b2e00008",
+          "label": "Label",
+          "name": "label",
           "aria-label": "",
-          "type": "image",
+          "type": "text",
           "instructions": "",
           "required": 0,
           "conditional_logic": 0,
           "wrapper": {
-            "width": "50",
+            "width": "",
             "class": "",
             "id": ""
           },
-          "return_format": "id",
-          "library": "all",
-          "min_width": "",
-          "min_height": "",
-          "min_size": "",
-          "max_width": "",
-          "max_height": "",
-          "max_size": "",
-          "mime_types": "",
+          "default_value": "",
+          "maxlength": "",
           "allow_in_bindings": 0,
-          "preview_size": "medium",
-          "parent_repeater": "field_66f6690c8fa23"
+          "placeholder": "LinkedIn",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_6a1c0b2e00007"
         },
         {
-          "key": "field_66f66e4266fbb",
-          "label": "Link",
-          "name": "link",
+          "key": "field_6a1c0b2e00009",
+          "label": "URL",
+          "name": "url",
           "aria-label": "",
-          "type": "link",
+          "type": "url",
           "instructions": "",
           "required": 0,
           "conditional_logic": 0,
           "wrapper": {
-            "width": "50",
+            "width": "",
             "class": "",
             "id": ""
           },
-          "return_format": "array",
+          "default_value": "",
           "allow_in_bindings": 0,
-          "parent_repeater": "field_66f6690c8fa23"
+          "placeholder": "",
+          "parent_repeater": "field_6a1c0b2e00007"
         }
       ]
     },
     {
-      "key": "field_66f6701f8a1f2",
-      "label": "Copyright",
-      "name": "theme_settings_footer_copyright",
-      "aria-label": "",
-      "type": "textarea",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "allow_in_bindings": 0,
-      "rows": 2,
-      "placeholder": "",
-      "new_lines": "br"
-    },
-    {
-      "key": "field_67118d44f9a22",
-      "label": "404",
+      "key": "field_6a1c0b2e00010",
+      "label": "Site",
       "name": "",
       "aria-label": "",
       "type": "tab",
@@ -279,51 +202,12 @@
       "selected": 0
     },
     {
-      "key": "field_67118d9ff9a23",
-      "label": "Text",
-      "name": "theme_settings_404_text",
-      "aria-label": "",
-      "type": "textarea",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "allow_in_bindings": 0,
-      "rows": "",
-      "placeholder": "",
-      "new_lines": ""
-    },
-    {
-      "key": "field_699703091fec7",
-      "label": "License\/api keys",
-      "name": "",
-      "aria-label": "",
-      "type": "tab",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "placement": "top",
-      "endpoint": 0,
-      "selected": 0
-    },
-    {
-      "key": "field_6997031c1fec8",
-      "label": "CookieYes",
-      "name": "keys_cookieyes",
+      "key": "field_6a1c0b2e00011",
+      "label": "PageSpeed score",
+      "name": "theme_settings_pagespeed",
       "aria-label": "",
       "type": "text",
-      "instructions": "",
+      "instructions": "Real measured mobile score for the footer. Empty → [PAGESPEED] placeholder.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -334,7 +218,7 @@
       "default_value": "",
       "maxlength": "",
       "allow_in_bindings": 0,
-      "placeholder": "",
+      "placeholder": "98",
       "prepend": "",
       "append": ""
     }
@@ -358,5 +242,5 @@
   "description": "",
   "show_in_rest": 0,
   "display_title": "",
-  "modified": 1771504444
+  "modified": 1793050046
 }
