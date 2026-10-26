@@ -32,6 +32,8 @@ $contact_url = theme_get_page_url('contact');
 
 <a class="skip-link" href="#content"><?php echo esc_html(theme_t('Skip to content')); ?></a>
 
+<div class="page" id="page">
+
 <header id="header" class="header" data-header>
     <div class="header__inner">
         <?php get_template_part('template-parts/partials/logo'); ?>
@@ -60,5 +62,3 @@ $contact_url = theme_get_page_url('contact');
 </header>
 
 <?php get_template_part('template-parts/header/mobile-menu', null, array('menu' => $menu, 'contact_url' => $contact_url)); ?>
-
-<div id="page" class="site">

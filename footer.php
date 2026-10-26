@@ -32,8 +32,6 @@ foreach ($menu as $item) {
 $kyiv_offset = (new DateTimeImmutable('now', new DateTimeZone('Europe/Kyiv')))->getOffset() / HOUR_IN_SECONDS;
 $utc_label = 'UTC' . ($kyiv_offset >= 0 ? '+' : '−') . abs($kyiv_offset);
 ?>
-</div><!-- #page -->
-
 <footer class="footer bp" data-footer>
     <div class="container">
         <div class="footer__cta grid-12">
@@ -129,6 +127,8 @@ $utc_label = 'UTC' . ($kyiv_offset >= 0 ? '+' : '−') . abs($kyiv_offset);
         </div>
     </div>
 </footer>
+
+</div><!-- #page -->
 
 <?php wp_footer(); ?>
 
