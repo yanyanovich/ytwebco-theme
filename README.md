@@ -25,11 +25,16 @@ No page builders, no parent theme: every section of the design is a custom ACF P
 - [x] Custom block inserter UI: allowed blocks only, manual order, search, previews
 - [x] Editable archive pages: a hidden CPT whose Gutenberg content is attached to post-type archives (Polylang-aware)
 - [x] Hardening and cleanup: comments disabled, extra upload MIME types, lowercase URL redirects, image srcset/lazy-load helpers
+- [x] Design tokens (colors, type scale, 4px spacing, layout) in SCSS, CSS custom properties and `theme.json`
+- [x] Self-hosted variable fonts (Inter Tight, JetBrains Mono, Latin + Cyrillic) with preload and metric-matched fallbacks
+- [x] Base components with hover states: buttons (lime fill-rise secondary), animated link underline, nav dimming, arrow shift, chips, form fields, status pill, language switch
+- [x] Header: Services dropdown, current-page dot, compact state after 80px scroll
+- [x] Accessible full-screen mobile menu: Services accordion, sticky CTA, scroll lock, focus trap, Esc / link close
+- [x] Footer with live Lutsk time (`Intl.DateTimeFormat`, UTC offset derived from `Europe/Kyiv`)
+- [x] Translatable UI strings via Polylang, EN / UA switch as plain links
+- [x] Front-end cleanup: no emoji, oEmbed or global-styles output
 
 **Planned**
-- [ ] Design tokens, self-hosted fonts (Inter Tight, JetBrains Mono, Latin + Cyrillic)
-- [ ] Sticky header with compact state, Services dropdown, accessible full-screen mobile menu (focus trap, scroll lock)
-- [ ] Footer with live Lutsk time (`Intl.DateTimeFormat`, auto UTC offset)
 - [ ] Homepage blocks: hero, metrics strip, services, case grid, process, about, FAQ, contact
 - [ ] `case` CPT with brand-colour hover cards and a Work archive with filtering
 - [ ] EN / UA content, hreflang, self-referencing canonicals
@@ -57,8 +62,12 @@ ytwebco-theme/
 │   ├── enqueue_scripts_and_styles.php
 │   └── helpers.php
 ├── template-parts/
-│   └── blocks/<group>/<block>/   # block.json + template.php + preview
-├── fonts/  media/  js/
+│   ├── blocks/<group>/<block>/   # block.json + template.php + preview
+│   ├── header/             # desktop nav, mobile menu
+│   └── partials/           # logo, language switch
+├── fonts/                  # self-hosted woff2 (SIL OFL)
+├── media/  js/
+├── theme.json              # editor palette, type and spacing tokens
 ├── functions.php
 └── style.css
 ```
@@ -73,6 +82,8 @@ ytwebco-theme/
 3. Install and activate the required plugins (not included in this repo): **ACF Pro**, **Polylang**, **Rank Math**.
 4. Activate the theme.
 5. In **ACF → Field Groups**, sync the field groups from `acf-json/`.
+6. In **Appearance → Menus**, create the main menu and assign it to *Main menu (header, mobile menu, footer)*. The item with children becomes the Services dropdown; turn on *Description* in Screen Options for the dropdown subtitles.
+7. Fill in **Theme settings → Contacts** (Telegram, email, socials). Empty fields show as `[placeholders]`.
 
 The compiled assets in `assets/` are committed, so the theme works without running a build.
 
