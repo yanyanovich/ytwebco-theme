@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-    <main>
+    <main id="content" class="site-main">
         <?php the_content(); ?>
     </main>
 

@@ -14,6 +14,8 @@ if ( ! defined( '_S_VERSION' ) ) {
 
 require get_template_directory() . '/inc/theme_settings.php';
 require get_template_directory() . '/inc/helpers.php';
+require get_template_directory() . '/inc/polylang.php';
+require get_template_directory() . '/inc/menus.php';
 require get_template_directory() . '/inc/acf_settings.php';
 require get_template_directory() . '/inc/post_types.php';
 require get_template_directory() . '/inc/cf7_functions.php';
