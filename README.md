@@ -14,7 +14,7 @@ No page builders, no parent theme: every section of the design is a custom ACF P
 - **ACF Pro** — Gutenberg blocks (`block.json` + PHP template), field groups synced as JSON
 - **Polylang** — English at `/`, Ukrainian at `/uk/`
 - **SCSS + modern JS** (ES modules, bundled with webpack), **GSAP** for scroll and count-up animations
-- **Rank Math**: titles, meta, sitemap, schema
+- **Yoast SEO**: titles, meta, sitemap, schema
 
 ## Features
 
@@ -41,7 +41,7 @@ No page builders, no parent theme: every section of the design is a custom ACF P
 - [ ] Contact form → REST endpoint → Telegram (nonce, honeypot, rate limiting), event-based conversion tracking
 - [ ] Custom cookie banner with Google Consent Mode v2
 - [ ] Schema: Person, ProfessionalService, Service, FAQPage, CreativeWork, BreadcrumbList
-- [ ] Performance pass: WebP/AVIF, critical CSS, no jQuery on the frontend, no WP bloat
+- [ ] Performance pass: WebP/AVIF, critical CSS, deferred scripts, no WP bloat
 - [ ] Accessibility pass: keyboard navigation, visible focus states, `prefers-reduced-motion`
 
 ## Structure
@@ -79,7 +79,7 @@ ytwebco-theme/
    ```bash
    git clone https://github.com/yanyanovich/ytwebco-theme.git wp-content/themes/ytwebco-theme
    ```
-3. Install and activate the required plugins (not included in this repo): **ACF Pro**, **Polylang**, **Rank Math**.
+3. Install and activate the required plugins (not included in this repo): **ACF Pro**, **Polylang**, **Yoast SEO**.
 4. Activate the theme.
 5. In **ACF → Field Groups**, sync the field groups from `acf-json/`.
 6. In **Appearance → Menus**, create the main menu and assign it to *Main menu (header, mobile menu, footer)*. The item with children becomes the Services dropdown; turn on *Description* in Screen Options for the dropdown subtitles.
