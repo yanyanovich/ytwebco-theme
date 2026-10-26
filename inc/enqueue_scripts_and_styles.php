@@ -21,6 +21,23 @@ function theme_styles()
 add_action('wp_enqueue_scripts', 'theme_styles');
 
 /**
+ * Preload the Latin subsets of the two variable fonts (used above the fold on every page).
+ * Cyrillic subsets load on demand through unicode-range.
+ */
+function theme_preload_fonts()
+{
+    $fonts = array('inter-tight-latin-wght-normal', 'jetbrains-mono-latin-wght-normal');
+
+    foreach ($fonts as $font) {
+        printf(
+            '<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
+            esc_url(get_template_directory_uri() . '/fonts/' . $font . '.woff2')
+        );
+    }
+}
+add_action('wp_head', 'theme_preload_fonts', 1);
+
+/**
  * Enqueue scripts and styles.
  */
 function theme_scripts() {
