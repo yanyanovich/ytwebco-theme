@@ -14,7 +14,7 @@ $archive_page_content = theme_get_archive_page_content($queried_object->name);
 
 ?>
 
-<main id="content" class="site-main example-post-type-archive">
+<main id="content" tabindex="-1" class="site-main example-post-type-archive">
     <?php if (!empty($archive_page_content)) : ?>
         <div class="example-post-type-archive__content">
             <?php echo $archive_page_content; ?>

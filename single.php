@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-    <main id="content" class="site-main">
+    <main id="content" tabindex="-1" class="site-main">
         <?php the_content(); ?>
     </main>
 
