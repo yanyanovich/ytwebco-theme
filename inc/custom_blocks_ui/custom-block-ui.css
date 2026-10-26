@@ -1,0 +1,140 @@
+.custom-block-selector-container {
+    display: inline-flex;
+    margin-left: 8px;
+}
+
+.custom-block-selector-container .custom-block-selector-button {
+    height: 32px;
+}
+
+.custom-block-selector-modal * {
+    box-sizing: border-box;
+}
+
+.custom-block-selector-modal {
+    max-height: 92vh;
+    max-width: 1200px;
+    width: 92vw;
+    overflow: hidden;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-container {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    height: calc(92vh - 120px);
+    min-height: 420px;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-categories {
+    border-right: 1px solid #ddd;
+    padding: 12px;
+    overflow-y: auto;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-search {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-search span {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-search input {
+    width: 100%;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-categories button {
+    width: 100%;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px 10px;
+    text-align: left;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-categories button:hover,
+.custom-block-selector-modal .custom-block-selector-modal-categories button.is-active {
+    background: #f0f0f1;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-blocklist {
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-section {
+    margin-bottom: 28px;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-section h3 {
+    margin: 0 0 12px;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-card {
+    min-height: 190px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+    padding: 10px;
+    text-align: left;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-card:hover {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-preview {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-card strong,
+.custom-block-selector-modal .custom-block-selector-modal-card span {
+    display: block;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-card span {
+    color: #646970;
+    margin-top: 4px;
+}
+
+.custom-block-selector-modal .custom-block-selector-modal-empty {
+    align-items: center;
+    color: #646970;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+.custom-block-selector-modal .components-modal__content {
+    overflow: hidden;
+}
+
+.components-modal__content > div:nth-child(2) {
+    height: 100%;
+}
+
+.interface-complementary-area__fill,
+.interface-complementary-area{
+    width: 500px !important;
+    max-width: 50vw !important;
+}
+html :where(.wp-block.acf-block-preview) img{
+    max-width: 100% !important;
+    width: 100% !important;
+}

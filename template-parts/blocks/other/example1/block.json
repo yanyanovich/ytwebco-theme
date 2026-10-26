@@ -1,0 +1,38 @@
+{
+  "name": "acf/other-blocks-example1",
+  "title": "Other blocks Example #1",
+  "description": "Example ACF block template.",
+  "style": [],
+  "category": "other-blocks",
+  "icon": "screenoptions",
+  "keywords": [
+    "example",
+    "section"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php"
+  },
+  "supports": {
+    "multiple": true,
+    "anchor": true,
+    "align": true,
+    "html": false,
+    "className": true,
+    "color": {
+      "gradients": true,
+      "background": true,
+      "text": true,
+      "link": true
+    }
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}
