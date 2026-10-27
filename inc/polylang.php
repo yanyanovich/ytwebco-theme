@@ -33,6 +33,10 @@ function theme_get_translatable_strings()
         'Cookie settings' => 'Cookie settings',
         'Back to top' => 'Back to top',
         'Opens in a new tab' => 'opens in a new tab',
+        'Hero: live badge' => 'Live',
+        'Hero: perf report label' => 'Performance report of this site',
+        'Hero: LCP good threshold' => 'good ≤ 2.5s',
+        'Hero: gauge label' => 'PageSpeed score %s out of 100',
     );
 }
 

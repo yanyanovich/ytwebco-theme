@@ -14,7 +14,7 @@ $contacts = theme_get_contacts();
 $socials = theme_get_socials();
 $contact_url = theme_get_page_url('contact');
 $privacy_url = get_privacy_policy_url() ?: theme_get_page_url('privacy');
-$pagespeed = function_exists('get_field') ? get_field('theme_settings_pagespeed', 'theme-settings') : '';
+$perf = theme_get_perf();
 
 // Services column = children of the menu item that has them; Site column = the other top-level items
 $services = array();
@@ -122,7 +122,7 @@ $utc_label = 'UTC' . ($kyiv_offset >= 0 ? '+' : '−') . abs($kyiv_offset);
             </span>
             <span class="footer__built">
                 <?php echo esc_html(theme_t('Built on WordPress')); ?> · PageSpeed
-                <span class="accent"><?php echo esc_html($pagespeed ?: '[PAGESPEED]'); ?></span>
+                <span class="accent"><?php echo esc_html($perf['pagespeed']); ?></span>
             </span>
             <a class="link-muted footer__top" href="#top">
                 <?php echo esc_html(theme_t('Back to top')); ?>
