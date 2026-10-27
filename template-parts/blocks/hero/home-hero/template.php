@@ -37,18 +37,18 @@ else :
              class="<?php echo esc_attr(trim(implode(' ', array_filter($block_classes)))); ?>"
              data-section>
         <div class="container">
-            <p class="home-hero__badge mono">
+            <p class="home-hero__badge mono" data-aos="drift-up">
                 <span class="dot dot--pulse" aria-hidden="true"></span>
                 <span class="home-hero__live"><?php echo esc_html(theme_t('Live')); ?></span>
                 <span>PageSpeed <span class="accent"><?php echo esc_html($perf['pagespeed']); ?></span> · LCP <span class="accent"><?php echo esc_html($perf['lcp']); ?></span></span>
             </p>
 
             <?php if (!empty($title)) : ?>
-                <h1 class="display home-hero__title"><?php echo theme_accent_period($title); ?></h1>
+                <h1 class="display home-hero__title" data-aos="rise-mask" data-aos-delay="100"><?php echo theme_accent_period($title); ?></h1>
             <?php endif; ?>
 
             <div class="home-hero__body grid-12">
-                <div class="home-hero__content">
+                <div class="home-hero__content" data-aos="drift-up" data-aos-delay="250">
                     <?php if (!empty($text)) : ?>
                         <p class="lead home-hero__text"><?php echo esc_html($text); ?></p>
                     <?php endif; ?>
@@ -66,7 +66,7 @@ else :
                     <?php endif; ?>
                 </div>
 
-                <div class="home-hero__report" role="group" data-section="0.5" data-count-group aria-label="<?php echo esc_attr(theme_t('Performance report of this site')); ?>">
+                <div class="home-hero__report" data-aos="soft-scale" data-aos-delay="350" role="group" data-section="0.5" data-count-group aria-label="<?php echo esc_attr(theme_t('Performance report of this site')); ?>">
                     <div class="home-hero__report-head">
                         <span class="label">perf.report</span>
                         <span class="label">Core Web Vitals</span>
@@ -110,7 +110,7 @@ else :
                             $source === 'pagespeed' ? 'metric--accent' : '',
                         );
                         ?>
-                        <li class="home-hero__metric">
+                        <li class="home-hero__metric" data-aos="drift-up" data-aos-delay="<?php echo esc_attr($index * 100); ?>">
                             <span class="<?php echo esc_attr(trim(implode(' ', array_filter($value_classes)))); ?>">
                                 <span<?php echo $count_attr((string)$value); ?> data-delay="<?php echo esc_attr($index * 120); ?>"><?php echo esc_html($value); ?></span><?php if (!empty($unit)) : ?><span class="home-hero__metric-unit"> <?php echo esc_html($unit); ?></span><?php endif; ?>
                             </span>
@@ -124,7 +124,7 @@ else :
             <?php endif; ?>
 
             <?php if (!empty($location) || !empty($region)) : ?>
-                <div class="home-hero__location mono">
+                <div class="home-hero__location mono" data-aos="reveal">
                     <span><?php echo esc_html($location); ?></span>
                     <?php if (!empty($region)) : ?>
                         <span class="home-hero__region"><?php echo esc_html($region); ?></span>

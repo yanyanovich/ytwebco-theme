@@ -17,7 +17,7 @@ if (empty($index) && empty($name) && empty($meta)) {
     return;
 }
 ?>
-<div class="section-head label <?php echo esc_attr($args['class'] ?? ''); ?>">
+<div class="section-head label <?php echo esc_attr($args['class'] ?? ''); ?>" data-aos="reveal">
     <span class="section-head__name">
         <?php if (!empty($index)) : ?>
             <span class="section-head__index"><?php echo esc_html($index); ?></span>

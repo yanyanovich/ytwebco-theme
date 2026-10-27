@@ -24,10 +24,10 @@ else :
             <?php if (!empty($title) || !empty($text)) : ?>
                 <div class="hp-services__intro grid-12">
                     <?php if (!empty($title)) : ?>
-                        <h2 class="h2 hp-services__title"><?php echo esc_html($title); ?></h2>
+                        <h2 class="h2 hp-services__title" data-aos="rise-mask"><?php echo esc_html($title); ?></h2>
                     <?php endif; ?>
                     <?php if (!empty($text)) : ?>
-                        <p class="hp-services__text"><?php echo esc_html($text); ?></p>
+                        <p class="hp-services__text" data-aos="drift-up" data-aos-delay="150"><?php echo esc_html($text); ?></p>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
@@ -37,7 +37,7 @@ else :
                     <?php foreach ($items as $index => $item) :
                         $tags = array_filter(array_map('trim', preg_split('/\R/', (string)$item['tags'])));
                         ?>
-                        <details class="acc<?php echo $index === 0 ? ' is-open' : ''; ?>" data-accordion<?php echo $index === 0 ? ' open' : ''; ?>>
+                        <details class="acc<?php echo $index === 0 ? ' is-open' : ''; ?>" data-accordion data-aos="drift-up" data-aos-delay="<?php echo esc_attr($index * 80); ?>"<?php echo $index === 0 ? ' open' : ''; ?>>
                             <summary class="acc__summary">
                                 <span class="acc__index mono"><?php echo esc_html(sprintf('%02d', $index + 1)); ?></span>
                                 <h3 class="acc__title"><?php echo esc_html($item['title']); ?></h3>
