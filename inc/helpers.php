@@ -4,8 +4,8 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Contact details from Theme settings → Contacts. Empty values stay visible
- * as [placeholders] until they are filled in.
+ * Contact details from Theme settings → Contacts. Telegram falls back to the handle
+ * from content.md; email / phone stay visible as [placeholders] until they are filled in.
  *
  * @return array{telegram: string, telegram_url: string, email: string, email_url: string, phone: string, phone_url: string, booking_url: string}
  */
@@ -31,8 +31,8 @@ function theme_get_contacts()
     $phone = $get('phone');
 
     $contacts = array(
-        'telegram' => $telegram ?: '[@username]',
-        'telegram_url' => $telegram_url ?: '#',
+        'telegram' => $telegram ?: '@yanyanovic',
+        'telegram_url' => $telegram_url ?: 'https://t.me/yanyanovic',
         'email' => $email ?: '[email]',
         'email_url' => $email ? 'mailto:' . antispambot($email) : '#',
         'phone' => $phone ?: '[+380 XX XXX XX XX]',
@@ -66,26 +66,43 @@ function theme_get_socials()
 }
 
 /**
- * Inline SVG icons used across the theme (stroke icons, inherit currentColor).
+ * Inline an SVG from the theme folder (logo lockups, icons from design/assets).
+ * Decorative by default: aria-hidden + focusable="false"; extra attributes go on <svg>.
  */
-function theme_icon($name, $size = 16)
+function theme_svg($relative_path, array $attrs = array())
 {
-    $paths = array(
-        'arrow-right' => '<path d="M3 8h10M9 4l4 4-4 4"/>',
-        'arrow-diag' => '<path d="M4 12 12 4M5 4h7v7"/>',
-        'chevron-down' => '<path d="m4 6 4 4 4-4"/>',
-        'plus' => '<path d="M8 3v10M3 8h10"/>',
-        'close' => '<path d="M3 3l10 10M13 3 3 13"/>',
-        'burger' => '<path d="M2 4.5h12M2 8h12M2 11.5h8"/>',
-    );
+    static $cache = array();
 
-    if (!isset($paths[$name])) {
+    if (!isset($cache[$relative_path])) {
+        $file = get_template_directory() . '/' . ltrim($relative_path, '/');
+        $cache[$relative_path] = is_readable($file) ? trim(file_get_contents($file)) : '';
+    }
+
+    $svg = $cache[$relative_path];
+
+    if ($svg === '') {
         return '';
     }
 
-    return sprintf(
-        '<svg width="%1$d" height="%1$d" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false">%2$s</svg>',
-        (int)$size,
-        $paths[$name]
-    );
+    $attrs = array_merge(array('aria-hidden' => 'true', 'focusable' => 'false'), $attrs);
+    $attr_string = '';
+    foreach ($attrs as $name => $value) {
+        $attr_string .= ' ' . $name . '="' . esc_attr($value) . '"';
+    }
+
+    return preg_replace('/^<svg\b/', '<svg' . $attr_string, $svg, 1);
+}
+
+/**
+ * UI icon from media/icons (stroke, currentColor): 16px UI icons, 20px contact icons.
+ *
+ * @param string $name arrow-right | arrow-up-right | arrow-up | arrow-down | chevron-down | check |
+ *                     burger | close | plus | telegram | email | phone | calendar | location | alert
+ */
+function theme_icon($name, $size = 16)
+{
+    return theme_svg('media/icons/icon-' . $name . '.svg', array(
+        'width' => (int)$size,
+        'height' => (int)$size,
+    ));
 }

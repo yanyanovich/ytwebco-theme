@@ -39,6 +39,7 @@ No page builders, no parent theme: every section of the design is a custom ACF P
 - [ ] `case` CPT with brand-colour hover cards and a Work archive with filtering
 - [ ] EN / UA content, hreflang, self-referencing canonicals
 - [ ] Contact form → REST endpoint → Telegram (nonce, honeypot, rate limiting), event-based conversion tracking
+- [ ] Project brief `/brief/` · `/uk/bryf/`: 4-step questionnaire on the same leads endpoint (noindex)
 - [ ] Custom cookie banner with Google Consent Mode v2
 - [ ] Schema: Person, ProfessionalService, Service, FAQPage, CreativeWork, BreadcrumbList
 - [ ] Performance pass: WebP/AVIF, critical CSS, deferred scripts, no WP bloat

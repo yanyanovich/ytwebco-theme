@@ -31,7 +31,7 @@ function theme_get_translatable_strings()
         'Footer: built on' => 'Built on WordPress',
         'Privacy policy' => 'Privacy policy',
         'Cookie settings' => 'Cookie settings',
-        'Back to top' => 'Back to top ↑',
+        'Back to top' => 'Back to top',
         'Opens in a new tab' => 'opens in a new tab',
     );
 }
