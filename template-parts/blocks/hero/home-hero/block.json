@@ -1,0 +1,22 @@
+{
+  "name": "acf/hero-home",
+  "title": "Hero / Homepage",
+  "description": "Homepage hero with performance report.",
+  "style": [],
+  "category": "hero-blocks",
+  "icon": "cover-image",
+  "keywords": ["hero", "homepage", "performance"],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": ["wide", "full"],
+    "html": false,
+    "className": true
+  }
+}

@@ -102,7 +102,7 @@ function theme_get_block_groups()
             'core-embed/wordpress-tv',
         ),
         'acf_hero' => array(
-            // 'acf/hero-blocks-type1',
+            'acf/hero-home',
         ),
         'acf_blog' => array(
             // 'acf/blog-blocks-faq',
