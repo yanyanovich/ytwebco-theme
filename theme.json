@@ -18,6 +18,7 @@
         { "slug": "text-2", "name": "Text 2", "color": "#B8BBC0" },
         { "slug": "muted", "name": "Muted", "color": "#8E9196" },
         { "slug": "accent", "name": "Accent", "color": "#C6F432" },
+        { "slug": "accent-on-light", "name": "Accent on light", "color": "#5C7A00" },
         { "slug": "error", "name": "Error", "color": "#FF6B5A" }
       ]
     },
