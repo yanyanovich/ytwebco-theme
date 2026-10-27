@@ -98,7 +98,8 @@ $utc_label = 'UTC' . ($kyiv_offset >= 0 ? '+' : '−') . abs($kyiv_offset);
                         <?php foreach ($socials as $social) : ?>
                             <li>
                                 <a class="link-muted" href="<?php echo esc_url($social['url']); ?>" target="_blank" rel="noopener me">
-                                    <?php echo esc_html($social['label']); ?> <span aria-hidden="true">↗</span>
+                                    <?php echo esc_html($social['label']); ?>
+                                    <span class="arrow arrow--diag"><?php echo theme_icon('arrow-up-right', 12); ?></span>
                                     <span class="screen-reader-text">(<?php echo esc_html(theme_t('opens in a new tab')); ?>)</span>
                                 </a>
                             </li>
@@ -123,7 +124,10 @@ $utc_label = 'UTC' . ($kyiv_offset >= 0 ? '+' : '−') . abs($kyiv_offset);
                 <?php echo esc_html(theme_t('Built on WordPress')); ?> · PageSpeed
                 <span class="accent"><?php echo esc_html($pagespeed ?: '[PAGESPEED]'); ?></span>
             </span>
-            <a class="link-muted footer__top" href="#top"><?php echo esc_html(theme_t('Back to top')); ?></a>
+            <a class="link-muted footer__top" href="#top">
+                <?php echo esc_html(theme_t('Back to top')); ?>
+                <span class="arrow arrow--up"><?php echo theme_icon('arrow-up', 12); ?></span>
+            </a>
         </div>
     </div>
 </footer>

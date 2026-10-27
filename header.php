@@ -45,13 +45,13 @@ $contact_url = theme_get_page_url('contact');
             <a class="btn btn--primary btn--sm header__cta" href="<?php echo esc_url($contact_url); ?>">
                 <span class="dot dot--sm header__cta-dot" aria-hidden="true"></span>
                 <?php echo esc_html(theme_t('Start a project')); ?>
-                <span class="arrow arrow--diag"><?php echo theme_icon('arrow-diag', 14); ?></span>
+                <span class="arrow arrow--diag"><?php echo theme_icon('arrow-up-right', 14); ?></span>
             </a>
         </div>
 
         <div class="header__mob-actions">
             <a class="icon-btn icon-btn--cta" href="<?php echo esc_url($contact_url); ?>" aria-label="<?php echo esc_attr(theme_t('Start a project')); ?>">
-                <?php echo theme_icon('arrow-diag'); ?>
+                <?php echo theme_icon('arrow-up-right'); ?>
             </a>
             <button type="button" class="icon-btn header__burger" aria-label="<?php echo esc_attr(theme_t('Open menu')); ?>"
                     aria-expanded="false" aria-controls="mobile-menu" data-mob-menu-open>
