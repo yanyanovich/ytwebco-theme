@@ -22,7 +22,7 @@ function theme_allowed_block_types($allowed_blocks, $editor_context)
                 $theme_blocks = theme_collect_block_groups($groups, 'core_full', 'acf_blog');
                 break;
             case 'page':
-                $theme_blocks = theme_collect_block_groups($groups, 'core_full', 'acf_hero', 'acf_other');
+                $theme_blocks = theme_collect_block_groups($groups, 'core_full', 'acf_hero', 'acf_home', 'acf_other');
                 break;
             default:
                 $theme_blocks = theme_collect_block_groups($groups, 'core_min', 'acf_other');
@@ -104,6 +104,9 @@ function theme_get_block_groups()
         'acf_hero' => array(
             'acf/hero-blocks-home-hero',
         ),
+        'acf_home' => array(
+            'acf/home-page-blocks-services',
+        ),
         'acf_blog' => array(
             // 'acf/blog-blocks-faq',
         ),
@@ -119,6 +122,10 @@ function theme_get_block_categories()
         array(
             'slug' => 'hero-blocks',
             'title' => 'Hero blocks',
+        ),
+        array(
+            'slug' => 'home-page-blocks',
+            'title' => 'Home page blocks',
         ),
         array(
             'slug' => 'blog-blocks',
