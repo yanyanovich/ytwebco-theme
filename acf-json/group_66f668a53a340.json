@@ -26,7 +26,7 @@
       "name": "theme_settings_telegram",
       "aria-label": "",
       "type": "text",
-      "instructions": "Shown in the footer and mobile menu. Empty → [@username] placeholder.",
+      "instructions": "Shown in the footer and mobile menu. Empty → @yanyanovic.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -37,7 +37,7 @@
       "default_value": "",
       "maxlength": "",
       "allow_in_bindings": 0,
-      "placeholder": "@username",
+      "placeholder": "@yanyanovic",
       "prepend": "",
       "append": ""
     },
@@ -57,7 +57,7 @@
       },
       "default_value": "",
       "allow_in_bindings": 0,
-      "placeholder": "https://t.me/username"
+      "placeholder": "https://t.me/yanyanovic"
     },
     {
       "key": "field_6a1c0b2e00004",
@@ -242,5 +242,5 @@
   "description": "",
   "show_in_rest": 0,
   "display_title": "",
-  "modified": 1793050046
+  "modified": 1793118628
 }
