@@ -17,6 +17,7 @@ $contact_url = theme_get_page_url('contact');
 <html <?php language_attributes(); ?> data-overlayscrollbars-initialize>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<script>document.documentElement.classList.add('js');</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#0E0F11">
 	<link rel="profile" href="https://gmpg.org/xfn/11">

@@ -22,6 +22,10 @@ else :
     $is_placeholder = function ($value) {
         return strpos($value, '[') === 0;
     };
+    // Count-up (setup-count-up.js) only for real numbers, never for [placeholders]
+    $count_attr = function ($value) use ($is_placeholder) {
+        return !$is_placeholder($value) && preg_match('/\d/', $value) ? ' data-count' : '';
+    };
 
     // Gauge ring (r = 52) and LCP bar (scale 0 → 2.5s) follow the real numbers; placeholders keep the mockup state.
     $circumference = 2 * M_PI * 52;
@@ -62,7 +66,7 @@ else :
                     <?php endif; ?>
                 </div>
 
-                <div class="home-hero__report" role="group" aria-label="<?php echo esc_attr(theme_t('Performance report of this site')); ?>">
+                <div class="home-hero__report" role="group" data-section="0.5" data-count-group aria-label="<?php echo esc_attr(theme_t('Performance report of this site')); ?>">
                     <div class="home-hero__report-head">
                         <span class="label">perf.report</span>
                         <span class="label">Core Web Vitals</span>
@@ -70,21 +74,21 @@ else :
                     <div class="home-hero__report-body">
                         <svg class="home-hero__gauge" viewBox="0 0 120 120" role="img" aria-label="<?php echo esc_attr(sprintf(theme_t('PageSpeed score %s out of 100'), $perf['pagespeed'])); ?>">
                             <circle class="home-hero__gauge-track" cx="60" cy="60" r="52"></circle>
-                            <circle class="home-hero__gauge-value" cx="60" cy="60" r="52" transform="rotate(-90 60 60)"
+                            <circle class="home-hero__gauge-value" cx="60" cy="60" r="52" transform="rotate(-90 60 60)" data-gauge="<?php echo esc_attr($score); ?>"
                                     stroke-dasharray="<?php echo esc_attr(round($circumference * $score / 100, 1) . ' ' . round($circumference, 1)); ?>"></circle>
-                            <text class="home-hero__gauge-score<?php echo $is_placeholder($perf['pagespeed']) ? ' is-placeholder' : ''; ?>" x="60" y="<?php echo $is_placeholder($perf['pagespeed']) ? 64 : 68; ?>" text-anchor="middle"><?php echo esc_html($perf['pagespeed']); ?></text>
+                            <text class="home-hero__gauge-score<?php echo $is_placeholder($perf['pagespeed']) ? ' is-placeholder' : ''; ?>" x="60" y="<?php echo $is_placeholder($perf['pagespeed']) ? 64 : 68; ?>" text-anchor="middle"<?php echo $count_attr($perf['pagespeed']); ?>><?php echo esc_html($perf['pagespeed']); ?></text>
                             <text class="home-hero__gauge-max" x="60" y="<?php echo $is_placeholder($perf['pagespeed']) ? 82 : 88; ?>" text-anchor="middle">/ 100</text>
                         </svg>
                         <dl class="home-hero__report-data">
                             <div class="home-hero__report-row">
                                 <dt class="label">PageSpeed</dt>
-                                <dd class="mono home-hero__report-value"><?php echo esc_html($perf['pagespeed']); ?></dd>
+                                <dd class="mono home-hero__report-value"<?php echo $count_attr($perf['pagespeed']); ?>><?php echo esc_html($perf['pagespeed']); ?></dd>
                             </div>
                             <div class="home-hero__report-row home-hero__report-row--lcp">
                                 <dt class="label">LCP</dt>
-                                <dd class="mono home-hero__report-value"><?php echo esc_html($perf['lcp']); ?></dd>
+                                <dd class="mono home-hero__report-value"<?php echo $count_attr($perf['lcp']); ?>><?php echo esc_html($perf['lcp']); ?></dd>
                                 <dd class="home-hero__lcp" aria-hidden="true">
-                                    <span class="home-hero__lcp-bar"><span style="width: <?php echo esc_attr(round($lcp_width, 1)); ?>%"></span></span>
+                                    <span class="home-hero__lcp-bar"><span style="width: <?php echo esc_attr(round($lcp_width, 1)); ?>%" data-bar="<?php echo esc_attr(round($lcp_width, 1)); ?>"></span></span>
                                     <span class="home-hero__lcp-scale mono"><span>0s</span><span><?php echo esc_html(theme_t('good ≤ 2.5s')); ?></span></span>
                                 </dd>
                             </div>
@@ -94,8 +98,8 @@ else :
             </div>
 
             <?php if (!empty($metrics)) : ?>
-                <ul class="home-hero__metrics">
-                    <?php foreach ($metrics as $metric) :
+                <ul class="home-hero__metrics" data-section="0.5" data-count-group>
+                    <?php foreach ($metrics as $index => $metric) :
                         $source = $metric['source'] ?? 'custom';
                         $value = $source === 'custom' ? $metric['value'] : $perf[$source];
                         $unit = $source === 'custom' ? $metric['unit'] : '';
@@ -108,7 +112,7 @@ else :
                         ?>
                         <li class="home-hero__metric">
                             <span class="<?php echo esc_attr(trim(implode(' ', array_filter($value_classes)))); ?>">
-                                <?php echo esc_html($value); ?><?php if (!empty($unit)) : ?><span class="home-hero__metric-unit"> <?php echo esc_html($unit); ?></span><?php endif; ?>
+                                <span<?php echo $count_attr((string)$value); ?> data-delay="<?php echo esc_attr($index * 120); ?>"><?php echo esc_html($value); ?></span><?php if (!empty($unit)) : ?><span class="home-hero__metric-unit"> <?php echo esc_html($unit); ?></span><?php endif; ?>
                             </span>
                             <span class="label">
                                 <span class="home-hero__metric-label"><?php echo esc_html($metric['label']); ?></span>
