@@ -2,7 +2,7 @@
 /**
  * Floating CTA (Interactions · 05): fixed bottom-right lime circle, the label rotates along the edge
  * (12s loop), arrow scales on hover. Homepage only. setup-floating-cta.js hides it while the
- * footer or the contact block is in view.
+ * footer, the contact block or the SEO text is in view.
  *
  * @var array $args {
  *     @type string $url   link target (Contact page)

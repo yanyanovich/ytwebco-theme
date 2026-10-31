@@ -37,6 +37,8 @@ function theme_get_translatable_strings()
         'Hero: perf report label' => 'Performance report of this site',
         'Hero: LCP good threshold' => 'good ≤ 2.5s',
         'Hero: gauge label' => 'PageSpeed score %s out of 100',
+        'SEO text: read more' => 'Read more',
+        'SEO text: show less' => 'Show less',
     );
 }
 

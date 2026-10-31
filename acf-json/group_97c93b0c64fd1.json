@@ -1,0 +1,149 @@
+{
+    "key": "group_97c93b0c64fd1",
+    "title": "Block - Other - SEO text",
+    "fields": [
+        {
+            "key": "field_626ece8f544e7",
+            "label": "Section head",
+            "name": "b_other_seo_head",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Muted rule line: \u201c07 \/ About this service\u201d on the left, optional meta on the right.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_fa920e17ad9c5",
+                    "label": "Index",
+                    "name": "index",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "07",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_ba76ded5c2989",
+                    "label": "Name",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "About this service",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_bba4879e2486f",
+                    "label": "Meta",
+                    "name": "meta",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_82dd987f0e3f6",
+            "label": "Title (H2)",
+            "name": "b_other_seo_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "WordPress and WooCommerce developer for fast, conversion-focused websites",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_f9a1ceecf5c49",
+            "label": "Text",
+            "name": "b_other_seo_content",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "H3 subheadings, paragraphs, lists and links. The full text is in the page HTML; it is only visually collapsed to about 6 lines.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/other-blocks-seo-text"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793479824
+}
