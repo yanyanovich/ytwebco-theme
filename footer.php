@@ -132,6 +132,13 @@ $utc_label = 'UTC' . ($kyiv_offset >= 0 ? '+' : '−') . abs($kyiv_offset);
     </div>
 </footer>
 
+<?php if (is_front_page()) {
+    get_template_part('template-parts/partials/floating-cta', null, array(
+        'url' => theme_get_page_url('contact'),
+        'label' => theme_t('Start a project'),
+    ));
+} ?>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
