@@ -108,6 +108,7 @@ function theme_get_block_groups()
             'acf/home-page-blocks-services',
             'acf/home-page-blocks-cases',
             'acf/home-page-blocks-process',
+            'acf/home-page-blocks-about',
         ),
         'acf_blog' => array(
             // 'acf/blog-blocks-faq',

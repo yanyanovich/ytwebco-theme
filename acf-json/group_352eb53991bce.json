@@ -1,0 +1,453 @@
+{
+    "key": "group_352eb53991bce",
+    "title": "Block - Home - About",
+    "fields": [
+        {
+            "key": "field_82fceaf15eb01",
+            "label": "Content",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_3b73d4ece6af7",
+            "label": "Section head",
+            "name": "b_hp_about_head",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Rule line above the block: \u201c04 \/ About\u201d on the left, \u201cLutsk, UA\u201d on the right.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_1cee642441be1",
+                    "label": "Index",
+                    "name": "index",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "04",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_1047629a1a2be",
+                    "label": "Name",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "About",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_8be9d1d8348c2",
+                    "label": "Meta",
+                    "name": "meta",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Lutsk, UA",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_a88ab25390970",
+            "label": "Label",
+            "name": "b_hp_about_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Founder",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66ee46b34e4c6",
+            "label": "Title",
+            "name": "b_hp_about_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Hi, I'm Yan.",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_377bd1975be1c",
+            "label": "Lead",
+            "name": "b_hp_about_lead",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "I've been building with WordPress for 6 years\u2026",
+            "new_lines": ""
+        },
+        {
+            "key": "field_59b35b676c252",
+            "label": "Text",
+            "name": "b_hp_about_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "I work directly with clients\u2026",
+            "new_lines": ""
+        },
+        {
+            "key": "field_7843cc6d6b292",
+            "label": "Photo",
+            "name": "b_hp_about_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Portrait 4:5, at least 1200\u00d71500. Alt text comes from the media library.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg, png, webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_777d5d83fbbed",
+            "label": "Photo caption",
+            "name": "b_hp_about_image_caption",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small label in the photo corner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Lutsk, UA",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_bcd66008324ab",
+            "label": "Stats & tools",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_42e461d683d71",
+            "label": "Stats",
+            "name": "b_hp_about_stats",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 3,
+            "collapsed": "field_bf1df34ba57e1",
+            "button_label": "Add stat",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_bf1df34ba57e1",
+                    "label": "Value",
+                    "name": "value",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "6 yrs",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_42e461d683d71"
+                },
+                {
+                    "key": "field_db1bc9191e116",
+                    "label": "Label",
+                    "name": "label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "WordPress",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_42e461d683d71"
+                },
+                {
+                    "key": "field_b4b25bfe08b07",
+                    "label": "Mobile label",
+                    "name": "label_mobile",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Shorter label for phones, optional.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Direct",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_42e461d683d71"
+                }
+            ]
+        },
+        {
+            "key": "field_1dbd305c853dd",
+            "label": "Tools label",
+            "name": "b_hp_about_tools_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Toolbox",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_e8c7af232c174",
+            "label": "Tools",
+            "name": "b_hp_about_tools",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_a47372867b038",
+            "button_label": "Add tool",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_55dcc9da47e47",
+                    "label": "Code",
+                    "name": "code",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "2\u20133 letters in the badge.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "WP",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_e8c7af232c174"
+                },
+                {
+                    "key": "field_a47372867b038",
+                    "label": "Name",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "WordPress",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_e8c7af232c174"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/home-page-blocks-about"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793475087
+}
