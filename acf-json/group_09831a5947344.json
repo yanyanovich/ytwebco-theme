@@ -1,0 +1,235 @@
+{
+    "key": "group_09831a5947344",
+    "title": "Case",
+    "fields": [
+        {
+            "key": "field_5669729fb4dc4",
+            "label": "Card",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_c72b2f7e57be4",
+            "label": "Card image",
+            "name": "case_card_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Ready browser + phone mockup, 16:10 (case-*-card@2x.png, 3200×2000).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "png,jpg,jpeg,webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_162937a5c7764",
+            "label": "Domain",
+            "name": "case_domain",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Shown without https:\/\/",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "ppmarket.in.ua",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_30d79d269aa74",
+            "label": "Live URL",
+            "name": "case_live_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": "https:\/\/"
+        },
+        {
+            "key": "field_b3e308898abe4",
+            "label": "One-liner",
+            "name": "case_excerpt",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Card description, one sentence.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_46d9a8cb853a4",
+            "label": "Main metric",
+            "name": "case_metric",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Lime number on the card.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "−65% server requests",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_51d8acab651f4",
+            "label": "Stack",
+            "name": "case_stack",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Tags on the card (WooCommerce, Telegram bot, REST API…).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add item",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_e9d4f2ea4ed54",
+                    "label": "Name",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "WooCommerce",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_51d8acab651f4"
+                }
+            ]
+        },
+        {
+            "key": "field_849ffd3d85194",
+            "label": "Brand colour",
+            "name": "case_brand_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "Card hover gradient.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_f02b69d5a6894",
+            "label": "Brand colour 2",
+            "name": "case_brand_color_2",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "Second stop of the gradient (optional).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "case"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793500000
+}

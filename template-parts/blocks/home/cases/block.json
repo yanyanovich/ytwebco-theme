@@ -1,0 +1,35 @@
+{
+  "name": "acf/home-page-blocks-cases",
+  "title": "Home page blocks Cases",
+  "description": "“Selected work”: section head with a link, title, lead and the case card grid.",
+  "style": [],
+  "category": "home-page-blocks",
+  "icon": "portfolio",
+  "keywords": [
+    "cases",
+    "work",
+    "homepage"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}
