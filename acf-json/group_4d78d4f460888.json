@@ -1,0 +1,239 @@
+{
+    "key": "group_4d78d4f460888",
+    "title": "Block - Home - Process",
+    "fields": [
+        {
+            "key": "field_4033a9475a4b5",
+            "label": "Section head",
+            "name": "b_hp_process_head",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Rule line above the title: \u201c03 \/ Process\u201d on the left, \u201cQuote in \u2264 2 days\u201d on the right.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_1be87b94fd52c",
+                    "label": "Index",
+                    "name": "index",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "03",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_f8989cef3601d",
+                    "label": "Name",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Process",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_eb7cac87f6aaf",
+                    "label": "Meta",
+                    "name": "meta",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Quote in \u2264 2 days",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_6ea7fe9d8ddec",
+            "label": "Title",
+            "name": "b_hp_process_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "How we'll work",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_0e2d54e8e1bf8",
+            "label": "Text",
+            "name": "b_hp_process_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "No surprises: you know the scope, price and timeline\u2026",
+            "new_lines": ""
+        },
+        {
+            "key": "field_8ab7938a2132f",
+            "label": "Steps",
+            "name": "b_hp_process_steps",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Numbered 01\u201304 automatically. Four fit one row on desktop.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 4,
+            "collapsed": "field_55a387651bf50",
+            "button_label": "Add step",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_55a387651bf50",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Discovery call",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_8ab7938a2132f"
+                },
+                {
+                    "key": "field_77c39ab95eda5",
+                    "label": "Chip",
+                    "name": "chip",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Free \u00b7 30 min",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_8ab7938a2132f"
+                },
+                {
+                    "key": "field_f804dfd45149d",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "A free 30-minute call to understand your business\u2026",
+                    "new_lines": "",
+                    "parent_repeater": "field_8ab7938a2132f"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/home-page-blocks-process"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793474262
+}

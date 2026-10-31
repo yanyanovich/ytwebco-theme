@@ -22,7 +22,7 @@ function theme_allowed_block_types($allowed_blocks, $editor_context)
                 $theme_blocks = theme_collect_block_groups($groups, 'core_full', 'acf_blog');
                 break;
             case 'page':
-                $theme_blocks = theme_collect_block_groups($groups, 'core_full', 'acf_hero', 'acf_other');
+                $theme_blocks = theme_collect_block_groups($groups, 'core_full', 'acf_hero', 'acf_home', 'acf_other');
                 break;
             default:
                 $theme_blocks = theme_collect_block_groups($groups, 'core_min', 'acf_other');
@@ -102,13 +102,22 @@ function theme_get_block_groups()
             'core-embed/wordpress-tv',
         ),
         'acf_hero' => array(
-            // 'acf/hero-blocks-type1',
+            'acf/hero-blocks-home-hero',
+        ),
+        'acf_home' => array(
+            'acf/home-page-blocks-services',
+            'acf/home-page-blocks-cases',
+            'acf/home-page-blocks-process',
+            'acf/home-page-blocks-about',
+            'acf/home-page-blocks-faq',
+            'acf/home-page-blocks-contact',
         ),
         'acf_blog' => array(
             // 'acf/blog-blocks-faq',
         ),
         'acf_other' => array(
             'acf/other-blocks-example1',
+            'acf/other-blocks-seo-text',
         ),
     );
 }
@@ -119,6 +128,10 @@ function theme_get_block_categories()
         array(
             'slug' => 'hero-blocks',
             'title' => 'Hero blocks',
+        ),
+        array(
+            'slug' => 'home-page-blocks',
+            'title' => 'Home page blocks',
         ),
         array(
             'slug' => 'blog-blocks',

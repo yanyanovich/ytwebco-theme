@@ -207,11 +207,11 @@
       "name": "theme_settings_pagespeed",
       "aria-label": "",
       "type": "text",
-      "instructions": "Real measured mobile score for the footer. Empty → [PAGESPEED] placeholder.",
+      "instructions": "Real measured mobile score (hero, footer). Empty → [PAGESPEED] placeholder.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
-        "width": "",
+        "width": "50",
         "class": "",
         "id": ""
       },
@@ -219,6 +219,27 @@
       "maxlength": "",
       "allow_in_bindings": 0,
       "placeholder": "98",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_6a1c0b2e00012",
+      "label": "LCP",
+      "name": "theme_settings_lcp",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "Real measured Largest Contentful Paint, with unit (hero). Empty → [LCP] placeholder.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "1.2s",
       "prepend": "",
       "append": ""
     }
@@ -242,5 +263,5 @@
   "description": "",
   "show_in_rest": 0,
   "display_title": "",
-  "modified": 1793118628
+  "modified": 1793140000
 }

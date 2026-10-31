@@ -1,0 +1,35 @@
+{
+  "name": "acf/home-page-blocks-services",
+  "title": "Home page blocks Services",
+  "description": "“What I build”: section head, title, lead and a services accordion with tags.",
+  "style": [],
+  "category": "home-page-blocks",
+  "icon": "list-view",
+  "keywords": [
+    "services",
+    "accordion",
+    "homepage"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

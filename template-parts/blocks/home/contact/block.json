@@ -1,0 +1,35 @@
+{
+  "name": "acf/home-page-blocks-contact",
+  "title": "Home page blocks Contact",
+  "description": "“Tell me about your project”: status, contact rows and a Contact Form 7 form that turns into a success panel in place.",
+  "style": [],
+  "category": "home-page-blocks",
+  "icon": "email",
+  "keywords": [
+    "contact",
+    "form",
+    "homepage"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

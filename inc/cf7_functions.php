@@ -31,6 +31,11 @@ function theme_replace_cf7_submit_input_with_button($content)
             preg_match('/value=["\']([^"\']*)["\']/', $attributes, $value_match);
             $button_text = isset($value_match[1]) ? esc_html($value_match[1]) : '';
 
+            // Primary buttons carry the arrow, like the buttons in templates
+            if (preg_match('/class=["\'][^"\']*btn--primary[^"\']*["\']/', $attributes)) {
+                $button_text = '<span class="btn__text">' . $button_text . '</span><span class="arrow">' . theme_icon('arrow-right') . '</span>';
+            }
+
             return '<button' . $attributes . '>' . $button_text . '</button>';
         },
         $content

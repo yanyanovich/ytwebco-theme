@@ -1,0 +1,234 @@
+{
+    "key": "group_a8fc956807122",
+    "title": "Block - Home - FAQ",
+    "fields": [
+        {
+            "key": "field_67157fed11d15",
+            "label": "Section head",
+            "name": "b_hp_faq_head",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Rule line above the block: \u201c05 \/ FAQ\u201d on the left, \u201c6 questions\u201d on the right.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_444182537f366",
+                    "label": "Index",
+                    "name": "index",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "05",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6e013f6cc5912",
+                    "label": "Name",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "FAQ",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_fa95d57d9e6b0",
+                    "label": "Meta",
+                    "name": "meta",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "6 questions",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_a52fc1ffd4a53",
+            "label": "Title",
+            "name": "b_hp_faq_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Line breaks are kept on desktop.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "Questions,\nanswered",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_eb2d3e720d9b0",
+            "label": "Text",
+            "name": "b_hp_faq_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "Something else on your mind? Ask me directly.",
+            "new_lines": ""
+        },
+        {
+            "key": "field_ab4e62de5c5ff",
+            "label": "Link",
+            "name": "b_hp_faq_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "E.g. \u201cMessage me on Telegram \u2192\u201d.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_fa652ce7df77f",
+            "label": "Questions",
+            "name": "b_hp_faq_items",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "The first question is open on load. Also printed as FAQPage schema.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_bff627070cdd3",
+            "button_label": "Add question",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_bff627070cdd3",
+                    "label": "Question",
+                    "name": "question",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "How much does a website cost?",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_fa652ce7df77f"
+                },
+                {
+                    "key": "field_14bc65922a750",
+                    "label": "Answer",
+                    "name": "answer",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 3,
+                    "placeholder": "Every project gets a fixed quote after a free call\u2026",
+                    "new_lines": "",
+                    "parent_repeater": "field_fa652ce7df77f"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/home-page-blocks-faq"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793476082
+}

@@ -44,6 +44,41 @@ function theme_get_contacts()
 }
 
 /**
+ * Measured performance numbers from Theme settings → Site (hero badge, perf report, metrics, footer).
+ * Unmeasured values stay visible as [PAGESPEED] / [LCP] placeholders.
+ *
+ * @return array{pagespeed: string, lcp: string}
+ */
+function theme_get_perf()
+{
+    static $perf = null;
+
+    if ($perf === null) {
+        $get = function ($name) {
+            return function_exists('get_field') ? trim((string)get_field('theme_settings_' . $name, 'theme-settings')) : '';
+        };
+
+        $perf = array(
+            'pagespeed' => $get('pagespeed') ?: '[PAGESPEED]',
+            'lcp' => $get('lcp') ?: '[LCP]',
+        );
+    }
+
+    return $perf;
+}
+
+/**
+ * Escapes a heading and paints its closing full stop lime (the brand "." from the design).
+ * Keeps <br> from ACF textareas with "new_lines: br".
+ */
+function theme_accent_period($text)
+{
+    $html = wp_kses((string)$text, array('br' => array()));
+
+    return preg_replace('/\.(\s*)$/u', '<span class="accent">.</span>$1', trim($html));
+}
+
+/**
  * Social links for the footer "Elsewhere" column (Theme settings → Contacts → Socials).
  *
  * @return array<int, array{label: string, url: string}>

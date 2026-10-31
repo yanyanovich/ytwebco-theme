@@ -22,4 +22,5 @@ require get_template_directory() . '/inc/cf7_functions.php';
 require get_template_directory() . '/inc/CustomArchiveContent.php';
 require get_template_directory() . '/inc/enqueue_scripts_and_styles.php';
 require get_template_directory() . '/inc/gutenberg_blocks.php';
+require get_template_directory() . '/inc/schema.php';
 require get_template_directory() . '/inc/ajax_functions.php';

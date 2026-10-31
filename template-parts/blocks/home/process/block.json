@@ -1,0 +1,35 @@
+{
+  "name": "acf/home-page-blocks-process",
+  "title": "Home page blocks Process",
+  "description": "“How we’ll work”: section head, title, lead and numbered steps with a chip each.",
+  "style": [],
+  "category": "home-page-blocks",
+  "icon": "editor-ol",
+  "keywords": [
+    "process",
+    "steps",
+    "homepage"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

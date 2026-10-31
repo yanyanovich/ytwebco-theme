@@ -1,0 +1,554 @@
+{
+    "key": "group_572d59bdcb910",
+    "title": "Block - Home - Contact",
+    "fields": [
+        {
+            "key": "field_87cae9ae3896a",
+            "label": "Content",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_65f02b37e3f48",
+            "label": "Section head",
+            "name": "b_hp_contact_head",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Rule line above the block: \u201c06 \/ Contact\u201d on the left, \u201cReply < 1 working day\u201d on the right.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_21b2449da324b",
+                    "label": "Index",
+                    "name": "index",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "06",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_04daa0ad985e8",
+                    "label": "Name",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Contact",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_f0fa1625f2153",
+                    "label": "Meta",
+                    "name": "meta",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Reply < 1 working day",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_a17d945382004",
+            "label": "Status",
+            "name": "b_hp_contact_status",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Available for new projects",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_2133f9507bd3b",
+            "label": "Title",
+            "name": "b_hp_contact_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Line breaks are kept on desktop.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "Tell me about\nyour project",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_35540aedd1fce",
+            "label": "Text",
+            "name": "b_hp_contact_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "A few lines are enough\u2026",
+            "new_lines": ""
+        },
+        {
+            "key": "field_c1b2907246d7e",
+            "label": "Contact rows",
+            "name": "b_hp_contact_rows",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Icon and link follow the type.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_b3ab851b1999c",
+            "button_label": "Add row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_92fc2b3b90a96",
+                    "label": "Type",
+                    "name": "type",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "telegram": "Telegram",
+                        "booking": "Book a call",
+                        "email": "Email",
+                        "phone": "Phone",
+                        "location": "Location"
+                    },
+                    "default_value": "telegram",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_c1b2907246d7e"
+                },
+                {
+                    "key": "field_b3ab851b1999c",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Message me on Telegram",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_c1b2907246d7e"
+                },
+                {
+                    "key": "field_222b52f37805d",
+                    "label": "Note",
+                    "name": "note",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Empty: the handle, email or phone from Theme settings \u2192 Contacts.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Free \u00b7 30 minutes",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_c1b2907246d7e"
+                },
+                {
+                    "key": "field_8595fc0b251e4",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Empty: the URL from Theme settings \u2192 Contacts.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_c1b2907246d7e"
+                }
+            ]
+        },
+        {
+            "key": "field_88d17375b9e5c",
+            "label": "Reply note",
+            "name": "b_hp_contact_note",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "\u21b3 I reply within one working day.",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_4056c922c6ba8",
+            "label": "Form",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_d5629c7219e9d",
+            "label": "Form",
+            "name": "b_hp_contact_form",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Contact Form 7 form. Fields, the error message (data-form-error) and the \u201cNo spam\u201d note live in Contact \u2192 Contact Forms.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "wpcf7_contact_form"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_43bf61fe50658",
+            "label": "Sending label",
+            "name": "b_hp_contact_sending",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Button text while the request is in flight.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Sending\u2026",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_297c5d9ff71fc",
+            "label": "Success",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_ce1cb75daea09",
+            "label": "Badge",
+            "name": "b_hp_contact_success_badge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "200 OK \u00b7 Message sent",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_84686ce3d3889",
+            "label": "Title",
+            "name": "b_hp_contact_success_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Thanks \u2014 your message is in.",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_edc973a73dcaf",
+            "label": "Next steps",
+            "name": "b_hp_contact_success_steps",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 4,
+            "collapsed": "field_12a16f3dd1bb4",
+            "button_label": "Add step",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_12a16f3dd1bb4",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Reply within one working day",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_edc973a73dcaf"
+                },
+                {
+                    "key": "field_5245f995d056f",
+                    "label": "Chip",
+                    "name": "chip",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "< 1 working day",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_edc973a73dcaf"
+                }
+            ]
+        },
+        {
+            "key": "field_73bef5c864b22",
+            "label": "Primary link",
+            "name": "b_hp_contact_success_link_primary",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_9018055888635",
+            "label": "Secondary link",
+            "name": "b_hp_contact_success_link_secondary",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/home-page-blocks-contact"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793476446
+}

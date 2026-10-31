@@ -1,0 +1,337 @@
+{
+    "key": "group_c2c91a67ddb14",
+    "title": "Block - Hero - Home hero",
+    "fields": [
+        {
+            "key": "field_9e94b3261f9b4",
+            "label": "Content",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_080befd3b2f74",
+            "label": "Title",
+            "name": "b_hero_home_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Press Enter where the line should break on desktop. A closing “.” turns lime.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "Fast websites\nthat sell.",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_2762f94183434",
+            "label": "Text",
+            "name": "b_hero_home_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "placeholder": "WordPress, WooCommerce & Shopify developer…",
+            "new_lines": ""
+        },
+        {
+            "key": "field_3da750254f5d4",
+            "label": "Primary button",
+            "name": "b_hero_home_link_primary",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_e4bd23c32c9f4",
+            "label": "Secondary button",
+            "name": "b_hero_home_link_secondary",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_a1cffb66bbde4",
+            "label": "Metrics",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_9b591bd89ab04",
+            "label": "Metrics",
+            "name": "b_hero_home_metrics",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Up to 4 numbers under the hero. PageSpeed and LCP come from Theme settings → Site.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 4,
+            "collapsed": "",
+            "button_label": "Add metric",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_5eae13bdc87d4",
+                    "label": "Value from",
+                    "name": "source",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "custom": "Custom",
+                        "pagespeed": "PageSpeed (Theme settings)",
+                        "lcp": "LCP (Theme settings)"
+                    },
+                    "default_value": "custom",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_9b591bd89ab04"
+                },
+                {
+                    "key": "field_972b257aed774",
+                    "label": "Value",
+                    "name": "value",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eae13bdc87d4",
+                                "operator": "==",
+                                "value": "custom"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "15",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "6",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_9b591bd89ab04"
+                },
+                {
+                    "key": "field_a0a28f93661b4",
+                    "label": "Unit",
+                    "name": "unit",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5eae13bdc87d4",
+                                "operator": "==",
+                                "value": "custom"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "15",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "yrs",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_9b591bd89ab04"
+                },
+                {
+                    "key": "field_6e0409b2f91e4",
+                    "label": "Label",
+                    "name": "label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "With WordPress",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_9b591bd89ab04"
+                },
+                {
+                    "key": "field_2bd006f148d74",
+                    "label": "Label on mobile",
+                    "name": "label_mobile",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Optional, shorter",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_9b591bd89ab04"
+                }
+            ]
+        },
+        {
+            "key": "field_a2c87c8625894",
+            "label": "Location",
+            "name": "b_hero_home_location",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Based in Lutsk, Ukraine · Working with clients worldwide",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_c1c7c72be0914",
+            "label": "Region (desktop only)",
+            "name": "b_hero_home_region",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Lutsk · Volyn region · UA",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/hero-blocks-home-hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793140000
+}
