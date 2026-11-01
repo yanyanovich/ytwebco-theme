@@ -37,7 +37,7 @@ else :
                         <h2 class="h2 hp-cases__title" data-aos="rise-mask"><?php echo esc_html($title); ?></h2>
                     <?php endif; ?>
                     <?php if (!empty($text) || !empty($link['url'])) : ?>
-                        <div class="hp-cases__aside" data-aos="drift-up" data-aos-delay="150">
+                        <div class="hp-cases__aside<?php echo empty($text) ? ' hp-cases__aside--link' : ''; ?>" data-aos="drift-up" data-aos-delay="150">
                             <?php if (!empty($text)) : ?>
                                 <p class="hp-cases__text"><?php echo esc_html($text); ?></p>
                             <?php endif; ?>
