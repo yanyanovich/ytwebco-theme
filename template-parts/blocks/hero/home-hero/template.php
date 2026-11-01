@@ -4,12 +4,17 @@ if (is_admin() && !empty($is_preview)) :
     return;
 else :
     $block_id = !empty($block['anchor']) ? $block['anchor'] : $block['id'];
+    // "local": UA local landing — smaller H1, buttons on the right, no perf report card
+    $layout = get_field('b_hero_home_layout') === 'local' ? 'local' : 'report';
     $block_classes = array(
         'home-hero',
+        'home-hero--' . $layout,
         'bp',
         !empty($block['className']) ? $block['className'] : '',
     );
 
+    $badge_location = get_field('b_hero_home_badge_location');
+    $badge_location_mobile = get_field('b_hero_home_badge_location_mobile');
     $title = get_field('b_hero_home_title');
     $text = get_field('b_hero_home_text');
     $link_primary = get_field('b_hero_home_link_primary');
@@ -37,11 +42,24 @@ else :
              class="<?php echo esc_attr(trim(implode(' ', array_filter($block_classes)))); ?>"
              data-section>
         <div class="container">
-            <p class="home-hero__badge mono" data-aos="drift-up">
-                <span class="dot dot--pulse" aria-hidden="true"></span>
-                <span class="home-hero__live"><?php echo esc_html(theme_t('Live')); ?></span>
-                <span>PageSpeed <span class="accent"><?php echo esc_html($perf['pagespeed']); ?></span> · LCP <span class="accent"><?php echo esc_html($perf['lcp']); ?></span></span>
-            </p>
+            <div class="home-hero__badges" data-aos="drift-up">
+                <p class="home-hero__badge mono">
+                    <span class="dot dot--pulse" aria-hidden="true"></span>
+                    <span class="home-hero__live"><?php echo esc_html(theme_t('Live')); ?></span>
+                    <span>PageSpeed <span class="accent"><?php echo esc_html($perf['pagespeed']); ?></span> · LCP <span class="accent"><?php echo esc_html($perf['lcp']); ?></span></span>
+                </p>
+                <?php if (!empty($badge_location)) : ?>
+                    <p class="home-hero__badge home-hero__badge--location mono">
+                        <?php echo theme_icon('location', 14); ?>
+                        <?php if (!empty($badge_location_mobile)) : ?>
+                            <span class="home-hero__badge-full"><?php echo esc_html($badge_location); ?></span>
+                            <span class="home-hero__badge-mob"><?php echo esc_html($badge_location_mobile); ?></span>
+                        <?php else : ?>
+                            <span><?php echo esc_html($badge_location); ?></span>
+                        <?php endif; ?>
+                    </p>
+                <?php endif; ?>
+            </div>
 
             <?php if (!empty($title)) : ?>
                 <h1 class="display home-hero__title" data-aos="rise-mask" data-aos-delay="100"><?php echo theme_accent_period($title); ?></h1>
@@ -66,6 +84,7 @@ else :
                     <?php endif; ?>
                 </div>
 
+                <?php if ($layout === 'report') : ?>
                 <div class="home-hero__report" data-aos="soft-scale" data-aos-delay="350" role="group" data-section="0.5" data-count-group aria-label="<?php echo esc_attr(theme_t('Performance report of this site')); ?>">
                     <div class="home-hero__report-head">
                         <span class="label">perf.report</span>
@@ -95,6 +114,7 @@ else :
                         </dl>
                     </div>
                 </div>
+                <?php endif; ?>
             </div>
 
             <?php if (!empty($metrics)) : ?>

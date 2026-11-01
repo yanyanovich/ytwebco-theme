@@ -21,12 +21,78 @@
             "selected": 0
         },
         {
+            "key": "field_1295774002c97",
+            "label": "Layout",
+            "name": "b_hero_home_layout",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "Perf report: EN portfolio (report card next to the text). Local landing: UA homepage (smaller H1, buttons on the right, no report card).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "report": "Perf report",
+                "local": "Local landing"
+            },
+            "default_value": "report",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_173f6c2219218",
+            "label": "Location badge",
+            "name": "b_hero_home_badge_location",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Second badge with a pin icon next to the live badge. Empty: not shown.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "\u041b\u0443\u0446\u044c\u043a \u00b7 \u0412\u043e\u043b\u0438\u043d\u044c",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_c181b1c372bcf",
+            "label": "Location badge (mobile)",
+            "name": "b_hero_home_badge_location_mobile",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Shorter text for phones, optional.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "\u041b\u0443\u0446\u044c\u043a",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_080befd3b2f74",
             "label": "Title",
             "name": "b_hero_home_title",
             "aria-label": "",
             "type": "textarea",
-            "instructions": "Press Enter where the line should break on desktop. A closing “.” turns lime.",
+            "instructions": "Press Enter where the line should break on desktop. A closing \u201c.\u201d turns lime.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -59,7 +125,7 @@
             "maxlength": "",
             "allow_in_bindings": 0,
             "rows": 3,
-            "placeholder": "WordPress, WooCommerce & Shopify developer…",
+            "placeholder": "WordPress, WooCommerce & Shopify developer\u2026",
             "new_lines": ""
         },
         {
@@ -120,7 +186,7 @@
             "name": "b_hero_home_metrics",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Up to 4 numbers under the hero. PageSpeed and LCP come from Theme settings → Site.",
+            "instructions": "Up to 4 numbers under the hero. PageSpeed and LCP come from Theme settings \u2192 Site.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -288,7 +354,7 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": "Based in Lutsk, Ukraine · Working with clients worldwide",
+            "placeholder": "Based in Lutsk, Ukraine \u00b7 Working with clients worldwide",
             "prepend": "",
             "append": ""
         },
@@ -309,7 +375,7 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": "Lutsk · Volyn region · UA",
+            "placeholder": "Lutsk \u00b7 Volyn region \u00b7 UA",
             "prepend": "",
             "append": ""
         }
@@ -333,5 +399,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793140000
+    "modified": 1793546728
 }
