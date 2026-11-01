@@ -71,6 +71,14 @@ function ytweb_theme_register_case_post_type()
         'menu_position' => 21,
         // Menu order sets the order of the Work grid
         'supports' => array('title', 'editor', 'thumbnail', 'page-attributes', 'revisions'),
+        // A new case starts with the page sections in design order; blocks can be removed or reordered
+        'template' => array(
+            array('acf/case-blocks-hero'),
+            array('acf/case-blocks-work'),
+            array('acf/case-blocks-results'),
+            array('acf/case-blocks-screens'),
+            array('acf/other-blocks-cta-band'),
+        ),
     ));
 }
 add_action('init', 'ytweb_theme_register_case_post_type');
@@ -91,7 +99,7 @@ add_filter('pll_get_taxonomies', function ($taxonomies) {
 /**
  * Card data for the case grid (Home, Work archive, related cases).
  *
- * @return array{title: string, url: string, domain: string, excerpt: string, metric: string, stack: string[], brand: string, brand_2: string, image_id: int}
+ * @return array{title: string, url: string, domain: string, excerpt: string, label: string, metric: string, stack: string[], brand: string, brand_2: string, image_id: int}
  */
 function theme_get_case_card($post_id)
 {
@@ -107,6 +115,7 @@ function theme_get_case_card($post_id)
         'url' => get_permalink($post_id),
         'domain' => (string)get_field('case_domain', $post_id),
         'excerpt' => (string)get_field('case_excerpt', $post_id),
+        'label' => theme_get_case_card_label($post_id),
         'metric' => (string)get_field('case_metric', $post_id),
         'stack' => $stack,
         'brand' => (string)get_field('case_brand_color', $post_id),
@@ -114,3 +123,75 @@ function theme_get_case_card($post_id)
         'image_id' => (int)get_field('case_card_image', $post_id),
     );
 }
+
+/**
+ * Short label for the Work archive card ("E-commerce").
+ */
+function theme_get_case_card_label($post_id)
+{
+    return trim((string)get_field('case_card_label', $post_id));
+}
+
+/**
+ * Next section number on a case page ("01", "02", …). The case blocks call it in render order,
+ * so a section that is removed or has no data never leaves a gap.
+ */
+function theme_case_section_index()
+{
+    static $index = 0;
+
+    return sprintf('%02d', ++$index);
+}
+
+/**
+ * Cases in grid order (menu order), current language only (Polylang filters the query).
+ *
+ * @return int[]
+ */
+function theme_get_case_ids()
+{
+    static $ids = null;
+
+    if ($ids === null) {
+        $ids = get_posts(array(
+            'post_type' => 'case',
+            'posts_per_page' => -1,
+            'orderby' => array('menu_order' => 'ASC', 'title' => 'ASC'),
+            'fields' => 'ids',
+            'no_found_rows' => true,
+        ));
+    }
+
+    return $ids;
+}
+
+/**
+ * Previous / next case for the case page; the list loops at both ends.
+ *
+ * @return array{prev: int, next: int}
+ */
+function theme_get_case_neighbours($post_id)
+{
+    $ids = theme_get_case_ids();
+    $index = array_search((int)$post_id, $ids, true);
+
+    if ($index === false || count($ids) < 2) {
+        return array('prev' => 0, 'next' => 0);
+    }
+
+    $count = count($ids);
+
+    return array(
+        'prev' => $ids[($index - 1 + $count) % $count],
+        'next' => $ids[($index + 1) % $count],
+    );
+}
+
+// The Work archive renders every case on one page (the filter works without paging)
+add_action('pre_get_posts', function ($query) {
+    if (!is_admin() && $query->is_main_query() && $query->is_post_type_archive('case')) {
+        $query->set('posts_per_page', -1);
+        $query->set('orderby', array('menu_order' => 'ASC', 'title' => 'ASC'));
+    }
+});
+

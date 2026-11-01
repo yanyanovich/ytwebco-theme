@@ -1,0 +1,35 @@
+{
+  "name": "acf/case-blocks-hero",
+  "title": "Case blocks Hero",
+  "description": "Case title: breadcrumbs, category, H1, summary, client / role / engagement / year / live site and the hero screenshot.",
+  "style": [],
+  "category": "case-blocks",
+  "icon": "cover-image",
+  "keywords": [
+    "case",
+    "hero",
+    "title"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

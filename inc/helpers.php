@@ -141,3 +141,14 @@ function theme_icon($name, $size = 16)
         'height' => (int)$size,
     ));
 }
+
+/**
+ * "Book a free call" target: the Cal.com link from Theme settings, else the Contact page.
+ */
+function theme_get_booking_url()
+{
+    $booking_url = theme_get_contacts()['booking_url'];
+
+    return $booking_url !== '#' ? $booking_url : theme_get_page_url('contact');
+}
+

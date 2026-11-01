@@ -1,0 +1,157 @@
+{
+    "key": "group_4b035f21cb39c",
+    "title": "Block - Case - Work",
+    "fields": [
+        {
+            "key": "field_6978177b602e9",
+            "label": "Challenge \u2014 lead",
+            "name": "b_case_work_challenge_lead",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Empty: \u201cThe challenge\u201d is hidden and the sections renumber.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "placeholder": "The store had heavy traffic at peak hours\u2026",
+            "new_lines": ""
+        },
+        {
+            "key": "field_05bd7592803c0",
+            "label": "Challenge \u2014 text",
+            "name": "b_case_work_challenge_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "placeholder": "The business also needed custom features\u2026",
+            "new_lines": ""
+        },
+        {
+            "key": "field_70d9883f0687b",
+            "label": "What I did",
+            "name": "b_case_work_items",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Lead is printed in bold, the text follows it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_4ba9f9d5682ff",
+            "button_label": "Add item",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_4ba9f9d5682ff",
+                    "label": "Lead",
+                    "name": "lead",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Air-raid alert system:",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_70d9883f0687b"
+                },
+                {
+                    "key": "field_4bc3b7e42a9eb",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "65",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "integration with the national alerts API\u2026",
+                    "new_lines": "",
+                    "parent_repeater": "field_70d9883f0687b"
+                }
+            ]
+        },
+        {
+            "key": "field_3c2eae89b18c8",
+            "label": "Section meta",
+            "name": "b_case_work_meta",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Right side of the \u201cWhat I did\u201d head; shown when there is no challenge (the list then takes the full width).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "WordPress developer",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/case-blocks-work"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793527251
+}

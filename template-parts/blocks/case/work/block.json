@@ -1,0 +1,35 @@
+{
+  "name": "acf/case-blocks-work",
+  "title": "Case blocks Work",
+  "description": "“The challenge” and “What I did”. Without a challenge the list takes the full width.",
+  "style": [],
+  "category": "case-blocks",
+  "icon": "editor-ol",
+  "keywords": [
+    "case",
+    "challenge",
+    "what i did"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

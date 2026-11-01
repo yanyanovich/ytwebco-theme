@@ -26,7 +26,7 @@
             "name": "case_card_image",
             "aria-label": "",
             "type": "image",
-            "instructions": "Ready browser + phone mockup, 16:10 (case-*-card@2x.png, 3200×2000).",
+            "instructions": "Ready browser + phone mockup, 16:10 (case-*-card@2x.png, 3200\u00d72000).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -107,6 +107,27 @@
             "new_lines": ""
         },
         {
+            "key": "field_86c87964867e9",
+            "label": "Card label",
+            "name": "case_card_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small label above the title in the Work archive, e.g. \u201cE-commerce\u201d.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "E-commerce",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_46d9a8cb853a4",
             "label": "Main metric",
             "name": "case_metric",
@@ -123,7 +144,7 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": "−65% server requests",
+            "placeholder": "\u221265% server requests",
             "prepend": "",
             "append": ""
         },
@@ -133,7 +154,7 @@
             "name": "case_stack",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Tags on the card (WooCommerce, Telegram bot, REST API…).",
+            "instructions": "Tags on the card (WooCommerce, Telegram bot, REST API\u2026).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -231,5 +252,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793500000
+    "modified": 1793527251
 }

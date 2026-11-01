@@ -1,0 +1,178 @@
+{
+    "key": "group_d80efdc9dc5bf",
+    "title": "Block - Case - Hero",
+    "fields": [
+        {
+            "key": "field_122dff683e9f9",
+            "label": "Category",
+            "name": "b_case_hero_category",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Lime label above the H1. The H1 is the case title; breadcrumbs, domain and live site come from the case.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "E-commerce \u00b7 WooCommerce",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_c52bae38e9134",
+            "label": "Summary",
+            "name": "b_case_hero_summary",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Lead under the H1.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "Long-term custom development for a high-traffic food delivery store\u2026",
+            "new_lines": ""
+        },
+        {
+            "key": "field_137165b8c50db",
+            "label": "Client",
+            "name": "b_case_hero_client",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Pizza & sushi delivery chain, Lutsk, Ukraine",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_10430ccd3033c",
+            "label": "Role",
+            "name": "b_case_hero_role",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Lead WordPress \/ WooCommerce developer",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ad814148afe56",
+            "label": "Engagement",
+            "name": "b_case_hero_engagement",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Long-term development",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_39355f1723ec7",
+            "label": "Year",
+            "name": "b_case_hero_year",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "[YEAR]",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_10704503cdc02",
+            "label": "Hero screenshot",
+            "name": "b_case_hero_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Desktop screenshot in a browser frame, 16:9 (2560\u00d71440). Shown from the top.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg, png, webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/case-blocks-hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793527251
+}

@@ -24,6 +24,9 @@ function theme_allowed_block_types($allowed_blocks, $editor_context)
             case 'page':
                 $theme_blocks = theme_collect_block_groups($groups, 'core_full', 'acf_hero', 'acf_home', 'acf_other');
                 break;
+            case 'case':
+                $theme_blocks = theme_collect_block_groups($groups, 'acf_case', 'acf/other-blocks-cta-band');
+                break;
             default:
                 $theme_blocks = theme_collect_block_groups($groups, 'core_min', 'acf_other');
                 break;
@@ -112,12 +115,20 @@ function theme_get_block_groups()
             'acf/home-page-blocks-faq',
             'acf/home-page-blocks-contact',
         ),
+        'acf_case' => array(
+            'acf/case-blocks-hero',
+            'acf/case-blocks-work',
+            'acf/case-blocks-results',
+            'acf/case-blocks-screens',
+        ),
         'acf_blog' => array(
             // 'acf/blog-blocks-faq',
         ),
         'acf_other' => array(
             'acf/other-blocks-example1',
             'acf/other-blocks-seo-text',
+            'acf/other-blocks-work-archive',
+            'acf/other-blocks-cta-band',
         ),
     );
 }
@@ -132,6 +143,10 @@ function theme_get_block_categories()
         array(
             'slug' => 'home-page-blocks',
             'title' => 'Home page blocks',
+        ),
+        array(
+            'slug' => 'case-blocks',
+            'title' => 'Case blocks',
         ),
         array(
             'slug' => 'blog-blocks',

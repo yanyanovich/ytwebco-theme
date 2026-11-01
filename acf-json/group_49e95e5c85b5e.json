@@ -1,0 +1,68 @@
+{
+    "key": "group_49e95e5c85b5e",
+    "title": "Block - Other - Work archive",
+    "fields": [
+        {
+            "key": "field_762886b947d26",
+            "label": "Title (H1)",
+            "name": "b_other_work_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Work",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_9733eb0336c61",
+            "label": "Text",
+            "name": "b_other_work_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "All cases of this language are listed in menu order; the filter chips come from the case types.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "Stores, platforms and websites \u2014 each with a number that mattered to the client.",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/other-blocks-work-archive"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793526731
+}

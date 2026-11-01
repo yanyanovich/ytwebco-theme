@@ -94,3 +94,68 @@ add_action('wp_head', function () {
     );
     echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
 });
+
+/**
+ * Breadcrumb trail for inner pages; one source for the visible breadcrumbs and BreadcrumbList.
+ * Work archive: Home / Work. Case page: Home / Work / {case}. Other pages: empty (Yoast default).
+ *
+ * @return array<int, array{label: string, url: string}>
+ */
+function theme_get_breadcrumbs()
+{
+    $home = array('label' => theme_t('Home'), 'url' => function_exists('pll_home_url') ? pll_home_url() : home_url('/'));
+
+    $work_page_id = theme_get_archive_page_id('case');
+    $work = array(
+        'label' => $work_page_id ? get_the_title($work_page_id) : theme_t('Work'),
+        'url' => (string)get_post_type_archive_link('case'),
+    );
+
+    if (is_singular('case')) {
+        return array($home, $work, array('label' => get_the_title(get_queried_object_id()), 'url' => get_permalink(get_queried_object_id())));
+    }
+
+    if (is_post_type_archive('case')) {
+        return array($home, $work);
+    }
+
+    return array();
+}
+
+// Yoast builds its BreadcrumbList from these links, so the schema matches what the page shows
+add_filter('wpseo_breadcrumb_links', function ($links) {
+    $crumbs = theme_get_breadcrumbs();
+
+    if (empty($crumbs)) {
+        return $links;
+    }
+
+    return array_map(function ($crumb) {
+        return array('url' => $crumb['url'], 'text' => $crumb['label']);
+    }, $crumbs);
+});
+
+// Without Yoast: a standalone BreadcrumbList
+add_action('wp_head', function () {
+    if (defined('WPSEO_VERSION')) {
+        return;
+    }
+
+    $crumbs = theme_get_breadcrumbs();
+    if (empty($crumbs)) {
+        return;
+    }
+
+    $items = array();
+    foreach ($crumbs as $position => $crumb) {
+        $item = array('@type' => 'ListItem', 'position' => $position + 1, 'name' => $crumb['label']);
+        if ($position < count($crumbs) - 1) {
+            $item['item'] = $crumb['url'];
+        }
+        $items[] = $item;
+    }
+
+    $schema = array('@context' => 'https://schema.org', '@type' => 'BreadcrumbList', 'itemListElement' => $items);
+    echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
+});
+

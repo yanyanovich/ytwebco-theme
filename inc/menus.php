@@ -49,6 +49,10 @@ function theme_get_menu_tree($location)
             // WP strips the #fragment before comparing URLs, so "/#process" would count as
             // "current" on the homepage. Section anchors are never the current page.
             $is_current = !empty($item->current) && strpos($item->url, '#') === false;
+            // Case pages sit under "Work" (/work/)
+            if (!$is_current && is_singular('case')) {
+                $is_current = untrailingslashit($item->url) === untrailingslashit((string)get_post_type_archive_link('case'));
+            }
             $has_current_child = in_array(true, array_column($children, 'current'), true);
 
             $branch[] = array(
