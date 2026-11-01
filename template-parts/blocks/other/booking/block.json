@@ -1,0 +1,35 @@
+{
+  "name": "acf/other-blocks-booking",
+  "title": "Other blocks Booking",
+  "description": "“Book a free call” with an inline Cal.com calendar, loaded when it scrolls into view.",
+  "style": [],
+  "category": "other-blocks",
+  "icon": "calendar-alt",
+  "keywords": [
+    "booking",
+    "cal.com",
+    "call"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

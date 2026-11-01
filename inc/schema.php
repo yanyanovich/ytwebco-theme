@@ -97,7 +97,7 @@ add_action('wp_head', function () {
 
 /**
  * Breadcrumb trail for inner pages; one source for the visible breadcrumbs and BreadcrumbList.
- * Work archive: Home / Work. Case page: Home / Work / {case}. Other pages: empty (Yoast default).
+ * Work archive: Home / Work. Case page: Home / Work / {case}. Inner pages: Home / {page}.
  *
  * @return array<int, array{label: string, url: string}>
  */
@@ -117,6 +117,12 @@ function theme_get_breadcrumbs()
 
     if (is_post_type_archive('case')) {
         return array($home, $work);
+    }
+
+    // Inner pages (Contact, Privacy, services): Home / {page}
+    if (is_page() && !is_front_page()) {
+        $page_id = get_queried_object_id();
+        return array($home, array('label' => get_the_title($page_id), 'url' => get_permalink($page_id)));
     }
 
     return array();
