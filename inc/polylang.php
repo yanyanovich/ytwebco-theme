@@ -81,7 +81,7 @@ function theme_get_translatable_strings()
 function theme_get_string_translations()
 {
     return array(
-        'uk' => array(
+        'ua' => array(
             'Skip link' => 'Перейти до вмісту',
             'Logo role' => 'Веб-студія · Луцьк',
             'Logo label' => 'YT Web Co. — головна',
@@ -181,13 +181,14 @@ add_action('admin_init', function () {
 
 /**
  * Plural form of a count for the current language: "one", "few" (Ukrainian 2–4) or "many".
+ * Decided by the locale, not the URL slug (the Ukrainian language uses the "ua" slug and the "uk" locale).
  */
 function theme_plural_form($count)
 {
-    $language = function_exists('pll_current_language') ? pll_current_language() : 'en';
+    $locale = function_exists('pll_current_language') ? (string)pll_current_language('locale') : get_locale();
     $count = abs((int)$count);
 
-    if ($language === 'uk') {
+    if (strpos($locale, 'uk') === 0) {
         if ($count % 10 === 1 && $count % 100 !== 11) {
             return 'one';
         }
@@ -225,7 +226,7 @@ function theme_t($string)
  */
 function theme_get_languages()
 {
-    $labels = array('en' => 'EN', 'uk' => 'UA');
+    $labels = array('en' => 'EN', 'ua' => 'UA');
 
     if (function_exists('pll_the_languages')) {
         $languages = pll_the_languages(array('raw' => 1, 'hide_if_empty' => 0));
@@ -246,10 +247,10 @@ function theme_get_languages()
         }
     }
 
-    // Before Polylang is set up: EN is the only real language, UA lives at /uk/.
+    // Before Polylang is set up: EN is the only real language, UA lives at /ua/.
     return array(
         array('slug' => 'en', 'label' => 'EN', 'url' => home_url('/'), 'current' => true),
-        array('slug' => 'uk', 'label' => 'UA', 'url' => home_url('/uk/'), 'current' => false),
+        array('slug' => 'ua', 'label' => 'UA', 'url' => home_url('/ua/'), 'current' => false),
     );
 }
 
