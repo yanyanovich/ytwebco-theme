@@ -179,6 +179,22 @@ add_action('admin_init', function () {
     update_option('theme_string_translations_version', $version, false);
 });
 
+// hreflang en / uk + x-default → the English version (Polylang adds x-default only with browser detection)
+add_filter('pll_rel_hreflang_attributes', function ($hreflangs) {
+    if (!isset($hreflangs['x-default']) && function_exists('pll_default_language')) {
+        $default = PLL()->model->get_language(pll_default_language());
+        if ($default && isset($hreflangs[$default->get_locale('display')])) {
+            $hreflangs['x-default'] = $hreflangs[$default->get_locale('display')];
+        } elseif ($default && isset($hreflangs[$default->slug])) {
+            $hreflangs['x-default'] = $hreflangs[$default->slug];
+        } elseif (!empty($hreflangs['en'])) {
+            $hreflangs['x-default'] = $hreflangs['en'];
+        }
+    }
+
+    return $hreflangs;
+});
+
 /**
  * Plural form of a count for the current language: "one", "few" (Ukrainian 2–4) or "many".
  * Decided by the locale, not the URL slug (the Ukrainian language uses the "ua" slug and the "uk" locale).
