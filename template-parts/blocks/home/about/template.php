@@ -21,6 +21,11 @@ else :
     $tools_label = get_field('b_hp_about_tools_label');
     $tools = get_field('b_hp_about_tools');
     $tools = !empty($tools) ? $tools : array();
+
+    // Without a toolbox (UA local landing) the block is shorter: narrower photo, text column wider
+    if (empty($tools)) {
+        $block_classes[] = 'hp-about--compact';
+    }
     ?>
     <section id="<?php echo esc_attr($block_id); ?>"
              class="<?php echo esc_attr(trim(implode(' ', array_filter($block_classes)))); ?>"
