@@ -7,6 +7,7 @@
  *     @type string $index  e.g. "01"
  *     @type string $name   e.g. "Services"
  *     @type string $meta   e.g. "4 areas"
+ *     @type string $meta_mobile shorter meta for phones, e.g. "Swipe →"
  *     @type array  $link   ACF link, e.g. "All 06 projects" → /work/ (replaces meta)
  *     @type string $class  extra classes
  * }
@@ -35,6 +36,11 @@ if (empty($index) && empty($name) && empty($meta) && empty($link['url'])) {
             <?php echo esc_html($link['title'] ?: $link['url']); ?>
             <span class="arrow"><?php echo theme_icon('arrow-right', 12); ?></span>
         </a>
+    <?php elseif (!empty($meta) && !empty($args['meta_mobile'])) : ?>
+        <span class="section-head__meta">
+            <span class="section-head__meta-full"><?php echo esc_html($meta); ?></span>
+            <span class="section-head__meta-mob"><?php echo esc_html($args['meta_mobile']); ?></span>
+        </span>
     <?php elseif (!empty($meta)) : ?>
         <span class="section-head__meta"><?php echo esc_html($meta); ?></span>
     <?php endif; ?>
