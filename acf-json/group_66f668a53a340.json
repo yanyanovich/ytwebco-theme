@@ -26,7 +26,7 @@
             "name": "theme_settings_telegram",
             "aria-label": "",
             "type": "text",
-            "instructions": "Shown in the footer and mobile menu. Empty \u2192 @yanyanovic.",
+            "instructions": "Shown in the footer and mobile menu. Empty → @yanyanovic.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -47,7 +47,7 @@
             "name": "theme_settings_telegram_url",
             "aria-label": "",
             "type": "url",
-            "instructions": "Optional \u2014 built from the username when empty.",
+            "instructions": "Optional — built from the username when empty.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -57,7 +57,7 @@
             },
             "default_value": "",
             "allow_in_bindings": 0,
-            "placeholder": "https:\/\/t.me\/yanyanovic"
+            "placeholder": "https://t.me/yanyanovic"
         },
         {
             "key": "field_6a1c0b2e00004",
@@ -137,7 +137,7 @@
             },
             "default_value": "",
             "allow_in_bindings": 0,
-            "placeholder": "https:\/\/cal.com\/\u2026"
+            "placeholder": "https://cal.com/…"
         },
         {
             "key": "field_6a1c0b2e00007",
@@ -145,7 +145,7 @@
             "name": "theme_settings_socials",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Footer \u201cElsewhere\u201d column (Upwork, LinkedIn, GitHub, Telegram\u2026). Same for all languages.",
+            "instructions": "Footer “Elsewhere” column (Upwork, LinkedIn, GitHub, Telegram…). Same for all languages.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -228,7 +228,7 @@
             "name": "theme_settings_pagespeed",
             "aria-label": "",
             "type": "text",
-            "instructions": "Real measured mobile score (hero, footer). Empty \u2192 [PAGESPEED] placeholder.",
+            "instructions": "Real measured mobile score (hero, footer). Empty → [PAGESPEED] placeholder.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -249,7 +249,7 @@
             "name": "theme_settings_lcp",
             "aria-label": "",
             "type": "text",
-            "instructions": "Real measured Largest Contentful Paint, with unit (hero). Empty \u2192 [LCP] placeholder.",
+            "instructions": "Real measured Largest Contentful Paint, with unit (hero). Empty → [LCP] placeholder.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -261,6 +261,87 @@
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "1.2s",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_b8c8f4bd08773",
+            "label": "Tracking",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_1707c1659992d",
+            "label": "GA4 measurement ID",
+            "name": "theme_settings_ga4_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Loaded only after the visitor accepts Analytics in the cookie banner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "G-XXXXXXXXXX",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ecf678c94354a",
+            "label": "Google Ads ID",
+            "name": "theme_settings_ads_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Loaded only after the visitor accepts Marketing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "AW-XXXXXXXXX",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_a5dd040c750af",
+            "label": "Google Ads conversion label",
+            "name": "theme_settings_ads_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Conversion sent on contact form and brief submit (Marketing consent only).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "AbCdEfGh123",
             "prepend": "",
             "append": ""
         }
@@ -284,5 +365,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793550910
+    "modified": 1793569597
 }
