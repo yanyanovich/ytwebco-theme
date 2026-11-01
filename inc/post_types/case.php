@@ -71,6 +71,14 @@ function ytweb_theme_register_case_post_type()
         'menu_position' => 21,
         // Menu order sets the order of the Work grid
         'supports' => array('title', 'editor', 'thumbnail', 'page-attributes', 'revisions'),
+        // A new case starts with the page sections in design order; blocks can be removed or reordered
+        'template' => array(
+            array('acf/case-blocks-hero'),
+            array('acf/case-blocks-work'),
+            array('acf/case-blocks-results'),
+            array('acf/case-blocks-screens'),
+            array('acf/other-blocks-cta-band'),
+        ),
     ));
 }
 add_action('init', 'ytweb_theme_register_case_post_type');
@@ -117,19 +125,22 @@ function theme_get_case_card($post_id)
 }
 
 /**
- * Short label for the Work archive card: "Card label", else the first part of the category
- * ("E-commerce · WooCommerce" → "E-commerce").
+ * Short label for the Work archive card ("E-commerce").
  */
 function theme_get_case_card_label($post_id)
 {
-    $label = trim((string)get_field('case_card_label', $post_id));
+    return trim((string)get_field('case_card_label', $post_id));
+}
 
-    if ($label === '') {
-        $parts = explode('·', (string)get_field('case_category', $post_id));
-        $label = trim($parts[0]);
-    }
+/**
+ * Next section number on a case page ("01", "02", …). The case blocks call it in render order,
+ * so a section that is removed or has no data never leaves a gap.
+ */
+function theme_case_section_index()
+{
+    static $index = 0;
 
-    return $label;
+    return sprintf('%02d', ++$index);
 }
 
 /**

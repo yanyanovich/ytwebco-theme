@@ -1,0 +1,237 @@
+{
+    "key": "group_781caa35e2b16",
+    "title": "Block - Case - Screens",
+    "fields": [
+        {
+            "key": "field_5eb88452298f6",
+            "label": "Desktop screens",
+            "name": "b_case_screens_desktop",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_3ba4fe70bbe9e",
+            "button_label": "Add screen",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_20dbaaac6eaf0",
+                    "label": "Screenshot",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg, jpeg, png, webp",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_5eb88452298f6"
+                },
+                {
+                    "key": "field_3ba4fe70bbe9e",
+                    "label": "Caption",
+                    "name": "caption",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "On-site air-raid alert notice",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_5eb88452298f6"
+                },
+                {
+                    "key": "field_eb632aa2f7035",
+                    "label": "Placeholder file",
+                    "name": "placeholder",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "While there is no screenshot: the file name it will have (2560\u00d71600).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "case-ppmarket-checkout-desktop.png",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_5eb88452298f6"
+                }
+            ]
+        },
+        {
+            "key": "field_ce73b922b94e3",
+            "label": "Mobile screens",
+            "name": "b_case_screens_mobile",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_01a6ee8123ead",
+            "button_label": "Add screen",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_2baca43f3389a",
+                    "label": "Screenshot",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg, jpeg, png, webp",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_ce73b922b94e3"
+                },
+                {
+                    "key": "field_01a6ee8123ead",
+                    "label": "Caption",
+                    "name": "caption",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "On-site air-raid alert notice",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_ce73b922b94e3"
+                },
+                {
+                    "key": "field_79604572143d8",
+                    "label": "Placeholder file",
+                    "name": "placeholder",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "While there is no screenshot: the file name it will have (780\u00d71688).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "case-ppmarket-cart-mobile.png",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_ce73b922b94e3"
+                }
+            ]
+        },
+        {
+            "key": "field_e1d499c253c74",
+            "label": "Shown in English translation",
+            "name": "b_case_screens_translated",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Screenshots are translated (Ukrainian-language site)",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/case-blocks-screens"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793527251
+}

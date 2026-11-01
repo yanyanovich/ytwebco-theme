@@ -1,0 +1,35 @@
+{
+  "name": "acf/case-blocks-results",
+  "title": "Case blocks Results",
+  "description": "Big numbers (optional before / after bars) or a qualitative line, check points and the stack.",
+  "style": [],
+  "category": "case-blocks",
+  "icon": "chart-bar",
+  "keywords": [
+    "case",
+    "results",
+    "stack"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

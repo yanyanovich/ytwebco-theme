@@ -1,0 +1,358 @@
+{
+    "key": "group_ad928e20032a8",
+    "title": "Block - Case - Results",
+    "fields": [
+        {
+            "key": "field_5e6e883680f8d",
+            "label": "Section meta",
+            "name": "b_case_results_meta",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Right side of the \u201cResults\u201d head.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Dynamic server requests per day",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_a26ced0628266",
+            "label": "Results type",
+            "name": "b_case_results_type",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "numbers": "Big numbers",
+                "outcome": "Qualitative line"
+            },
+            "default_value": "numbers",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_56bd54e9f54c9",
+            "label": "Numbers",
+            "name": "b_case_results_numbers",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "One or two big numbers. Only real metrics.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_a26ced0628266",
+                        "operator": "==",
+                        "value": "numbers"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 2,
+            "collapsed": "field_1307af41fac50",
+            "button_label": "Add number",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_1307af41fac50",
+                    "label": "Value",
+                    "name": "value",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "\u221265%",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_56bd54e9f54c9"
+                },
+                {
+                    "key": "field_08b7755ef4dca",
+                    "label": "Label",
+                    "name": "label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Dynamic server requests",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_56bd54e9f54c9"
+                },
+                {
+                    "key": "field_35049891abbc8",
+                    "label": "Note",
+                    "name": "note",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Teacher \u00b7 students \u00b7 parents",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_56bd54e9f54c9"
+                }
+            ]
+        },
+        {
+            "key": "field_285341969d790",
+            "label": "Before \/ after",
+            "name": "b_case_results_compare",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Optional bars under a single number. The \u201cafter\u201d bar is sized by the ratio of the two numbers.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_a26ced0628266",
+                        "operator": "==",
+                        "value": "numbers"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_6ffe6c3712506",
+                    "label": "Before",
+                    "name": "before",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "20,000+",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_7a659649ee13a",
+                    "label": "After",
+                    "name": "after",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "~7,000",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_622900df32902",
+                    "label": "Unit",
+                    "name": "unit",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "\/ day",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_c140d90335c26",
+            "label": "Outcome line",
+            "name": "b_case_results_line",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_a26ced0628266",
+                        "operator": "==",
+                        "value": "outcome"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "US client",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5c247c0fe56a1",
+            "label": "Outcome text",
+            "name": "b_case_results_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_a26ced0628266",
+                        "operator": "==",
+                        "value": "outcome"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "English-language lead-gen website",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_b96b481bf2c97",
+            "label": "Result points",
+            "name": "b_case_results_points",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "One per line, shown as a check list next to the outcome line or a single number (not with before \/ after bars).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "Pricing breakdown cards with savings",
+            "new_lines": ""
+        },
+        {
+            "key": "field_7a8f9b069b874",
+            "label": "Full stack",
+            "name": "b_case_results_stack",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Stack chips, one per line. Empty: the card stack.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "WordPress\nWooCommerce (HPOS)",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/case-blocks-results"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793527251
+}
