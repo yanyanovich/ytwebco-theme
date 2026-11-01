@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
  * Contact details from Theme settings → Contacts. Telegram falls back to the handle
  * from content.md; email / phone stay visible as [placeholders] until they are filled in.
  *
- * @return array{telegram: string, telegram_url: string, email: string, email_url: string, phone: string, phone_url: string, booking_url: string}
+ * @return array{telegram: string, telegram_url: string, email: string, email_url: string, phone: string, phone_url: string, whatsapp_url: string, booking_url: string}
  */
 function theme_get_contacts()
 {
@@ -29,6 +29,8 @@ function theme_get_contacts()
 
     $email = $get('email');
     $phone = $get('phone');
+    // wa.me needs digits only, without "+" or spaces
+    $whatsapp = preg_replace('/\D/', '', $get('whatsapp') ?: $phone);
 
     $contacts = array(
         'telegram' => $telegram ?: '@yanyanovic',
@@ -37,6 +39,7 @@ function theme_get_contacts()
         'email_url' => $email ? 'mailto:' . antispambot($email) : '#',
         'phone' => $phone ?: '[+380 XX XXX XX XX]',
         'phone_url' => $phone ? 'tel:' . preg_replace('/[^\d+]/', '', $phone) : '#',
+        'whatsapp_url' => $whatsapp ? 'https://wa.me/' . $whatsapp : '#',
         'booking_url' => $get('booking_url') ?: '#',
     );
 

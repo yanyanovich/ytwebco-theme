@@ -19,6 +19,8 @@ $types = array(
     'booking' => array('icon' => 'calendar', 'url' => $contacts['booking_url'], 'note' => '', 'external' => true),
     'email' => array('icon' => 'email', 'url' => $contacts['email_url'], 'note' => $contacts['email'], 'external' => false),
     'phone' => array('icon' => 'phone', 'url' => $contacts['phone_url'], 'note' => $contacts['phone'], 'external' => false),
+    // Chat link only: the number is not shown (EN pages)
+    'whatsapp' => array('icon' => 'whatsapp', 'url' => $contacts['whatsapp_url'], 'note' => '', 'external' => true),
     'location' => array('icon' => 'location', 'url' => '', 'note' => '', 'external' => false),
 );
 ?>

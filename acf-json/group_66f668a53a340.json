@@ -1,267 +1,288 @@
 {
-  "key": "group_66f668a53a340",
-  "title": "Theme settings",
-  "fields": [
-    {
-      "key": "field_6a1c0b2e00001",
-      "label": "Contacts",
-      "name": "",
-      "aria-label": "",
-      "type": "tab",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "placement": "top",
-      "endpoint": 0,
-      "selected": 0
-    },
-    {
-      "key": "field_6a1c0b2e00002",
-      "label": "Telegram username",
-      "name": "theme_settings_telegram",
-      "aria-label": "",
-      "type": "text",
-      "instructions": "Shown in the footer and mobile menu. Empty → @yanyanovic.",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "allow_in_bindings": 0,
-      "placeholder": "@yanyanovic",
-      "prepend": "",
-      "append": ""
-    },
-    {
-      "key": "field_6a1c0b2e00003",
-      "label": "Telegram link",
-      "name": "theme_settings_telegram_url",
-      "aria-label": "",
-      "type": "url",
-      "instructions": "Optional — built from the username when empty.",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "allow_in_bindings": 0,
-      "placeholder": "https://t.me/yanyanovic"
-    },
-    {
-      "key": "field_6a1c0b2e00004",
-      "label": "Email",
-      "name": "theme_settings_email",
-      "aria-label": "",
-      "type": "email",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "allow_in_bindings": 0,
-      "placeholder": "name@example.com",
-      "prepend": "",
-      "append": ""
-    },
-    {
-      "key": "field_6a1c0b2e00005",
-      "label": "Phone",
-      "name": "theme_settings_phone",
-      "aria-label": "",
-      "type": "text",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "allow_in_bindings": 0,
-      "placeholder": "+380 XX XXX XX XX",
-      "prepend": "",
-      "append": ""
-    },
-    {
-      "key": "field_6a1c0b2e00006",
-      "label": "Booking link (Cal.com)",
-      "name": "theme_settings_booking_url",
-      "aria-label": "",
-      "type": "url",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "allow_in_bindings": 0,
-      "placeholder": "https://cal.com/…"
-    },
-    {
-      "key": "field_6a1c0b2e00007",
-      "label": "Socials",
-      "name": "theme_settings_socials",
-      "aria-label": "",
-      "type": "repeater",
-      "instructions": "Footer “Elsewhere” column (Upwork, LinkedIn, GitHub, Telegram…). Same for all languages.",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "layout": "table",
-      "pagination": 0,
-      "min": 0,
-      "max": 0,
-      "collapsed": "",
-      "button_label": "Add link",
-      "rows_per_page": 20,
-      "sub_fields": [
+    "key": "group_66f668a53a340",
+    "title": "Theme settings",
+    "fields": [
         {
-          "key": "field_6a1c0b2e00008",
-          "label": "Label",
-          "name": "label",
-          "aria-label": "",
-          "type": "text",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "",
-            "class": "",
-            "id": ""
-          },
-          "default_value": "",
-          "maxlength": "",
-          "allow_in_bindings": 0,
-          "placeholder": "LinkedIn",
-          "prepend": "",
-          "append": "",
-          "parent_repeater": "field_6a1c0b2e00007"
+            "key": "field_6a1c0b2e00001",
+            "label": "Contacts",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
         },
         {
-          "key": "field_6a1c0b2e00009",
-          "label": "URL",
-          "name": "url",
-          "aria-label": "",
-          "type": "url",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "",
-            "class": "",
-            "id": ""
-          },
-          "default_value": "",
-          "allow_in_bindings": 0,
-          "placeholder": "",
-          "parent_repeater": "field_6a1c0b2e00007"
+            "key": "field_6a1c0b2e00002",
+            "label": "Telegram username",
+            "name": "theme_settings_telegram",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Shown in the footer and mobile menu. Empty \u2192 @yanyanovic.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "@yanyanovic",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6a1c0b2e00003",
+            "label": "Telegram link",
+            "name": "theme_settings_telegram_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Optional \u2014 built from the username when empty.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": "https:\/\/t.me\/yanyanovic"
+        },
+        {
+            "key": "field_6a1c0b2e00004",
+            "label": "Email",
+            "name": "theme_settings_email",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": "name@example.com",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6a1c0b2e00005",
+            "label": "Phone",
+            "name": "theme_settings_phone",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "+380 XX XXX XX XX",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5f913d93e2bde",
+            "label": "WhatsApp",
+            "name": "theme_settings_whatsapp",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Number in international format, e.g. +380 67 000 00 00. Shown on EN pages as a wa.me chat link (the number itself is not displayed). Empty: the phone above.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "+380 67 000 00 00",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6a1c0b2e00006",
+            "label": "Booking link (Cal.com)",
+            "name": "theme_settings_booking_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": "https:\/\/cal.com\/\u2026"
+        },
+        {
+            "key": "field_6a1c0b2e00007",
+            "label": "Socials",
+            "name": "theme_settings_socials",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Footer \u201cElsewhere\u201d column (Upwork, LinkedIn, GitHub, Telegram\u2026). Same for all languages.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add link",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6a1c0b2e00008",
+                    "label": "Label",
+                    "name": "label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "LinkedIn",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6a1c0b2e00007"
+                },
+                {
+                    "key": "field_6a1c0b2e00009",
+                    "label": "URL",
+                    "name": "url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_6a1c0b2e00007"
+                }
+            ]
+        },
+        {
+            "key": "field_6a1c0b2e00010",
+            "label": "Site",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_6a1c0b2e00011",
+            "label": "PageSpeed score",
+            "name": "theme_settings_pagespeed",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Real measured mobile score (hero, footer). Empty \u2192 [PAGESPEED] placeholder.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "98",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6a1c0b2e00012",
+            "label": "LCP",
+            "name": "theme_settings_lcp",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Real measured Largest Contentful Paint, with unit (hero). Empty \u2192 [LCP] placeholder.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "1.2s",
+            "prepend": "",
+            "append": ""
         }
-      ]
-    },
-    {
-      "key": "field_6a1c0b2e00010",
-      "label": "Site",
-      "name": "",
-      "aria-label": "",
-      "type": "tab",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "placement": "top",
-      "endpoint": 0,
-      "selected": 0
-    },
-    {
-      "key": "field_6a1c0b2e00011",
-      "label": "PageSpeed score",
-      "name": "theme_settings_pagespeed",
-      "aria-label": "",
-      "type": "text",
-      "instructions": "Real measured mobile score (hero, footer). Empty → [PAGESPEED] placeholder.",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "allow_in_bindings": 0,
-      "placeholder": "98",
-      "prepend": "",
-      "append": ""
-    },
-    {
-      "key": "field_6a1c0b2e00012",
-      "label": "LCP",
-      "name": "theme_settings_lcp",
-      "aria-label": "",
-      "type": "text",
-      "instructions": "Real measured Largest Contentful Paint, with unit (hero). Empty → [LCP] placeholder.",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "allow_in_bindings": 0,
-      "placeholder": "1.2s",
-      "prepend": "",
-      "append": ""
-    }
-  ],
-  "location": [
-    [
-      {
-        "param": "options_page",
-        "operator": "==",
-        "value": "theme-settings"
-      }
-    ]
-  ],
-  "menu_order": 0,
-  "position": "normal",
-  "style": "default",
-  "label_placement": "top",
-  "instruction_placement": "label",
-  "hide_on_screen": "",
-  "active": true,
-  "description": "",
-  "show_in_rest": 0,
-  "display_title": "",
-  "modified": 1793140000
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793550910
 }

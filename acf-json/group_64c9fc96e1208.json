@@ -142,6 +142,7 @@
                         "booking": "Book a call",
                         "email": "Email",
                         "phone": "Phone",
+                        "whatsapp": "WhatsApp",
                         "location": "Location"
                     },
                     "default_value": "telegram",
@@ -643,5 +644,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793549449
+    "modified": 1793550910
 }
