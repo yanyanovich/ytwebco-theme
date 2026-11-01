@@ -1,7 +1,7 @@
 {
   "name": "acf/other-blocks-page-hero",
   "title": "Other blocks Page hero",
-  "description": "Inner page title: breadcrumbs, status pill, H1 and lead.",
+  "description": "Inner page title: breadcrumbs, label or status pill, H1 and lead.",
   "style": [],
   "category": "other-blocks",
   "icon": "heading",

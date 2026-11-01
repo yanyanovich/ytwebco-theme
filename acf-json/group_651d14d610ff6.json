@@ -3,6 +3,27 @@
     "title": "Block - Other - Page hero",
     "fields": [
         {
+            "key": "field_51f11edf67241",
+            "label": "Label",
+            "name": "b_other_page_hero_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Lime label above the H1 (instead of the status pill).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Project brief",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_74ac3a238263f",
             "label": "Status",
             "name": "b_other_page_hero_status",
@@ -41,7 +62,7 @@
             "maxlength": "",
             "allow_in_bindings": 0,
             "rows": 2,
-            "placeholder": "Let\u2019s talk about your project",
+            "placeholder": "Let’s talk about your project",
             "new_lines": "br"
         },
         {
@@ -62,8 +83,35 @@
             "maxlength": "",
             "allow_in_bindings": 0,
             "rows": 2,
-            "placeholder": "A few lines are enough\u2026",
+            "placeholder": "A few lines are enough…",
             "new_lines": ""
+        },
+        {
+            "key": "field_7bfa788009551",
+            "label": "Layout",
+            "name": "b_other_page_hero_layout",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "stacked": "Lead under the title",
+                "split": "Lead beside the title"
+            },
+            "default_value": "stacked",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -71,7 +119,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/other-blocks-page-hero"
+                "value": "acf/other-blocks-page-hero"
             }
         ]
     ],
@@ -85,5 +133,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793549449
+    "modified": 1793569090
 }
