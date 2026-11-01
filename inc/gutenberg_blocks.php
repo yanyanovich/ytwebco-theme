@@ -109,6 +109,7 @@ function theme_get_block_groups()
         ),
         'acf_home' => array(
             'acf/home-page-blocks-services',
+            'acf/home-page-blocks-price-list',
             'acf/home-page-blocks-cases',
             'acf/home-page-blocks-process',
             'acf/home-page-blocks-about',

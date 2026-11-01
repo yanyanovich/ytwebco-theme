@@ -1,6 +1,6 @@
 <?php
 /**
- * Work archive (/work/, /uk/work/). The content comes from the "Archive page" assigned to Cases in
+ * Work archive (/work/, /ua/work/). The content comes from the "Archive page" assigned to Cases in
  * Settings → Reading (one per language): Work archive, CTA band and SEO text blocks.
  *
  * @package ytweb_theme

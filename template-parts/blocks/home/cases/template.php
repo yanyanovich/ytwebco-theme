@@ -53,7 +53,8 @@ else :
             <?php endif; ?>
 
             <?php if (!empty($case_ids)) : ?>
-                <ul class="hp-cases__grid">
+                <?php // Three selected cases (UA local landing) sit in one row of three compact cards ?>
+                <ul class="hp-cases__grid<?php echo count($case_ids) === 3 ? ' hp-cases__grid--three' : ''; ?>">
                     <?php foreach ($case_ids as $index => $case_id) : ?>
                         <li class="hp-cases__item" data-aos="drift-up" data-aos-delay="<?php echo esc_attr(($index % 2) * 120); ?>">
                             <?php get_template_part('template-parts/partials/case-card', null, array('post_id' => $case_id)); ?>

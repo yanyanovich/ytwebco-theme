@@ -1,0 +1,35 @@
+{
+  "name": "acf/home-page-blocks-price-list",
+  "title": "Home page blocks Price list",
+  "description": "“Послуги та ціни”: section head, title, lead and service rows with prices (UA local landing).",
+  "style": [],
+  "category": "home-page-blocks",
+  "icon": "money-alt",
+  "keywords": [
+    "prices",
+    "services",
+    "homepage"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

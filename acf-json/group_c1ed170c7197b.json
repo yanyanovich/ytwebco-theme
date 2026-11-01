@@ -1,0 +1,256 @@
+{
+    "key": "group_c1ed170c7197b",
+    "title": "Block - Home - Price list",
+    "fields": [
+        {
+            "key": "field_493fcf2f3f5c2",
+            "label": "Section head",
+            "name": "b_hp_prices_head",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Rule line: \u201c01 \/ \u041f\u043e\u0441\u043b\u0443\u0433\u0438 \u0442\u0430 \u0446\u0456\u043d\u0438\u201d on the left, \u201c\u0426\u0456\u043d\u0438 \u043e\u0440\u0456\u0454\u043d\u0442\u043e\u0432\u043d\u0456\u201d on the right.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_687aecf7c1151",
+                    "label": "Index",
+                    "name": "index",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "01",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_d1c0ef2655099",
+                    "label": "Name",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "\u041f\u043e\u0441\u043b\u0443\u0433\u0438 \u0442\u0430 \u0446\u0456\u043d\u0438",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_e67e3d3017484",
+                    "label": "Meta",
+                    "name": "meta",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "\u0426\u0456\u043d\u0438 \u043e\u0440\u0456\u0454\u043d\u0442\u043e\u0432\u043d\u0456",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_e03b0ef24fe05",
+            "label": "Title",
+            "name": "b_hp_prices_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "\u0429\u043e \u044f \u0440\u043e\u0431\u043b\u044e \u0456 \u0441\u043a\u0456\u043b\u044c\u043a\u0438 \u0446\u0435 \u043a\u043e\u0448\u0442\u0443\u0454",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_b75dbce0c888c",
+            "label": "Text",
+            "name": "b_hp_prices_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "\u0426\u0456\u043d\u0438 \u043e\u0440\u0456\u0454\u043d\u0442\u043e\u0432\u043d\u0456. \u0422\u043e\u0447\u043d\u0443 \u0432\u0430\u0440\u0442\u0456\u0441\u0442\u044c \u043d\u0430\u0437\u0438\u0432\u0430\u044e \u043f\u0456\u0441\u043b\u044f \u0431\u0435\u0437\u043a\u043e\u0448\u0442\u043e\u0432\u043d\u043e\u0457 \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0442\u0430\u0446\u0456\u0457\u2026",
+            "new_lines": ""
+        },
+        {
+            "key": "field_e326c0d31c7cf",
+            "label": "Rows link",
+            "name": "b_hp_prices_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Every row links here, e.g. the contact block (#contact). Empty: rows are not links.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_67a990ce1d5b8",
+            "label": "Services",
+            "name": "b_hp_prices_items",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_675b482d809f1",
+            "button_label": "Add service",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_675b482d809f1",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "\u041b\u0435\u043d\u0434\u0456\u043d\u0433",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67a990ce1d5b8"
+                },
+                {
+                    "key": "field_ef97f90e3a8a8",
+                    "label": "Text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "45",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "\u041e\u0434\u043d\u043e\u0441\u0442\u043e\u0440\u0456\u043d\u043a\u043e\u0432\u0438\u0439 \u0441\u0430\u0439\u0442 \u043f\u0456\u0434 \u0440\u0435\u043a\u043b\u0430\u043c\u0443 \u0447\u0438 \u043e\u0434\u043d\u0443 \u043f\u043e\u0441\u043b\u0443\u0433\u0443",
+                    "new_lines": "",
+                    "parent_repeater": "field_67a990ce1d5b8"
+                },
+                {
+                    "key": "field_d056669e7ef4b",
+                    "label": "Price",
+                    "name": "price",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "The number is highlighted automatically.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "\u0432\u0456\u0434 12 000 \u0433\u0440\u043d",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67a990ce1d5b8"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/home-page-blocks-price-list"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793546788
+}
