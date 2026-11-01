@@ -1,13 +1,14 @@
 <?php
 /**
  * Breadcrumbs (mono 12): links, the current page last as plain text.
+ * By default the trail comes from theme_get_breadcrumbs(), the same one the BreadcrumbList schema uses.
  *
  * @var array $args {
  *     @type array $items list of array{label: string, url?: string}; the last one is the current page
  *     @type string $class extra classes
  * }
  */
-$items = array_values(array_filter((array)($args['items'] ?? array()), function ($item) {
+$items = array_values(array_filter((array)($args['items'] ?? theme_get_breadcrumbs()), function ($item) {
     return !empty($item['label']);
 }));
 

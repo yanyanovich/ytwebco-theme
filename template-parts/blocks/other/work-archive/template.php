@@ -48,12 +48,7 @@ else :
              data-section>
         <div class="work-archive__top bp">
             <div class="container">
-                <?php get_template_part('template-parts/partials/breadcrumbs', null, array(
-                    'items' => array(
-                        array('label' => theme_t('Home'), 'url' => home_url('/')),
-                        array('label' => $title ?: theme_t('Work')),
-                    ),
-                )); ?>
+                <?php get_template_part('template-parts/partials/breadcrumbs'); ?>
 
                 <div class="work-archive__head grid-12">
                     <h1 class="display work-archive__title" data-aos="rise-mask"><?php echo esc_html($title ?: theme_t('Work')); ?></h1>
