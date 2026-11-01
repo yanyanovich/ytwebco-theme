@@ -27,8 +27,13 @@ else :
     }
 
     $archive_url = get_post_type_archive_link('case');
-    $count_label = function ($count) {
-        return sprintf($count === 1 ? theme_t('%s project') : theme_t('%s projects'), sprintf('%02d', $count));
+    $count_templates = array(
+        'one' => theme_t('%s project'),
+        'few' => theme_plural_form(2) === 'few' ? theme_t('%s projects (2–4)') : theme_t('%s projects'),
+        'many' => theme_t('%s projects'),
+    );
+    $count_label = function ($count) use ($count_templates) {
+        return sprintf($count_templates[theme_plural_form($count)], sprintf('%02d', $count));
     };
 
     $cards = array();
@@ -43,8 +48,7 @@ else :
     <section id="<?php echo esc_attr($block_id); ?>"
              class="<?php echo esc_attr(trim(implode(' ', array_filter($block_classes)))); ?>"
              data-work-filter
-             data-count-template="<?php echo esc_attr(theme_t('%s projects')); ?>"
-             data-count-template-one="<?php echo esc_attr(theme_t('%s project')); ?>"
+             data-count-templates="<?php echo esc_attr(wp_json_encode($count_templates)); ?>"
              data-section>
         <div class="work-archive__top bp">
             <div class="container">
