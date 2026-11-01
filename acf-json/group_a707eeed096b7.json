@@ -1,0 +1,269 @@
+{
+    "key": "group_a707eeed096b7",
+    "title": "Block - Other - Service hero",
+    "fields": [
+        {
+            "key": "field_7bf9a082311e9",
+            "label": "Content",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_234853e84ef22",
+            "label": "Label",
+            "name": "b_other_service_hero_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Lime label above the H1.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "02 \/ Service \u00b7 Online stores",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_7945e423ee703",
+            "label": "Title (H1)",
+            "name": "b_other_service_hero_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "WooCommerce development",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_719ae6379d387",
+            "label": "Text",
+            "name": "b_other_service_hero_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "WooCommerce and Shopify stores with\u2026",
+            "new_lines": ""
+        },
+        {
+            "key": "field_2847b9b46c82e",
+            "label": "Primary link",
+            "name": "b_other_service_hero_link_primary",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_b2e62d50dac41",
+            "label": "Secondary link",
+            "name": "b_other_service_hero_link_secondary",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_a7f67399d803a",
+            "label": "Quote card",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_b40f253d1a13c",
+            "label": "Card label",
+            "name": "b_other_service_hero_card_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Right side of the \u201cquote.summary\u201d head.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Online store",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_63719a3425cc1",
+            "label": "Rows",
+            "name": "b_other_service_hero_rows",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "The first value is lime (price).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_8343c7c81dc9c",
+            "button_label": "Add row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_8343c7c81dc9c",
+                    "label": "Label",
+                    "name": "label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "Price",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_63719a3425cc1"
+                },
+                {
+                    "key": "field_1fa76cff90833",
+                    "label": "Value",
+                    "name": "value",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "from $1,500",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_63719a3425cc1"
+                }
+            ]
+        },
+        {
+            "key": "field_5b4bd5dcbdaf7",
+            "label": "Tags",
+            "name": "b_other_service_hero_tags",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "One per line.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "WooCommerce\nShopify",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/other-blocks-service-hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793550286
+}

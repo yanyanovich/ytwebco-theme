@@ -1,0 +1,35 @@
+{
+  "name": "acf/other-blocks-service-features",
+  "title": "Other blocks Service features",
+  "description": "“What’s included”: section head, title, lead and numbered items with tags in two columns.",
+  "style": [],
+  "category": "other-blocks",
+  "icon": "grid-view",
+  "keywords": [
+    "features",
+    "included",
+    "service"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}
