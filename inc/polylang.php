@@ -69,6 +69,13 @@ function theme_get_translatable_strings()
         'Work: project count (one)' => '%s project',
         // Only used by languages with a separate 2–4 form (Ukrainian); English uses "%s projects"
         'Work: projects count (2–4)' => '%s projects (2–4)',
+        'Policy: last updated' => 'Last updated:',
+        'Policy: contents' => 'Contents',
+        '404: title' => 'Page not found',
+        '404: text' => 'This page took infinitely long to load — probably because it doesn’t exist.',
+        '404: back home' => 'Back to home',
+        '404: status' => 'Status',
+        '404: note' => 'Everything else on this site loads fast. Promise.',
     );
 }
 
@@ -140,6 +147,13 @@ function theme_get_string_translations()
             'Work: projects count' => '%s проєктів',
             'Work: project count (one)' => '%s проєкт',
             'Work: projects count (2–4)' => '%s проєкти',
+            'Policy: last updated' => 'Оновлено:',
+            'Policy: contents' => 'Зміст',
+            '404: title' => 'Сторінку не знайдено',
+            '404: text' => 'Ця сторінка завантажувалася нескінченно довго — мабуть, тому що її не існує.',
+            '404: back home' => 'На головну',
+            '404: status' => 'Статус',
+            '404: note' => 'Усе інше на цьому сайті завантажується швидко. Обіцяю.',
         ),
     );
 }

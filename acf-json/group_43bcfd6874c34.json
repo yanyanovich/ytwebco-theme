@@ -8,7 +8,7 @@
             "name": "b_hp_cases_head",
             "aria-label": "",
             "type": "group",
-            "instructions": "“02 \/ Selected work” on the left, a link to all projects on the right.",
+            "instructions": "\u201c02 \/ Selected work\u201d on the left, a link to all projects on the right.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -61,12 +61,33 @@
                     "append": ""
                 },
                 {
+                    "key": "field_24e417d2ddf87",
+                    "label": "Meta",
+                    "name": "meta",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Shown on the right when there is no link.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "WooCommerce",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_a507995d4b294",
                     "label": "Link",
                     "name": "link",
                     "aria-label": "",
                     "type": "link",
-                    "instructions": "e.g. “All 06 projects →” to \/work\/",
+                    "instructions": "e.g. \u201cAll 06 projects \u2192\u201d to \/work\/",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -118,7 +139,7 @@
             "maxlength": "",
             "allow_in_bindings": 0,
             "rows": 2,
-            "placeholder": "Stores, platforms and websites…",
+            "placeholder": "Stores, platforms and websites\u2026",
             "new_lines": ""
         },
         {
@@ -127,7 +148,7 @@
             "name": "b_hp_cases_link",
             "aria-label": "",
             "type": "link",
-            "instructions": "e.g. “Discuss your project →” to #contact",
+            "instructions": "e.g. \u201cDiscuss your project \u2192\u201d to #contact",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -144,7 +165,7 @@
             "name": "b_hp_cases_items",
             "aria-label": "",
             "type": "relationship",
-            "instructions": "Pick and order the cases. Empty → all cases by menu order.",
+            "instructions": "Pick and order the cases. Empty \u2192 all cases by menu order.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -172,6 +193,27 @@
             ],
             "bidirectional": 0,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_667c8ee796ad2",
+            "label": "Card labels",
+            "name": "b_hp_cases_labels",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Show the category label (\u201cE-commerce\u201d) above each card title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Show labels",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -193,5 +235,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793500000
+    "modified": 1793550528
 }

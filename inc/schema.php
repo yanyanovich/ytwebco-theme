@@ -97,7 +97,7 @@ add_action('wp_head', function () {
 
 /**
  * Breadcrumb trail for inner pages; one source for the visible breadcrumbs and BreadcrumbList.
- * Work archive: Home / Work. Case page: Home / Work / {case}. Other pages: empty (Yoast default).
+ * Work archive: Home / Work. Case page: Home / Work / {case}. Inner pages: Home / {page}.
  *
  * @return array<int, array{label: string, url: string}>
  */
@@ -117,6 +117,17 @@ function theme_get_breadcrumbs()
 
     if (is_post_type_archive('case')) {
         return array($home, $work);
+    }
+
+    // Inner pages (Contact, Privacy): Home / {page}; service pages: Home / Services / {page}
+    if (is_page() && !is_front_page()) {
+        $page_id = get_queried_object_id();
+        $crumbs = array($home);
+        if (has_block('acf/other-blocks-service-hero', $page_id)) {
+            $crumbs[] = array('label' => theme_t('Services'), 'url' => trailingslashit($home['url']) . '#services');
+        }
+        $crumbs[] = array('label' => get_the_title($page_id), 'url' => get_permalink($page_id));
+        return $crumbs;
     }
 
     return array();
@@ -157,5 +168,77 @@ add_action('wp_head', function () {
 
     $schema = array('@context' => 'https://schema.org', '@type' => 'BreadcrumbList', 'itemListElement' => $items);
     echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
+});
+
+/**
+ * Service schema for pages built with the service hero: name, description and price from the block,
+ * provided by YT Web Co. and served in Ukraine.
+ */
+function theme_get_service_schema($post_id)
+{
+    $post = get_post($post_id);
+    if (!$post || !has_block('acf/other-blocks-service-hero', $post)) {
+        return array();
+    }
+
+    foreach (parse_blocks($post->post_content) as $block) {
+        if ($block['blockName'] !== 'acf/other-blocks-service-hero') {
+            continue;
+        }
+        $data = (array)($block['attrs']['data'] ?? array());
+        $schema = array(
+            '@type' => 'Service',
+            '@id' => get_permalink($post_id) . '#service',
+            'name' => trim(preg_replace('/\s+/u', ' ', preg_replace('/-\s*\R\s*/u', '-', wp_strip_all_tags(str_replace(array('<br>', '<br />'), "\n", (string)($data['b_other_service_hero_title'] ?? get_the_title($post_id))))))),
+            'description' => trim(wp_strip_all_tags((string)($data['b_other_service_hero_text'] ?? ''))),
+            'url' => get_permalink($post_id),
+            'areaServed' => array('@type' => 'Country', 'name' => 'Ukraine'),
+            // Inline until the Organization / ProfessionalService node is added in the SEO step
+            'provider' => array('@type' => 'ProfessionalService', 'name' => 'YT Web Co.', 'url' => home_url('/')),
+        );
+
+        // First quote row = price ("from $1,500", "від 45 000 грн")
+        $price = (string)($data['b_other_service_hero_rows_0_value'] ?? '');
+        if (preg_match('/(\$|грн|uah|usd)/iu', $price) && preg_match('/\d[\d\s,.]*/u', $price, $number)) {
+            $schema['offers'] = array(
+                '@type' => 'Offer',
+                'priceSpecification' => array(
+                    '@type' => 'PriceSpecification',
+                    'minPrice' => (float)preg_replace('/[^\d.]/', '', str_replace(',', '', $number[0])),
+                    'priceCurrency' => strpos($price, '$') !== false || stripos($price, 'usd') !== false ? 'USD' : 'UAH',
+                ),
+            );
+        }
+
+        return $schema;
+    }
+
+    return array();
+}
+
+add_filter('wpseo_schema_graph', function ($graph) {
+    if (is_singular('page') && ($service = theme_get_service_schema(get_queried_object_id()))) {
+        $graph[] = $service;
+    }
+
+    return $graph;
+}, 20);
+
+add_action('wp_head', function () {
+    if (defined('WPSEO_VERSION') || !is_singular('page')) {
+        return;
+    }
+    $service = theme_get_service_schema(get_queried_object_id());
+    if ($service) {
+        echo '<script type="application/ld+json">' . wp_json_encode(array('@context' => 'https://schema.org') + $service, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
+    }
+});
+
+// /services/ only exists as the parent of /services/{service}/: send it to the services section
+add_action('template_redirect', function () {
+    if (is_page() && get_post_field('post_name', get_queried_object_id()) === 'services' && !get_post_field('post_parent', get_queried_object_id())) {
+        wp_safe_redirect(trailingslashit(function_exists('pll_home_url') ? pll_home_url() : home_url('/')) . '#services', 301);
+        exit;
+    }
 });
 

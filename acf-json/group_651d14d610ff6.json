@@ -1,0 +1,89 @@
+{
+    "key": "group_651d14d610ff6",
+    "title": "Block - Other - Page hero",
+    "fields": [
+        {
+            "key": "field_74ac3a238263f",
+            "label": "Status",
+            "name": "b_other_page_hero_status",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Lime status pill above the H1. Empty: not shown.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Available for new projects",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_82dc7a796d968",
+            "label": "Title (H1)",
+            "name": "b_other_page_hero_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "Let\u2019s talk about your project",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_b69eb33f939ef",
+            "label": "Text",
+            "name": "b_other_page_hero_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "A few lines are enough\u2026",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/other-blocks-page-hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1793549449
+}

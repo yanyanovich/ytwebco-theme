@@ -33,7 +33,7 @@ else :
                             <p class="hp-faq__text"><?php echo esc_html($text); ?></p>
                         <?php endif; ?>
                         <?php if (!empty($link['url'])) : ?>
-                            <a<?php echo get_acf_link_attrs($link, 'link-ul hp-faq__link'); ?>>
+                            <a<?php echo get_acf_link_attrs($link, 'link-ul link-ul--line hp-faq__link'); ?>>
                                 <?php echo esc_html($link['title'] ?: $link['url']); ?>
                                 <span class="arrow"><?php echo theme_icon('arrow-right', 14); ?></span>
                             </a>

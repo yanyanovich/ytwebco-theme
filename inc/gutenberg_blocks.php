@@ -130,6 +130,12 @@ function theme_get_block_groups()
             'acf/other-blocks-seo-text',
             'acf/other-blocks-work-archive',
             'acf/other-blocks-cta-band',
+            'acf/other-blocks-page-hero',
+            'acf/other-blocks-contact-page',
+            'acf/other-blocks-booking',
+            'acf/other-blocks-service-hero',
+            'acf/other-blocks-service-features',
+            'acf/other-blocks-service-price',
         ),
     );
 }

@@ -37,12 +37,12 @@ else :
                         <h2 class="h2 hp-cases__title" data-aos="rise-mask"><?php echo esc_html($title); ?></h2>
                     <?php endif; ?>
                     <?php if (!empty($text) || !empty($link['url'])) : ?>
-                        <div class="hp-cases__aside" data-aos="drift-up" data-aos-delay="150">
+                        <div class="hp-cases__aside<?php echo empty($text) ? ' hp-cases__aside--link' : ''; ?>" data-aos="drift-up" data-aos-delay="150">
                             <?php if (!empty($text)) : ?>
                                 <p class="hp-cases__text"><?php echo esc_html($text); ?></p>
                             <?php endif; ?>
                             <?php if (!empty($link['url'])) : ?>
-                                <a<?php echo get_acf_link_attrs($link, 'link-ul hp-cases__link'); ?>>
+                                <a<?php echo get_acf_link_attrs($link, 'link-ul link-ul--line hp-cases__link'); ?>>
                                     <?php echo esc_html($link['title'] ?: $link['url']); ?>
                                     <span class="arrow"><?php echo theme_icon('arrow-right', 14); ?></span>
                                 </a>
@@ -57,7 +57,7 @@ else :
                 <ul class="hp-cases__grid<?php echo count($case_ids) === 3 ? ' hp-cases__grid--three' : ''; ?>">
                     <?php foreach ($case_ids as $index => $case_id) : ?>
                         <li class="hp-cases__item" data-aos="drift-up" data-aos-delay="<?php echo esc_attr(($index % 2) * 120); ?>">
-                            <?php get_template_part('template-parts/partials/case-card', null, array('post_id' => $case_id)); ?>
+                            <?php get_template_part('template-parts/partials/case-card', null, array('post_id' => $case_id, 'label' => (bool)get_field('b_hp_cases_labels'))); ?>
                         </li>
                     <?php endforeach; ?>
                 </ul>
