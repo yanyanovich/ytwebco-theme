@@ -7,6 +7,7 @@
  *     @type int    $post_id
  *     @type string $heading  h2 | h3
  *     @type string $sizes    sizes attribute for the mockup image
+ *     @type bool   $label    show the small category label above the title (Work archive)
  * }
  */
 $post_id = $args['post_id'] ?? 0;
@@ -42,6 +43,9 @@ if ($card['brand_2']) {
 
     <div class="case-card__head">
         <div class="case-card__intro">
+            <?php if (!empty($args['label']) && $card['label']) : ?>
+                <span class="label case-card__label"><?php echo esc_html($card['label']); ?></span>
+            <?php endif; ?>
             <<?php echo $heading; ?> class="case-card__title">
                 <a class="case-card__link" href="<?php echo esc_url($card['url']); ?>"><?php echo esc_html($card['title']); ?></a>
             </<?php echo $heading; ?>>

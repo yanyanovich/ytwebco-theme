@@ -118,6 +118,8 @@ function theme_get_block_groups()
         'acf_other' => array(
             'acf/other-blocks-example1',
             'acf/other-blocks-seo-text',
+            'acf/other-blocks-work-archive',
+            'acf/other-blocks-cta-band',
         ),
     );
 }

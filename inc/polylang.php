@@ -63,6 +63,10 @@ function theme_get_translatable_strings()
         'Case nav label' => 'More projects',
         'Case nav: previous' => 'Previous project',
         'Case nav: next' => 'Next project',
+        'Work: filter' => 'Filter',
+        'Work: all' => 'All',
+        'Work: projects count' => '%s projects',
+        'Work: project count (one)' => '%s project',
     );
 }
 
