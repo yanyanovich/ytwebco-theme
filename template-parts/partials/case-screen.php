@@ -20,13 +20,23 @@ if (empty($image_id) && empty($placeholder)) {
 }
 
 $size_label = $device === 'mobile' ? '780 × 1688 px' : '2560 × 1600 px';
+
+// The screen keeps the screenshot's own proportions, so nothing is cut at the sides when a file
+// is not exactly 780 × 1688 / 2560 × 1600; placeholders use the standard size from CSS
+$shot_style = '';
+if (!empty($image_id)) {
+    $meta = wp_get_attachment_metadata($image_id);
+    if (!empty($meta['width']) && !empty($meta['height'])) {
+        $shot_style = ' style="aspect-ratio: ' . (int)$meta['width'] . ' / ' . (int)$meta['height'] . '"';
+    }
+}
 ?>
 <figure class="case-screen case-screen--<?php echo esc_attr($device); ?>"<?php echo $device === 'desktop' ? ' data-aos="drift-up" data-aos-delay="' . esc_attr((int)($args['delay'] ?? 0)) . '"' : ''; ?>>
     <div class="<?php echo $device === 'mobile' ? 'case-phone' : 'case-frame'; ?><?php echo empty($image_id) ? ' bp' : ''; ?>">
         <?php if ($device === 'desktop') : ?>
             <div class="case-frame__bar" aria-hidden="true"><i></i><i></i><i></i></div>
         <?php endif; ?>
-        <div class="case-screen__shot">
+        <div class="case-screen__shot"<?php echo $shot_style; ?>>
             <?php if (!empty($image_id)) : ?>
                 <?php echo wp_get_attachment_image($image_id, 'full', false, array(
                     'class' => 'case-frame__image',
