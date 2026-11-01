@@ -57,7 +57,7 @@ else :
                 <ul class="hp-cases__grid<?php echo count($case_ids) === 3 ? ' hp-cases__grid--three' : ''; ?>">
                     <?php foreach ($case_ids as $index => $case_id) : ?>
                         <li class="hp-cases__item" data-aos="drift-up" data-aos-delay="<?php echo esc_attr(($index % 2) * 120); ?>">
-                            <?php get_template_part('template-parts/partials/case-card', null, array('post_id' => $case_id)); ?>
+                            <?php get_template_part('template-parts/partials/case-card', null, array('post_id' => $case_id, 'label' => (bool)get_field('b_hp_cases_labels'))); ?>
                         </li>
                     <?php endforeach; ?>
                 </ul>
