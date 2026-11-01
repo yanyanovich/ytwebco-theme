@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Case studies: /work/{slug}/ (UA: /uk/work/{slug}/), archive /work/.
+ * Case studies: /work/{slug}/ (UA: /ua/work/{slug}/), archive /work/.
  * case_type groups them for the Work filter (Online stores / Websites / Integrations & apps).
  */
 function ytweb_theme_register_case_post_type()
@@ -186,6 +186,60 @@ function theme_get_case_neighbours($post_id)
         'next' => $ids[($index + 1) % $count],
     );
 }
+
+// EN and UA versions of a case share the slug (/work/food-delivery/ and /ua/work/food-delivery/).
+// WordPress makes slugs unique per post type; allow the duplicate when the other case is in another language.
+add_filter('wp_unique_post_slug', function ($slug, $post_id, $post_status, $post_type, $post_parent, $original_slug) {
+    if ($post_type !== 'case' || $slug === $original_slug || !function_exists('pll_get_post_language')) {
+        return $slug;
+    }
+
+    $language = pll_get_post_language($post_id);
+    if (!$language) {
+        return $slug;
+    }
+
+    // Cases with this slug, then their language (Polylang rewrites language queries, so check each post)
+    global $wpdb;
+    $taken = $wpdb->get_col($wpdb->prepare(
+        "SELECT ID FROM {$wpdb->posts} WHERE post_type = 'case' AND post_name = %s AND ID != %d AND post_status NOT IN ('trash', 'auto-draft', 'inherit')",
+        $original_slug,
+        $post_id
+    ));
+    $same_language = array_filter($taken, function ($id) use ($language) {
+        return pll_get_post_language((int)$id) === $language;
+    });
+
+    return empty($same_language) ? $original_slug : $slug;
+}, 10, 6);
+
+// With a shared slug, /work/{slug}/ must open the case of the URL's language (EN without prefix, UA under /ua/)
+add_filter('request', function ($query_vars) {
+    if (empty($query_vars['case']) || !empty($query_vars['p']) || !function_exists('pll_current_language') || !function_exists('pll_get_post_language')) {
+        return $query_vars;
+    }
+
+    // /ua/… carries lang=ua in the query vars; no prefix = the default language
+    $language = !empty($query_vars['lang']) ? $query_vars['lang'] : (pll_current_language() ?: pll_default_language());
+    $ids = get_posts(array(
+        'post_type' => 'case',
+        'name' => $query_vars['case'],
+        'post_status' => 'publish',
+        'lang' => '',
+        'fields' => 'ids',
+        'posts_per_page' => -1,
+        'suppress_filters' => true,
+    ));
+
+    foreach ($ids as $id) {
+        if (count($ids) > 1 && pll_get_post_language($id) === $language) {
+            unset($query_vars['case'], $query_vars['name']);
+            return array_merge($query_vars, array('p' => $id, 'post_type' => 'case'));
+        }
+    }
+
+    return $query_vars;
+});
 
 // The Work archive renders every case on one page (the filter works without paging)
 add_action('pre_get_posts', function ($query) {
