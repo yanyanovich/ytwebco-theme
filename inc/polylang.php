@@ -69,6 +69,8 @@ function theme_get_translatable_strings()
         'Work: project count (one)' => '%s project',
         // Only used by languages with a separate 2–4 form (Ukrainian); English uses "%s projects"
         'Work: projects count (2–4)' => '%s projects (2–4)',
+        'Policy: last updated' => 'Last updated:',
+        'Policy: contents' => 'Contents',
     );
 }
 
@@ -140,6 +142,8 @@ function theme_get_string_translations()
             'Work: projects count' => '%s проєктів',
             'Work: project count (one)' => '%s проєкт',
             'Work: projects count (2–4)' => '%s проєкти',
+            'Policy: last updated' => 'Оновлено:',
+            'Policy: contents' => 'Зміст',
         ),
     );
 }

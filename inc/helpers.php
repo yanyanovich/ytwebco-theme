@@ -152,3 +152,35 @@ function theme_get_booking_url()
     return $booking_url !== '#' ? $booking_url : theme_get_page_url('contact');
 }
 
+/**
+ * Splits policy content into numbered sections at each H2 and returns the TOC items.
+ * "<h2>Who I am</h2><p>…</p>" → <section id="who-i-am"> with "01" before the heading.
+ *
+ * @return array{html: string, items: array<int, array{id: string, title: string}>}
+ */
+function theme_get_policy_sections($html)
+{
+    $parts = preg_split('#(<h2\b[^>]*>.*?</h2>)#is', (string)$html, -1, PREG_SPLIT_DELIM_CAPTURE);
+    $out = trim(array_shift($parts));
+    $items = array();
+    $used = array();
+
+    for ($i = 0; $i < count($parts); $i += 2) {
+        $title = trim(wp_strip_all_tags($parts[$i]));
+        $id = sanitize_title($title) ?: 'section';
+        $id = isset($used[$id]) ? $id . '-' . (count($items) + 1) : $id;
+        $used[$id] = true;
+        $items[] = array('id' => $id, 'title' => $title);
+
+        $out .= sprintf(
+            '<section class="policy__section" id="%1$s"><div class="policy__section-head"><span class="mono">%2$s</span><h2>%3$s</h2></div><div class="policy__prose">%4$s</div></section>',
+            esc_attr($id),
+            esc_html(sprintf('%02d', count($items))),
+            esc_html($title),
+            $parts[$i + 1] ?? ''
+        );
+    }
+
+    return array('html' => $out, 'items' => $items);
+}
+
