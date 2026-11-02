@@ -204,3 +204,37 @@ function theme_paragraphs($text, $class = '')
         return '<p' . $attr . '>' . nl2br(esc_html($paragraph), false) . '</p>';
     }, $paragraphs));
 }
+
+/**
+ * Express / Designer values for the service hero summary card, read from the page's Design paths block,
+ * so prices, timelines and revisions are entered once.
+ *
+ * @param int $post_id
+ * @return array<string, array{title: string, price: string, timeline: string, revisions: string}>
+ */
+function theme_get_design_paths_summary($post_id)
+{
+    foreach (parse_blocks((string)get_post_field('post_content', $post_id)) as $block) {
+        if ($block['blockName'] !== 'acf/other-blocks-design-paths') {
+            continue;
+        }
+        $data = (array)($block['attrs']['data'] ?? array());
+        $paths = array(
+            'express' => array('title' => (string)($data['b_other_paths_express_title'] ?? ''), 'price' => '', 'timeline' => '', 'revisions' => ''),
+            'designer' => array('title' => (string)($data['b_other_paths_designer_title'] ?? ''), 'price' => '', 'timeline' => '', 'revisions' => ''),
+        );
+        for ($i = 0; $i < (int)($data['b_other_paths_rows'] ?? 0); $i++) {
+            $key = (string)($data["b_other_paths_rows_{$i}_summary"] ?? '');
+            if (!$key) {
+                continue;
+            }
+            foreach (array_keys($paths) as $path) {
+                $paths[$path][$key] = (string)($data["b_other_paths_rows_{$i}_{$path}"] ?? '');
+                $paths[$path][$key . '_label'] = (string)($data["b_other_paths_rows_{$i}_label"] ?? '');
+            }
+        }
+        return $paths;
+    }
+
+    return array();
+}

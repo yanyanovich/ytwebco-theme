@@ -45,6 +45,27 @@
             "new_lines": "br"
         },
         {
+            "key": "field_09e2b0a4584b0",
+            "label": "Text",
+            "name": "b_other_cta_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_fc2008aea3b81",
             "label": "Primary link",
             "name": "b_other_cta_link_primary",
@@ -84,7 +105,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/other-blocks-cta-band"
+                "value": "acf/other-blocks-cta-band"
             }
         ]
     ],
@@ -98,5 +119,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793526731
+    "modified": 1793631916
 }

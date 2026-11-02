@@ -56,6 +56,7 @@ else :
                  data-nonce="<?php echo esc_attr(wp_create_nonce('wp_rest')); ?>"
                  data-language="<?php echo esc_attr(strtolower(substr($language, 0, 2))); ?>"
                  data-progress="<?php echo esc_attr($progress); ?>"
+                 data-design-option="<?php echo esc_attr(get_field('b_other_brief_design_option')); ?>"
                  data-sending="<?php echo esc_attr(get_field('b_other_brief_sending')); ?>"
                  data-error-required="<?php echo esc_attr(get_field('b_other_brief_error_required')); ?>"
                  data-error-email="<?php echo esc_attr(get_field('b_other_brief_error_email')); ?>"
