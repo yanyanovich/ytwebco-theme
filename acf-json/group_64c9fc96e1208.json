@@ -95,7 +95,7 @@
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
-                    "placeholder": "Telegram \u00b7 phone \u00b7 email",
+                    "placeholder": "Telegram · phone · email",
                     "prepend": "",
                     "append": ""
                 }
@@ -183,7 +183,7 @@
                     "name": "note",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "Empty: the handle, email or phone from Theme settings \u2192 Contacts.",
+                    "instructions": "Empty: the handle, email or phone from Theme settings → Contacts.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -194,7 +194,7 @@
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
-                    "placeholder": "Free \u00b7 30 minutes",
+                    "placeholder": "Free · 30 minutes",
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_14d327dfbed89"
@@ -205,7 +205,7 @@
                     "name": "link",
                     "aria-label": "",
                     "type": "link",
-                    "instructions": "Empty: the URL from Theme settings \u2192 Contacts.",
+                    "instructions": "Empty: the URL from Theme settings → Contacts.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -420,7 +420,7 @@
             "name": "b_other_contact_form",
             "aria-label": "",
             "type": "post_object",
-            "instructions": "Contact Form 7 form. Fields, the error message (data-form-error) and the \u201cNo spam\u201d note live in Contact \u2192 Contact Forms.",
+            "instructions": "Contact Form 7 form. Fields, the error message (data-form-error) and the “No spam” note live in Contact → Contact Forms.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -458,9 +458,47 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": "Sending\u2026",
+            "placeholder": "Sending…",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_ab51bed90e17c",
+            "label": "Brief · text",
+            "name": "b_other_contact_brief_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Prefer a detailed brief?",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_501ba4d8ebc3a",
+            "label": "Brief · link",
+            "name": "b_other_contact_brief_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
         },
         {
             "key": "field_e5be540d6d519",
@@ -497,7 +535,7 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": "200 OK \u00b7 Message sent",
+            "placeholder": "200 OK · Message sent",
             "prepend": "",
             "append": ""
         },
@@ -518,7 +556,7 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": "Thanks \u2014 your message is in.",
+            "placeholder": "Thanks — your message is in.",
             "prepend": "",
             "append": ""
         },
@@ -623,6 +661,44 @@
             },
             "return_format": "array",
             "allow_in_bindings": 0
+        },
+        {
+            "key": "field_b067439a332aa",
+            "label": "Success · brief text",
+            "name": "b_other_contact_success_brief_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Want a faster quote?",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_d87aa9c916116",
+            "label": "Success · brief link",
+            "name": "b_other_contact_success_brief_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -630,7 +706,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/other-blocks-contact-page"
+                "value": "acf/other-blocks-contact-page"
             }
         ]
     ],
@@ -644,5 +720,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793550910
+    "modified": 1793569459
 }

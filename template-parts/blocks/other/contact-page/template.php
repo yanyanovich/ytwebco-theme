@@ -54,7 +54,11 @@ else :
                         'steps' => (array)get_field('b_other_contact_success_steps'),
                         'link_primary' => (array)get_field('b_other_contact_success_link_primary'),
                         'link_secondary' => (array)get_field('b_other_contact_success_link_secondary'),
+                        'note' => get_field('b_other_contact_success_brief_text'),
+                        'note_link' => (array)get_field('b_other_contact_success_brief_link'),
                     ),
+                    'note' => get_field('b_other_contact_brief_text'),
+                    'note_link' => (array)get_field('b_other_contact_brief_link'),
                     'class' => 'contact-page__form',
                 )); ?>
             </div>

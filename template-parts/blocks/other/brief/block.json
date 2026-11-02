@@ -1,0 +1,35 @@
+{
+  "name": "acf/other-blocks-brief",
+  "title": "Other blocks Brief",
+  "description": "Project brief: 4-step questionnaire sent to the tokaruk-leads REST endpoint.",
+  "style": [],
+  "category": "other-blocks",
+  "icon": "clipboard",
+  "keywords": [
+    "contact",
+    "form",
+    "brief"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}
