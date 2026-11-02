@@ -14,7 +14,7 @@ else :
     $head = (array)get_field('b_other_info_head');
     $title = get_field('b_other_info_title');
     $text = get_field('b_other_info_text');
-    $items = (array)get_field('b_other_info_items');
+    $items = get_field('b_other_info_items') ?: array(); // (array)false would be one empty item
     $note = get_field('b_other_info_note');
     $link = (array)get_field('b_other_info_link');
     ?>

@@ -7,7 +7,7 @@ else :
 
     $meta = get_field('b_case_results_meta');
     $type = get_field('b_case_results_type') ?: 'numbers';
-    $numbers = (array)get_field('b_case_results_numbers');
+    $numbers = (get_field('b_case_results_numbers') ?: array());
     $compare = (array)get_field('b_case_results_compare');
     $line = get_field('b_case_results_line');
     $text = get_field('b_case_results_text');

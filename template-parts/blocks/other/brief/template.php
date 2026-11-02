@@ -9,7 +9,7 @@ else :
         !empty($block['className']) ? $block['className'] : '',
     );
 
-    $steps = array_values(array_filter((array)get_field('b_other_brief_steps'), function ($step) {
+    $steps = array_values(array_filter((get_field('b_other_brief_steps') ?: array()), function ($step) {
         return !empty($step['questions']);
     }));
     if (empty($steps)) {
@@ -18,7 +18,7 @@ else :
 
     $total = count($steps);
     $progress = get_field('b_other_brief_progress') ?: '%1$s / %2$s';
-    $aside_steps = (array)get_field('b_other_brief_aside_steps');
+    $aside_steps = (get_field('b_other_brief_aside_steps') ?: array());
     $aside_note = get_field('b_other_brief_aside_note');
     $privacy = get_field('b_other_brief_privacy');
     $contacts = theme_get_contacts();
@@ -158,7 +158,7 @@ else :
                 <?php get_template_part('template-parts/partials/form-success', null, array(
                     'badge' => get_field('b_other_brief_success_badge'),
                     'title' => get_field('b_other_brief_success_title'),
-                    'steps' => (array)get_field('b_other_brief_success_steps'),
+                    'steps' => (get_field('b_other_brief_success_steps') ?: array()),
                     'link_primary' => (array)get_field('b_other_brief_success_link_primary'),
                     'link_secondary' => (array)get_field('b_other_brief_success_link_secondary'),
                     'segments' => $total,

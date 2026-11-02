@@ -10,7 +10,7 @@ else :
     );
 
     $head = (array)get_field('b_other_formats_head');
-    $items = (array)get_field('b_other_formats_items');
+    $items = (get_field('b_other_formats_items') ?: array());
     if (empty($items)) {
         return;
     }

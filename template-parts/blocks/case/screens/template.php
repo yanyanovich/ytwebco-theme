@@ -3,8 +3,8 @@ if (is_admin() && !empty($is_preview)) :
     get_block_preview(__DIR__);
     return;
 else :
-    $desktop = (array)get_field('b_case_screens_desktop');
-    $mobile = (array)get_field('b_case_screens_mobile');
+    $desktop = (get_field('b_case_screens_desktop') ?: array());
+    $mobile = (get_field('b_case_screens_mobile') ?: array());
     $translated = get_field('b_case_screens_translated');
 
     if (empty($desktop) && empty($mobile)) {

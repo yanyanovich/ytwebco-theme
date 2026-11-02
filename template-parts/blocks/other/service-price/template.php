@@ -12,7 +12,7 @@ else :
     $head = (array)get_field('b_other_price_head');
     $value = get_field('b_other_price_value');
     $label = get_field('b_other_price_label');
-    $rows = (array)get_field('b_other_price_rows');
+    $rows = (get_field('b_other_price_rows') ?: array());
     $link = (array)get_field('b_other_price_link');
     ?>
     <section id="<?php echo esc_attr($block_id); ?>"

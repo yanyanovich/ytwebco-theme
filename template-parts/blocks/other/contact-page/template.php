@@ -10,8 +10,8 @@ else :
     );
 
     $direct_head = (array)get_field('b_other_contact_direct_head');
-    $rows = (array)get_field('b_other_contact_rows');
-    $cards = (array)get_field('b_other_contact_cards');
+    $rows = (get_field('b_other_contact_rows') ?: array());
+    $cards = (get_field('b_other_contact_cards') ?: array());
     $form_head = (array)get_field('b_other_contact_form_head');
     ?>
     <section id="<?php echo esc_attr($block_id); ?>"
@@ -51,7 +51,7 @@ else :
                     'success' => array(
                         'badge' => get_field('b_other_contact_success_badge'),
                         'title' => get_field('b_other_contact_success_title'),
-                        'steps' => (array)get_field('b_other_contact_success_steps'),
+                        'steps' => (get_field('b_other_contact_success_steps') ?: array()),
                         'link_primary' => (array)get_field('b_other_contact_success_link_primary'),
                         'link_secondary' => (array)get_field('b_other_contact_success_link_secondary'),
                         'note' => get_field('b_other_contact_success_brief_text'),
