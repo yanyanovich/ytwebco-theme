@@ -26,7 +26,7 @@
             "name": "b_hp_about_head",
             "aria-label": "",
             "type": "group",
-            "instructions": "Rule line above the block: \u201c04 \/ About\u201d on the left, \u201cLutsk, UA\u201d on the right.",
+            "instructions": "Rule line above the block: “04 / About” on the left, “Lutsk, UA” on the right.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -161,7 +161,7 @@
             "maxlength": "",
             "allow_in_bindings": 0,
             "rows": 2,
-            "placeholder": "I've been building with WordPress for 6 years\u2026",
+            "placeholder": "I've been building with WordPress for 6 years…",
             "new_lines": ""
         },
         {
@@ -170,7 +170,7 @@
             "name": "b_hp_about_text",
             "aria-label": "",
             "type": "textarea",
-            "instructions": "",
+            "instructions": "Blank line = new paragraph.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -181,9 +181,47 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "rows": 4,
-            "placeholder": "I work directly with clients\u2026",
+            "rows": 8,
+            "placeholder": "I work directly with clients…",
             "new_lines": ""
+        },
+        {
+            "key": "field_4f43de4cc654d",
+            "label": "Note",
+            "name": "b_hp_about_note",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Мови: українська, англійська",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_edb84cc0b9450",
+            "label": "Button",
+            "name": "b_hp_about_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
         },
         {
             "key": "field_7843cc6d6b292",
@@ -191,7 +229,7 @@
             "name": "b_hp_about_image",
             "aria-label": "",
             "type": "image",
-            "instructions": "Portrait 4:5, at least 1200\u00d71500. Alt text comes from the media library.",
+            "instructions": "Portrait 4:5, at least 1200×1500. Alt text comes from the media library.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -389,7 +427,7 @@
                     "name": "code",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "2\u20133 letters in the badge.",
+                    "instructions": "2–3 letters in the badge.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -435,7 +473,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/home-page-blocks-about"
+                "value": "acf/home-page-blocks-about"
             }
         ]
     ],
@@ -449,5 +487,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793475087
+    "modified": 1793630146
 }

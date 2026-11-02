@@ -14,6 +14,8 @@ else :
     $title = get_field('b_hp_about_title');
     $lead = get_field('b_hp_about_lead');
     $text = get_field('b_hp_about_text');
+    $note = get_field('b_hp_about_note');
+    $link = (array)get_field('b_hp_about_link');
     $image_id = (int)get_field('b_hp_about_image');
     $image_caption = get_field('b_hp_about_image_caption');
     $stats = get_field('b_hp_about_stats');
@@ -63,7 +65,19 @@ else :
                         <p class="lead hp-about__lead" data-aos="drift-up" data-aos-delay="150"><?php echo esc_html($lead); ?></p>
                     <?php endif; ?>
                     <?php if (!empty($text)) : ?>
-                        <p class="hp-about__text" data-aos="drift-up" data-aos-delay="200"><?php echo esc_html($text); ?></p>
+                        <div class="hp-about__text" data-aos="drift-up" data-aos-delay="200"><?php echo theme_paragraphs($text); ?></div>
+                    <?php endif; ?>
+                    <?php if (!empty($note)) : ?>
+                        <p class="hp-about__note mono" data-aos="drift-up" data-aos-delay="220"><?php echo esc_html($note); ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($link['url'])) : ?>
+                        <?php // Reveal on the wrapper: AOS transitions on the button itself would override its hover transition ?>
+                        <div class="hp-about__btn" data-aos="drift-up" data-aos-delay="250">
+                            <a<?php echo get_acf_link_attrs($link, 'btn btn--secondary'); ?>>
+                                <?php echo esc_html($link['title'] ?: $link['url']); ?>
+                                <span class="arrow"><?php echo theme_icon('arrow-right'); ?></span>
+                            </a>
+                        </div>
                     <?php endif; ?>
 
                     <?php if (!empty($stats)) : ?>
