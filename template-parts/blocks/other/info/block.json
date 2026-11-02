@@ -1,0 +1,36 @@
+{
+  "name": "acf/other-blocks-info",
+  "title": "Other blocks Info list",
+  "description": "Trust band, terms, requirements or numbered steps: a title with a list of short items.",
+  "style": [],
+  "category": "other-blocks",
+  "icon": "list-view",
+  "keywords": [
+    "terms",
+    "trust",
+    "list",
+    "steps"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": true,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

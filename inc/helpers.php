@@ -187,3 +187,20 @@ function theme_get_policy_sections($html)
     return array('html' => $out, 'items' => $items);
 }
 
+
+/**
+ * Plain multiline text → escaped <p> paragraphs (a blank line starts a new paragraph, single line breaks become <br>).
+ *
+ * @param string $text
+ * @param string $class class for each paragraph
+ * @return string
+ */
+function theme_paragraphs($text, $class = '')
+{
+    $paragraphs = array_filter(array_map('trim', preg_split('/\R\s*\R/u', trim((string)$text))));
+    $attr = $class ? ' class="' . esc_attr($class) . '"' : '';
+
+    return implode('', array_map(function ($paragraph) use ($attr) {
+        return '<p' . $attr . '>' . nl2br(esc_html($paragraph), false) . '</p>';
+    }, $paragraphs));
+}
