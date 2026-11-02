@@ -395,6 +395,27 @@
             ]
         },
         {
+            "key": "field_8dd93d0bcca7f",
+            "label": "Design option",
+            "name": "b_other_brief_design_option",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Chip selected by ?design=need|express|designer (Website design page). The path is sent as \"Design path\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Need a design",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_ac37f0c3a6f29",
             "label": "Labels",
             "name": "",
@@ -802,5 +823,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793569090
+    "modified": 1793631916
 }

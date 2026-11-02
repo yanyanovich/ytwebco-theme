@@ -9,6 +9,7 @@ if (!defined('ABSPATH')) {
  *
  * Body (JSON): {
  *   language: "en" | "uk", ref?: string, page?: string, tl_website?: "" (honeypot),
+ *   design_path?: "express" | "designer" (Website design page),
  *   name: string, email?: string, contact?: string, project_type?: string,
  *   steps: [{ title: string, fields: { [label]: string | string[] } }]
  * }
@@ -78,6 +79,13 @@ class Tokaruk_Leads_Rest
                 $fields[$label] = $value;
                 $sections[$title][] = $label;
             }
+        }
+
+        // Website design page: the chosen design path arrives with the lead
+        $design_path = sanitize_key($body['design_path'] ?? '');
+        if (in_array($design_path, array('express', 'designer'), true)) {
+            $fields['Design path'] = $design_path;
+            $sections['Design'][] = 'Design path';
         }
 
         $lead = array(
