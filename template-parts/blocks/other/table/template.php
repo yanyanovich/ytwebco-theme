@@ -17,7 +17,7 @@ else :
     $title = get_field('b_other_table_title');
     $text = get_field('b_other_table_text');
     $columns = $split(get_field('b_other_table_columns'));
-    $rows = (array)get_field('b_other_table_rows');
+    $rows = get_field('b_other_table_rows') ?: array();
     $note = get_field('b_other_table_note');
     if (empty($rows)) {
         return;

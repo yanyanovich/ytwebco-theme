@@ -5,7 +5,7 @@ if (is_admin() && !empty($is_preview)) :
 else :
     $challenge_lead = get_field('b_case_work_challenge_lead');
     $challenge_text = get_field('b_case_work_challenge_text');
-    $items = (array)get_field('b_case_work_items');
+    $items = (get_field('b_case_work_items') ?: array());
     $meta = get_field('b_case_work_meta');
 
     if (empty($challenge_lead) && empty($items)) {

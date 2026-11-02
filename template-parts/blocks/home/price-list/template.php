@@ -13,7 +13,7 @@ else :
     $title = get_field('b_hp_prices_title');
     $text = get_field('b_hp_prices_text');
     $link = (array)get_field('b_hp_prices_link');
-    $items = (array)get_field('b_hp_prices_items');
+    $items = (get_field('b_hp_prices_items') ?: array());
 
     // "від 12 000 грн" → the first number group in lime
     $format_price = function ($price) {

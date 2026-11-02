@@ -12,7 +12,7 @@ else :
     $head = (array)get_field('b_other_features_head');
     $title = get_field('b_other_features_title');
     $text = get_field('b_other_features_text');
-    $items = (array)get_field('b_other_features_items');
+    $items = (get_field('b_other_features_items') ?: array());
     ?>
     <section id="<?php echo esc_attr($block_id); ?>"
              class="<?php echo esc_attr(trim(implode(' ', array_filter($block_classes)))); ?>"

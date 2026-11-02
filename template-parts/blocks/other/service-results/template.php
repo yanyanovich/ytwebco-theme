@@ -13,8 +13,8 @@ else :
     $value = get_field('b_other_results_value');
     $label = get_field('b_other_results_label');
     $link = (array)get_field('b_other_results_link');
-    $bars = (array)get_field('b_other_results_bars');
-    $cards = (array)get_field('b_other_results_cards');
+    $bars = (get_field('b_other_results_bars') ?: array());
+    $cards = (get_field('b_other_results_cards') ?: array());
     $note = get_field('b_other_results_note');
     ?>
     <section id="<?php echo esc_attr($block_id); ?>"
