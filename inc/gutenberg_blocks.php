@@ -141,6 +141,8 @@ function theme_get_block_groups()
             'acf/other-blocks-service-results',
             'acf/other-blocks-info',
             'acf/other-blocks-table',
+            'acf/other-blocks-design-paths',
+            'acf/other-blocks-design-work',
         ),
     );
 }

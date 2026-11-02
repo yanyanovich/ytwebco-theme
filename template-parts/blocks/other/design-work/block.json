@@ -1,0 +1,35 @@
+{
+  "name": "acf/other-blocks-design-work",
+  "title": "Other blocks Design work",
+  "description": "Website design: text card with a Telegram button; becomes a gallery with Express / Designer tabs once works are added.",
+  "style": [],
+  "category": "other-blocks",
+  "icon": "format-gallery",
+  "keywords": [
+    "design",
+    "works",
+    "gallery"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

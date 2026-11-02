@@ -17,6 +17,8 @@ else :
     $card_label = get_field('b_other_service_hero_card_label');
     $rows = (get_field('b_other_service_hero_rows') ?: array());
     $tags = array_filter(array_map('trim', preg_split('/\R/u', (string)get_field('b_other_service_hero_tags'))));
+    // Website design: no rows of its own, the card shows Express / Designer from the Design paths block
+    $paths = empty($rows) ? theme_get_design_paths_summary(get_the_ID()) : array();
     ?>
     <section<?php echo !empty($block['anchor']) ? ' id="' . esc_attr($block['anchor']) . '"' : ''; ?>
             class="<?php echo esc_attr(trim(implode(' ', array_filter($block_classes)))); ?>"
@@ -46,7 +48,24 @@ else :
                     <?php endif; ?>
                 </div>
 
-                <?php if (!empty($rows)) : ?>
+                <?php if (!empty($paths)) : ?>
+                    <a href="#paths" class="service-hero__card service-hero__card--paths" data-aos="soft-scale" data-aos-delay="300">
+                        <span class="service-hero__card-head">
+                            <span class="label"><?php echo esc_html($card_label); ?></span>
+                            <span class="label">A · B</span>
+                        </span>
+                        <span class="service-hero__card-body">
+                            <?php foreach ($paths as $path) : ?>
+                                <span class="service-hero__path">
+                                    <span class="service-hero__path-title"><?php echo esc_html($path['title']); ?></span>
+                                    <span class="service-hero__path-price mono accent"><?php echo esc_html($path['price']); ?></span>
+                                    <span class="service-hero__path-meta mono"><?php echo esc_html(trim(($path['timeline_label'] ?? '') . ' · ' . $path['timeline'], ' ·')); ?></span>
+                                    <span class="service-hero__path-meta mono"><?php echo esc_html($path['revisions']); ?></span>
+                                </span>
+                            <?php endforeach; ?>
+                        </span>
+                    </a>
+                <?php elseif (!empty($rows)) : ?>
                     <div class="service-hero__card" data-aos="soft-scale" data-aos-delay="300">
                         <div class="service-hero__card-head">
                             <span class="label">quote.summary</span>
