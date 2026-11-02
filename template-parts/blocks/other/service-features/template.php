@@ -34,7 +34,7 @@ else :
             <?php if (!empty($items)) : ?>
                 <ul class="service-features__list">
                     <?php foreach ($items as $index => $item) :
-                        $tags = array_filter(array_map('trim', preg_split('/\R/', (string)($item['tags'] ?? ''))));
+                        $tags = array_filter(array_map('trim', preg_split('/\R/u', (string)($item['tags'] ?? ''))));
                         ?>
                         <li class="service-features__item" data-aos="drift-up" data-aos-delay="<?php echo esc_attr(($index % 2) * 100); ?>">
                             <span class="service-features__index mono" aria-hidden="true"><?php echo esc_html(sprintf('%02d', $index + 1)); ?></span>

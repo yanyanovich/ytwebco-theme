@@ -99,7 +99,7 @@ else :
                                 $data = sprintf(' data-key="%s" data-label="%s"%s', esc_attr($question['key']), esc_attr($question['label']), $required ? ' data-required' : '');
                                 ?>
                                 <?php if ($type === 'single' || $type === 'multi') :
-                                    $options = array_filter(array_map('trim', preg_split('/\R/', (string)$question['options'])));
+                                    $options = array_filter(array_map('trim', preg_split('/\R/u', (string)$question['options'])));
                                     ?>
                                     <div class="brief-form__group" role="group" aria-labelledby="<?php echo esc_attr($id); ?>" data-brief-chips="<?php echo esc_attr($type); ?>"<?php echo $data; ?>>
                                         <span class="field__label" id="<?php echo esc_attr($id); ?>"><?php echo esc_html($label); ?></span>

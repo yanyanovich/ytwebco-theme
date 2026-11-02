@@ -16,7 +16,7 @@ else :
     $link_secondary = (array)get_field('b_other_service_hero_link_secondary');
     $card_label = get_field('b_other_service_hero_card_label');
     $rows = (array)get_field('b_other_service_hero_rows');
-    $tags = array_filter(array_map('trim', preg_split('/\R/', (string)get_field('b_other_service_hero_tags'))));
+    $tags = array_filter(array_map('trim', preg_split('/\R/u', (string)get_field('b_other_service_hero_tags'))));
     ?>
     <section<?php echo !empty($block['anchor']) ? ' id="' . esc_attr($block['anchor']) . '"' : ''; ?>
             class="<?php echo esc_attr(trim(implode(' ', array_filter($block_classes)))); ?>"

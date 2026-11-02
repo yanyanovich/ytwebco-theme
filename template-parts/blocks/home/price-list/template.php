@@ -43,7 +43,7 @@ else :
                         // A row links to its own page (Services hub) or to the block link (UA homepage)
                         $row_link = !empty($item['link']['url']) ? (array)$item['link'] : $link;
                         $tag = !empty($row_link['url']) ? 'a' : 'div';
-                        $tags = array_filter(array_map('trim', preg_split('/\R/', (string)($item['tags'] ?? ''))));
+                        $tags = array_filter(array_map('trim', preg_split('/\R/u', (string)($item['tags'] ?? ''))));
                         $arrow = !empty($item['link']['url']);
                         ?>
                         <li data-aos="drift-up" data-aos-delay="<?php echo esc_attr(min($index * 60, 360)); ?>">
