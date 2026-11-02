@@ -60,6 +60,7 @@ else :
                         'link_secondary' => $success_link_secondary,
                     ),
                     'class' => 'hp-contact__form',
+                    'preselect' => get_field('b_hp_contact_preselect'),
                 )); ?>
 
                 <?php if (!empty($rows) || !empty($note)) : ?>
