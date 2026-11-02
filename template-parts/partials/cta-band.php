@@ -5,6 +5,7 @@
  * @var array $args {
  *     @type string $status         e.g. "Available for new projects"
  *     @type string $title          H2 (line breaks kept on desktop)
+ *     @type string $text           optional line under the H2
  *     @type array  $link_primary   ACF-style link array
  *     @type array  $link_secondary ACF-style link array
  *     @type string $class          extra classes
@@ -29,6 +30,9 @@ if (empty($title)) {
                 </span>
             <?php endif; ?>
             <h2 class="cta-band__title" data-aos="rise-mask" data-aos-delay="100"><?php echo wp_kses($title, array('br' => array())); ?></h2>
+            <?php if (!empty($args['text'])) : ?>
+                <p class="cta-band__lead" data-aos="drift-up" data-aos-delay="150"><?php echo esc_html($args['text']); ?></p>
+            <?php endif; ?>
         </div>
         <?php if (!empty($link_primary['url']) || !empty($link_secondary['url'])) : ?>
             <div class="cta-band__actions" data-aos="drift-up" data-aos-delay="200">
