@@ -61,7 +61,7 @@ class Tokaruk_Leads_Telegram
         $lines = array(sprintf(
             '<b>%s</b> · %s%s',
             $lead['type'] === 'brief' ? '📝 New brief' : '✉️ New request',
-            strtoupper($escape($lead['language'])),
+            in_array($lead['language'], array('uk', 'ua'), true) ? 'UA' : 'EN',
             !empty($lead['ref']) ? ' · ref: ' . $escape($lead['ref']) : ''
         ));
 

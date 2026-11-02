@@ -68,12 +68,15 @@ class Tokaruk_Leads_CF7
             $fields[$label] = is_array($value) && count($value) === 1 ? $value[0] : $value;
         }
 
+        // The page language when CF7 knows the page; forms rendered by a block (homepage) have no container
+        // post, so the form's own locale decides (UA forms are uk). Stored as "en" / "uk", like the brief.
         $page_id = (int)$submission->get_meta('container_post_id');
-        $language = $page_id && function_exists('pll_get_post_language') ? (pll_get_post_language($page_id) ?: '') : '';
+        $language = $page_id && function_exists('pll_get_post_language') ? (string)pll_get_post_language($page_id, 'locale') : '';
+        $language = strtolower(substr($language ?: (string)$contact_form->locale(), 0, 2));
 
         $lead = array(
             'type' => 'contact',
-            'language' => $language ?: 'en',
+            'language' => $language === 'uk' ? 'uk' : 'en',
             'name' => (string)($fields['Name'] ?? ''),
             'contact' => (string)($fields['Email'] ?? $fields['Phone / Telegram'] ?? ''),
             'fields' => $fields,
