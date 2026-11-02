@@ -33,7 +33,7 @@ else :
             <?php endif; ?>
 
             <?php if (!empty($steps)) : ?>
-                <ol class="hp-process__steps">
+                <ol class="hp-process__steps hp-process__steps--<?php echo esc_attr(count($steps)); ?>">
                     <?php foreach ($steps as $index => $step) : ?>
                         <li class="hp-process__step" data-aos="drift-up" data-aos-delay="<?php echo esc_attr($index * 120); ?>">
                             <span class="hp-process__index mono" aria-hidden="true"><?php echo esc_html(sprintf('%02d', $index + 1)); ?></span>

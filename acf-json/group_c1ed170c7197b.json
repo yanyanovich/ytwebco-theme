@@ -209,6 +209,27 @@
                     "parent_repeater": "field_67a990ce1d5b8"
                 },
                 {
+                    "key": "field_896c851057ab9",
+                    "label": "Timeline",
+                    "name": "term",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Adds a \"Timeline\" column.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "1–2 тижні",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_d056669e7ef4b",
                     "label": "Price",
                     "name": "price",
@@ -290,5 +311,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793609345
+    "modified": 1793630146
 }

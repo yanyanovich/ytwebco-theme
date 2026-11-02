@@ -38,7 +38,8 @@ else :
             <?php endif; ?>
 
             <?php if (!empty($items)) : ?>
-                <ul class="hp-prices__list">
+                <?php $has_terms = (bool)array_filter(array_column($items, 'term')); ?>
+                <ul class="hp-prices__list<?php echo $has_terms ? ' hp-prices__list--terms' : ''; ?>">
                     <?php foreach ($items as $index => $item) :
                         // A row links to its own page (Services hub) or to the block link (UA homepage)
                         $row_link = !empty($item['link']['url']) ? (array)$item['link'] : $link;
@@ -61,6 +62,9 @@ else :
                                             </span>
                                         <?php endif; ?>
                                     </span>
+                                <?php endif; ?>
+                                <?php if ($has_terms) : ?>
+                                    <span class="hp-prices__term mono"><?php echo esc_html($item['term'] ?? ''); ?></span>
                                 <?php endif; ?>
                                 <?php if (!empty($item['price'])) : ?>
                                     <span class="hp-prices__price mono"><?php echo $format_price($item['price']); ?></span>

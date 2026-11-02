@@ -42,10 +42,12 @@ else :
                             <p class="page-hero__text" data-aos="drift-up" data-aos-delay="200"><?php echo esc_html($text); ?></p>
                         <?php endif; ?>
                         <?php if (!empty($link['url'])) : ?>
-                            <a<?php echo get_acf_link_attrs($link, 'btn btn--primary page-hero__btn'); ?> data-aos="drift-up" data-aos-delay="250">
-                                <?php echo esc_html($link['title'] ?: $link['url']); ?>
-                                <span class="arrow"><?php echo theme_icon('arrow-right'); ?></span>
-                            </a>
+                            <div class="page-hero__btn" data-aos="drift-up" data-aos-delay="250">
+                                <a<?php echo get_acf_link_attrs($link, 'btn btn--primary'); ?>>
+                                    <?php echo esc_html($link['title'] ?: $link['url']); ?>
+                                    <span class="arrow"><?php echo theme_icon('arrow-right'); ?></span>
+                                </a>
+                            </div>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
