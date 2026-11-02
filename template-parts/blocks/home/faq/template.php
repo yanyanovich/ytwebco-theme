@@ -52,7 +52,7 @@ else :
                                 <div class="acc__body">
                                     <div class="acc__inner">
                                         <div class="acc__content">
-                                            <p class="acc__text"><?php echo esc_html($item['answer']); ?></p>
+                                            <p class="acc__text"><?php echo wp_kses($item['answer'], array('a' => array('href' => array()))); // links only ?></p>
                                         </div>
                                     </div>
                                 </div>
