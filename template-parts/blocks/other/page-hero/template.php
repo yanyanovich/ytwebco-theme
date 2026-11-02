@@ -14,6 +14,7 @@ else :
     $status = get_field('b_other_page_hero_status');
     $title = get_field('b_other_page_hero_title');
     $text = get_field('b_other_page_hero_text');
+    $link = (array)get_field('b_other_page_hero_link');
     ?>
     <section<?php echo !empty($block['anchor']) ? ' id="' . esc_attr($block['anchor']) . '"' : ''; ?>
             class="<?php echo esc_attr(trim(implode(' ', array_filter($block_classes)))); ?>"
@@ -35,8 +36,18 @@ else :
             <div class="page-hero__body">
                 <h1 class="page-hero__title" data-aos="rise-mask" data-aos-delay="100"><?php echo wp_kses($title ?: get_the_title(), array('br' => array())); ?></h1>
 
-                <?php if (!empty($text)) : ?>
-                    <p class="page-hero__text" data-aos="drift-up" data-aos-delay="200"><?php echo esc_html($text); ?></p>
+                <?php if (!empty($text) || !empty($link['url'])) : ?>
+                    <div class="page-hero__foot">
+                        <?php if (!empty($text)) : ?>
+                            <p class="page-hero__text" data-aos="drift-up" data-aos-delay="200"><?php echo esc_html($text); ?></p>
+                        <?php endif; ?>
+                        <?php if (!empty($link['url'])) : ?>
+                            <a<?php echo get_acf_link_attrs($link, 'btn btn--primary page-hero__btn'); ?> data-aos="drift-up" data-aos-delay="250">
+                                <?php echo esc_html($link['title'] ?: $link['url']); ?>
+                                <span class="arrow"><?php echo theme_icon('arrow-right'); ?></span>
+                            </a>
+                        <?php endif; ?>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
