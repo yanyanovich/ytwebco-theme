@@ -98,6 +98,7 @@ add_action('wp_head', function () {
 /**
  * Breadcrumb trail for inner pages; one source for the visible breadcrumbs and BreadcrumbList.
  * Work archive: Home / Work. Case page: Home / Work / {case}. Inner pages: Home / {page}.
+ * Service pages: Home / Services (hub) / {page}.
  *
  * @return array<int, array{label: string, url: string}>
  */
@@ -119,12 +120,13 @@ function theme_get_breadcrumbs()
         return array($home, $work);
     }
 
-    // Inner pages (Contact, Privacy): Home / {page}; service pages: Home / Services / {page}
+    // Inner pages (Contact, Privacy, Services hub): Home / {page}; service pages: Home / Services / {page}
     if (is_page() && !is_front_page()) {
         $page_id = get_queried_object_id();
         $crumbs = array($home);
-        if (has_block('acf/other-blocks-service-hero', $page_id)) {
-            $crumbs[] = array('label' => theme_t('Services'), 'url' => trailingslashit($home['url']) . '#services');
+        $hub_id = theme_get_services_hub_id();
+        if ($hub_id && $hub_id !== $page_id && has_block('acf/other-blocks-service-hero', $page_id)) {
+            $crumbs[] = array('label' => get_the_title($hub_id), 'url' => get_permalink($hub_id));
         }
         $crumbs[] = array('label' => get_the_title($page_id), 'url' => get_permalink($page_id));
         return $crumbs;
@@ -197,9 +199,9 @@ function theme_get_service_schema($post_id)
             'provider' => array('@type' => 'ProfessionalService', 'name' => 'YT Web Co.', 'url' => home_url('/')),
         );
 
-        // First quote row = price ("from $1,500", "від 45 000 грн")
+        // First quote row = price ("from $1,500", "від 45 000 грн"); placeholders like "[$150]" are not real prices yet
         $price = (string)($data['b_other_service_hero_rows_0_value'] ?? '');
-        if (preg_match('/(\$|грн|uah|usd)/iu', $price) && preg_match('/\d[\d\s,.]*/u', $price, $number)) {
+        if (strpos($price, '[') === false && preg_match('/(\$|грн|uah|usd)/iu', $price) && preg_match('/\d[\d\s,.]*/u', $price, $number)) {
             $schema['offers'] = array(
                 '@type' => 'Offer',
                 'priceSpecification' => array(
@@ -234,11 +236,20 @@ add_action('wp_head', function () {
     }
 });
 
-// /services/ only exists as the parent of /services/{service}/: send it to the services section
-add_action('template_redirect', function () {
-    if (is_page() && get_post_field('post_name', get_queried_object_id()) === 'services' && !get_post_field('post_parent', get_queried_object_id())) {
-        wp_safe_redirect(trailingslashit(function_exists('pll_home_url') ? pll_home_url() : home_url('/')) . '#services', 301);
-        exit;
+/**
+ * Services hub page in the current language: EN /services/, UA /ua/posluhy/ (its Polylang translation).
+ */
+function theme_get_services_hub_id()
+{
+    static $id = null;
+    if ($id === null) {
+        $page = get_page_by_path('services');
+        $id = $page ? (int)$page->ID : 0;
+        if ($id && function_exists('pll_get_post')) {
+            $id = (int)pll_get_post($id) ?: 0;
+        }
     }
-});
+
+    return $id;
+}
 

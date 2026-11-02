@@ -26,7 +26,7 @@
             "name": "b_hp_contact_head",
             "aria-label": "",
             "type": "group",
-            "instructions": "Rule line above the block: \u201c06 \/ Contact\u201d on the left, \u201cReply < 1 working day\u201d on the right.",
+            "instructions": "Rule line above the block: “06 / Contact” on the left, “Reply < 1 working day” on the right.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -161,7 +161,7 @@
             "maxlength": "",
             "allow_in_bindings": 0,
             "rows": 2,
-            "placeholder": "A few lines are enough\u2026",
+            "placeholder": "A few lines are enough…",
             "new_lines": ""
         },
         {
@@ -246,7 +246,7 @@
                     "name": "note",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "Empty: the handle, email or phone from Theme settings \u2192 Contacts.",
+                    "instructions": "Empty: the handle, email or phone from Theme settings → Contacts.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -257,7 +257,7 @@
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
-                    "placeholder": "Free \u00b7 30 minutes",
+                    "placeholder": "Free · 30 minutes",
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_c1b2907246d7e"
@@ -268,7 +268,7 @@
                     "name": "link",
                     "aria-label": "",
                     "type": "link",
-                    "instructions": "Empty: the URL from Theme settings \u2192 Contacts.",
+                    "instructions": "Empty: the URL from Theme settings → Contacts.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -299,7 +299,7 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": "\u21b3 I reply within one working day.",
+            "placeholder": "↳ I reply within one working day.",
             "prepend": "",
             "append": ""
         },
@@ -327,7 +327,7 @@
             "name": "b_hp_contact_form",
             "aria-label": "",
             "type": "post_object",
-            "instructions": "Contact Form 7 form. Fields, the error message (data-form-error) and the \u201cNo spam\u201d note live in Contact \u2192 Contact Forms.",
+            "instructions": "Contact Form 7 form. Fields, the error message (data-form-error) and the “No spam” note live in Contact → Contact Forms.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -349,6 +349,27 @@
             "bidirectional_target": []
         },
         {
+            "key": "field_a50aaea0d6579",
+            "label": "Preselected project type",
+            "name": "b_hp_contact_preselect",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Project type chip selected when the page opens (exact option text from the form).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "New website",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_43bf61fe50658",
             "label": "Sending label",
             "name": "b_hp_contact_sending",
@@ -365,7 +386,7 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": "Sending\u2026",
+            "placeholder": "Sending…",
             "prepend": "",
             "append": ""
         },
@@ -404,7 +425,7 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": "200 OK \u00b7 Message sent",
+            "placeholder": "200 OK · Message sent",
             "prepend": "",
             "append": ""
         },
@@ -425,7 +446,7 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": "Thanks \u2014 your message is in.",
+            "placeholder": "Thanks — your message is in.",
             "prepend": "",
             "append": ""
         },
@@ -537,7 +558,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/home-page-blocks-contact"
+                "value": "acf/home-page-blocks-contact"
             }
         ]
     ],
@@ -551,5 +572,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793550910
+    "modified": 1793609345
 }

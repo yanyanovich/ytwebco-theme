@@ -19,7 +19,6 @@ else :
     $format_price = function ($price) {
         return preg_replace('/(\d[\d\s.,]*\d|\d)/u', '<span class="accent">$1</span>', esc_html($price), 1);
     };
-    $tag = !empty($link['url']) ? 'a' : 'div';
     ?>
     <section id="<?php echo esc_attr($block_id); ?>"
              class="<?php echo esc_attr(trim(implode(' ', array_filter($block_classes)))); ?>"
@@ -40,16 +39,34 @@ else :
 
             <?php if (!empty($items)) : ?>
                 <ul class="hp-prices__list">
-                    <?php foreach ($items as $index => $item) : ?>
+                    <?php foreach ($items as $index => $item) :
+                        // A row links to its own page (Services hub) or to the block link (UA homepage)
+                        $row_link = !empty($item['link']['url']) ? (array)$item['link'] : $link;
+                        $tag = !empty($row_link['url']) ? 'a' : 'div';
+                        $tags = array_filter(array_map('trim', preg_split('/\R/u', (string)($item['tags'] ?? ''))));
+                        $arrow = !empty($item['link']['url']);
+                        ?>
                         <li data-aos="drift-up" data-aos-delay="<?php echo esc_attr(min($index * 60, 360)); ?>">
-                            <<?php echo $tag; ?> class="hp-prices__row"<?php echo $tag === 'a' ? get_acf_link_attrs($link) : ''; ?>>
+                            <<?php echo $tag; ?> class="hp-prices__row<?php echo $arrow ? ' hp-prices__row--arrow' : ''; ?>"<?php echo $tag === 'a' ? get_acf_link_attrs($row_link) : ''; ?>>
                                 <span class="hp-prices__index mono" aria-hidden="true"><?php echo esc_html(sprintf('%02d', $index + 1)); ?></span>
                                 <h3 class="hp-prices__name"><?php echo esc_html($item['title']); ?></h3>
-                                <?php if (!empty($item['text'])) : ?>
-                                    <span class="hp-prices__desc"><?php echo esc_html($item['text']); ?></span>
+                                <?php if (!empty($item['text']) || !empty($tags)) : ?>
+                                    <span class="hp-prices__desc">
+                                        <?php echo esc_html($item['text']); ?>
+                                        <?php if (!empty($tags)) : ?>
+                                            <span class="hp-prices__tags">
+                                                <?php foreach ($tags as $chip) : ?>
+                                                    <span class="chip"><?php echo esc_html($chip); ?></span>
+                                                <?php endforeach; ?>
+                                            </span>
+                                        <?php endif; ?>
+                                    </span>
                                 <?php endif; ?>
                                 <?php if (!empty($item['price'])) : ?>
                                     <span class="hp-prices__price mono"><?php echo $format_price($item['price']); ?></span>
+                                <?php endif; ?>
+                                <?php if ($arrow) : ?>
+                                    <span class="hp-prices__arrow" aria-hidden="true"><span class="arrow arrow--diag"><?php echo theme_icon('arrow-up-right', 14); ?></span></span>
                                 <?php endif; ?>
                             </<?php echo $tag; ?>>
                         </li>

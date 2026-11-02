@@ -35,7 +35,7 @@ else :
             <?php if (!empty($items)) : ?>
                 <div class="hp-services__list">
                     <?php foreach ($items as $index => $item) :
-                        $tags = array_filter(array_map('trim', preg_split('/\R/', (string)$item['tags'])));
+                        $tags = array_filter(array_map('trim', preg_split('/\R/u', (string)$item['tags'])));
                         ?>
                         <details class="acc<?php echo $index === 0 ? ' is-open' : ''; ?>" data-accordion data-aos="drift-up" data-aos-delay="<?php echo esc_attr($index * 80); ?>"<?php echo $index === 0 ? ' open' : ''; ?>>
                             <summary class="acc__summary">

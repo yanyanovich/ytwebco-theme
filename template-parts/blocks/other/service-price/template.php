@@ -24,7 +24,7 @@ else :
             <div class="service-price__body grid-12">
                 <?php if (!empty($value)) : ?>
                     <div class="service-price__main" data-aos="drift-up">
-                        <span class="service-price__value mono"><?php echo esc_html($value); ?></span>
+                        <span class="service-price__value mono<?php echo mb_strlen($value) > 10 ? ' service-price__value--long' : ''; ?>"><?php echo esc_html($value); ?></span>
                         <?php if (!empty($label)) : ?>
                             <span class="service-price__label"><?php echo esc_html($label); ?></span>
                         <?php endif; ?>

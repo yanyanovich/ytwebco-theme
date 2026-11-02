@@ -11,8 +11,8 @@ else :
     $compare = (array)get_field('b_case_results_compare');
     $line = get_field('b_case_results_line');
     $text = get_field('b_case_results_text');
-    $points = array_values(array_filter(array_map('trim', preg_split('/\R/', (string)get_field('b_case_results_points')))));
-    $stack = array_values(array_filter(array_map('trim', preg_split('/\R/', (string)get_field('b_case_results_stack')))));
+    $points = array_values(array_filter(array_map('trim', preg_split('/\R/u', (string)get_field('b_case_results_points')))));
+    $stack = array_values(array_filter(array_map('trim', preg_split('/\R/u', (string)get_field('b_case_results_stack')))));
     $stack = !empty($stack) ? $stack : theme_get_case_card($case_id)['stack'];
 
     $has_results = $type === 'outcome' ? !empty($line) : !empty($numbers);

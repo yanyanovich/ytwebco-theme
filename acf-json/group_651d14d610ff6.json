@@ -112,6 +112,23 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_18f0f64bbb04c",
+            "label": "Button",
+            "name": "b_other_page_hero_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Beside the lead (Services hub).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -133,5 +150,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793569090
+    "modified": 1793609345
 }
