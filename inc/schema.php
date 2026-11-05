@@ -237,7 +237,7 @@ add_action('wp_head', function () {
 });
 
 /**
- * Services hub page in the current language: EN /services/, UA /ua/posluhy/ (its Polylang translation).
+ * Services hub page in the current language: UA /posluhy/, EN /en/services/ (its Polylang translation).
  */
 function theme_get_services_hub_id()
 {

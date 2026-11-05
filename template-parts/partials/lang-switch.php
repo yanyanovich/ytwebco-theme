@@ -17,8 +17,8 @@ $classes = 'lang-switch' . (!empty($args['size']) ? ' lang-switch--' . $args['si
 <nav class="<?php echo esc_attr($classes); ?>" aria-label="<?php echo esc_attr(theme_t('Language')); ?>">
     <?php foreach ($languages as $language) : ?>
         <a href="<?php echo esc_url($language['url']); ?>"
-           hreflang="<?php echo esc_attr($language['slug']); ?>"
-           lang="<?php echo esc_attr($language['slug']); ?>"
+           hreflang="<?php echo esc_attr($language['slug'] === 'ua' ? 'uk' : $language['slug']); ?>"
+           lang="<?php echo esc_attr($language['slug'] === 'ua' ? 'uk' : $language['slug']); ?>"
             <?php echo $language['current'] ? 'aria-current="true"' : ''; ?>><?php echo esc_html($language['label']); ?></a>
     <?php endforeach; ?>
 </nav>

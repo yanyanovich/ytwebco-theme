@@ -225,21 +225,31 @@ add_action('admin_init', function () {
     update_option('theme_string_translations_version', $version, false);
 });
 
-// hreflang en / uk + x-default → the English version (Polylang adds x-default only with browser detection)
+// hreflang uk / en + x-default → always the English version (/en/…), even though UA is the default language
 add_filter('pll_rel_hreflang_attributes', function ($hreflangs) {
-    if (!isset($hreflangs['x-default']) && function_exists('pll_default_language')) {
-        $default = PLL()->model->get_language(pll_default_language());
-        if ($default && isset($hreflangs[$default->get_locale('display')])) {
-            $hreflangs['x-default'] = $hreflangs[$default->get_locale('display')];
-        } elseif ($default && isset($hreflangs[$default->slug])) {
-            $hreflangs['x-default'] = $hreflangs[$default->slug];
-        } elseif (!empty($hreflangs['en'])) {
-            $hreflangs['x-default'] = $hreflangs['en'];
-        }
+    if (!empty($hreflangs['en'])) {
+        $hreflangs['x-default'] = $hreflangs['en'];
     }
 
     return $hreflangs;
 });
+
+// UA used to live under /ua/; it is the default language now (no prefix). 301 old links: /ua/x → /x
+add_action('init', function () {
+    $home_path = (string)wp_parse_url(home_url('/'), PHP_URL_PATH);
+    $uri = (string)($_SERVER['REQUEST_URI'] ?? '');
+
+    if (is_admin() || strpos($uri, $home_path) !== 0) {
+        return;
+    }
+
+    $path = substr($uri, strlen($home_path));
+    if (preg_match('~^ua(?:/(.*))?$~', strtok($path, '?') ?: '', $match)) {
+        $query = strpos($path, '?') !== false ? substr($path, strpos($path, '?')) : '';
+        wp_redirect(home_url('/' . ($match[1] ?? '')) . $query, 301);
+        exit;
+    }
+}, 0);
 
 /**
  * Plural form of a count for the current language: "one", "few" (Ukrainian 2–4) or "many".
@@ -309,10 +319,10 @@ function theme_get_languages()
         }
     }
 
-    // Before Polylang is set up: EN is the only real language, UA lives at /ua/.
+    // Before Polylang is set up: UA is the default language at /, EN lives at /en/.
     return array(
-        array('slug' => 'en', 'label' => 'EN', 'url' => home_url('/'), 'current' => true),
-        array('slug' => 'ua', 'label' => 'UA', 'url' => home_url('/ua/'), 'current' => false),
+        array('slug' => 'en', 'label' => 'EN', 'url' => home_url('/en/'), 'current' => false),
+        array('slug' => 'ua', 'label' => 'UA', 'url' => home_url('/'), 'current' => true),
     );
 }
 
