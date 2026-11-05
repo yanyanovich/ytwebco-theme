@@ -86,6 +86,7 @@ class Tokaruk_Leads
         update_post_meta($post_id, '_lead_fields', $lead['fields']);
         update_post_meta($post_id, '_lead_ref', sanitize_key($lead['ref'] ?? ''));
         update_post_meta($post_id, '_lead_page', esc_url_raw($lead['page'] ?? ''));
+        update_post_meta($post_id, '_lead_attr', (array)($lead['attribution'] ?? array()));
 
         return (int)$post_id;
     }
@@ -123,6 +124,15 @@ class Tokaruk_Leads
             );
         }
         echo '</tbody></table>';
+
+        $attribution = Tokaruk_Leads_Attribution::summary((array)get_post_meta($post->ID, '_lead_attr', true));
+        if ($attribution) {
+            echo '<h3 style="margin:20px 0 8px">' . esc_html__('Source and visit', 'tokaruk-leads') . '</h3><table class="widefat striped"><tbody>';
+            foreach ($attribution as $label => $value) {
+                printf('<tr><th style="width:220px">%s</th><td>%s</td></tr>', esc_html($label), nl2br(esc_html((string)$value)));
+            }
+            echo '</tbody></table>';
+        }
     }
 
     public static function columns($columns)
@@ -132,6 +142,7 @@ class Tokaruk_Leads
             'title' => __('Lead', 'tokaruk-leads'),
             'lead_type' => __('Type', 'tokaruk-leads'),
             'lead_language' => __('Language', 'tokaruk-leads'),
+            'lead_source' => __('Source', 'tokaruk-leads'),
             'lead_delivery' => __('Telegram', 'tokaruk-leads'),
             'date' => $columns['date'],
         );
@@ -140,6 +151,11 @@ class Tokaruk_Leads
     public static function column($column, $post_id)
     {
         $keys = array('lead_type' => '_lead_type', 'lead_language' => '_lead_language', 'lead_delivery' => '_lead_delivery');
+        if ($column === 'lead_source') {
+            $summary = Tokaruk_Leads_Attribution::summary((array)get_post_meta($post_id, '_lead_attr', true));
+            echo esc_html(trim(($summary['Source'] ?? '—') . (!empty($summary['Campaign']) ? ' / ' . $summary['Campaign'] : '')));
+            return;
+        }
         if (isset($keys[$column])) {
             echo esc_html((string)get_post_meta($post_id, $keys[$column], true));
         }

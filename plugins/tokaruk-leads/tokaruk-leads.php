@@ -18,6 +18,7 @@ define('TOKARUK_LEADS_DIR', __DIR__);
 
 require_once __DIR__ . '/includes/class-leads.php';
 require_once __DIR__ . '/includes/class-guard.php';
+require_once __DIR__ . '/includes/class-attribution.php';
 require_once __DIR__ . '/includes/class-telegram.php';
 require_once __DIR__ . '/includes/class-cf7.php';
 require_once __DIR__ . '/includes/class-rest.php';

@@ -80,6 +80,14 @@ class Tokaruk_Leads_Telegram
             }
         }
 
+        if (!empty($lead['attribution'])) {
+            $lines[] = '';
+            $lines[] = '<b>Source</b>';
+            foreach (Tokaruk_Leads_Attribution::summary($lead['attribution']) as $label => $value) {
+                $lines[] = $escape($label) . ': ' . $escape($value);
+            }
+        }
+
         if (!empty($lead['page'])) {
             $lines[] = '';
             $lines[] = $escape($lead['page']);
