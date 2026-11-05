@@ -32,7 +32,10 @@ function theme_custom_image_srcset($sources, $size_array, $image_src, $image_met
         }
     }
 
-    if (!empty($image_meta['width']) && $attachment_id) {
+    // The uploaded original (often a multi-MB PNG screenshot) joins the srcset only when no big generated size exists
+    $has_big_size = !empty($sources[1920]) || !empty($sources[1440]);
+
+    if (!$has_big_size && !empty($image_meta['width']) && $attachment_id) {
         $full_url = wp_get_attachment_url($attachment_id);
 
         if ($full_url) {
@@ -107,3 +110,24 @@ function theme_lazy_in_full_page_start()
     ob_start('theme_lazy_in_html');
 }
 add_action('template_redirect', 'theme_lazy_in_full_page_start');
+
+/**
+ * Generated sizes (the srcset candidates) are written as WebP instead of PNG / JPEG: screenshots of
+ * 2 MB shrink to ~150 KB. The uploaded original stays untouched. Existing images: run
+ * .agent-notes/scripts/regenerate-webp.php once; new uploads are converted automatically.
+ */
+add_filter('image_editor_output_format', function ($formats) {
+    // Site icon sizes stay PNG (apple-touch-icon and old browsers don't take WebP): the crop request is context=site-icon
+    if (isset($_POST['context']) && $_POST['context'] === 'site-icon') {
+        return $formats;
+    }
+
+    $formats['image/png'] = 'image/webp';
+    $formats['image/jpeg'] = 'image/webp';
+
+    return $formats;
+});
+
+add_filter('wp_editor_set_quality', function ($quality, $mime_type) {
+    return $mime_type === 'image/webp' ? 82 : $quality;
+}, 10, 2);

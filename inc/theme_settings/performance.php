@@ -43,3 +43,21 @@ add_action('wp_enqueue_scripts', function () {
     wp_dequeue_style('classic-theme-styles');
     wp_dequeue_script('wp-embed');
 }, 100);
+
+/**
+ * Inline CSS WordPress prints on its own: theme.json "global styles" (~14 KB, not used on the front end)
+ * and the img auto-sizes fix. The theme ships its own tokens.
+ */
+add_action('init', function () {
+    remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
+    remove_action('wp_footer', 'wp_enqueue_global_styles', 1);
+    remove_action('wp_enqueue_scripts', 'wp_enqueue_classic_theme_styles');
+    remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
+    remove_action('wp_head', 'wp_print_auto_sizes_contain_css_fix', 1);
+
+    // Head links nobody reads: feeds (the site has none), REST discovery, canonical-less shortlink
+    remove_action('wp_head', 'feed_links', 2);
+    remove_action('wp_head', 'feed_links_extra', 3);
+    remove_action('wp_head', 'rest_output_link_wp_head');
+    remove_action('template_redirect', 'rest_output_link_header', 11);
+});
