@@ -9,6 +9,9 @@ else :
     $type = get_field('b_case_results_type') ?: 'numbers';
     $numbers = (get_field('b_case_results_numbers') ?: array());
     $compare = (array)get_field('b_case_results_compare');
+    $proof = array_values(array_filter((get_field('b_case_results_proof') ?: array()), function ($item) {
+        return !empty($item['image']);
+    }));
     $line = get_field('b_case_results_line');
     $text = get_field('b_case_results_text');
     $points = array_values(array_filter(array_map('trim', preg_split('/\R/u', (string)get_field('b_case_results_points')))));
@@ -85,6 +88,23 @@ else :
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
+            <?php endif; ?>
+
+            <?php if (!empty($proof)) : ?>
+                <div class="case-results__proof<?php echo count($proof) > 1 ? ' case-results__proof--pair' : ''; ?>">
+                    <?php foreach ($proof as $i => $item) : ?>
+                        <figure class="case-results__proof-item" data-aos="drift-up" data-aos-delay="<?php echo esc_attr($i * 120); ?>">
+                            <?php echo wp_get_attachment_image((int)$item['image'], 'large', false, array(
+                                'class' => 'case-results__proof-image',
+                                'sizes' => '(min-width: 1025px) 580px, calc(100vw - 40px)',
+                                'loading' => 'lazy',
+                            )); ?>
+                            <?php if (!empty($item['caption'])) : ?>
+                                <figcaption class="case-results__proof-caption mono"><?php echo esc_html($item['caption']); ?></figcaption>
+                            <?php endif; ?>
+                        </figure>
+                    <?php endforeach; ?>
+                </div>
             <?php endif; ?>
 
             <?php if (!empty($stack)) : ?>
