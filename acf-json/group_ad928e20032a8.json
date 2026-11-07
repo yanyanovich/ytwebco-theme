@@ -314,6 +314,70 @@
             "new_lines": ""
         },
         {
+            "key": "field_f2a9d04c71b6e",
+            "label": "Result text",
+            "name": "b_case_results_summary",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Optional paragraph under the numbers (numbers type), 2–3 sentences.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_f2a9d04c71b6f",
+            "label": "Client feedback",
+            "name": "b_case_results_quote",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Optional. A real client quote with her/his consent. Empty = the block is hidden.",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_f2a9d04c71b70",
+            "label": "Feedback author",
+            "name": "b_case_results_quote_author",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Name, role (optional).",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_7a8f9b069b874",
             "label": "Full stack",
             "name": "b_case_results_stack",
@@ -426,5 +490,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793990779
+    "modified": 1794061387
 }

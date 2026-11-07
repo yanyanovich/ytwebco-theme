@@ -5,6 +5,7 @@ if (is_admin() && !empty($is_preview)) :
 else :
     $challenge_lead = get_field('b_case_work_challenge_lead');
     $challenge_text = get_field('b_case_work_challenge_text');
+    $solution = get_field('b_case_work_solution');
     $items = (get_field('b_case_work_items') ?: array());
     $meta = get_field('b_case_work_meta');
 
@@ -28,6 +29,10 @@ else :
                     <p class="case-work__lead" data-aos="drift-up"><?php echo esc_html($challenge_lead); ?></p>
                     <?php if (!empty($challenge_text)) : ?>
                         <p class="case-work__text" data-aos="drift-up" data-aos-delay="100"><?php echo esc_html($challenge_text); ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($solution)) : ?>
+                        <h3 class="case-work__sub label" data-aos="drift-up"><?php echo esc_html(theme_t('The solution')); ?></h3>
+                        <p class="case-work__text" data-aos="drift-up" data-aos-delay="100"><?php echo esc_html($solution); ?></p>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>

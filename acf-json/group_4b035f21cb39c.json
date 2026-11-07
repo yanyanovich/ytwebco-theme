@@ -4,11 +4,11 @@
     "fields": [
         {
             "key": "field_6978177b602e9",
-            "label": "Challenge \u2014 lead",
+            "label": "Challenge — lead",
             "name": "b_case_work_challenge_lead",
             "aria-label": "",
             "type": "textarea",
-            "instructions": "Empty: \u201cThe challenge\u201d is hidden and the sections renumber.",
+            "instructions": "Empty: “The challenge” is hidden and the sections renumber.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -20,12 +20,12 @@
             "maxlength": "",
             "allow_in_bindings": 0,
             "rows": 3,
-            "placeholder": "The store had heavy traffic at peak hours\u2026",
+            "placeholder": "The store had heavy traffic at peak hours…",
             "new_lines": ""
         },
         {
             "key": "field_05bd7592803c0",
-            "label": "Challenge \u2014 text",
+            "label": "Challenge — text",
             "name": "b_case_work_challenge_text",
             "aria-label": "",
             "type": "textarea",
@@ -41,7 +41,27 @@
             "maxlength": "",
             "allow_in_bindings": 0,
             "rows": 3,
-            "placeholder": "The business also needed custom features\u2026",
+            "placeholder": "The business also needed custom features…",
+            "new_lines": ""
+        },
+        {
+            "key": "field_e7b3c91a4d052",
+            "label": "Solution",
+            "name": "b_case_work_solution",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Optional. How the task was solved, 2–3 sentences. Shown under the challenge text with the heading \"The solution\".",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "placeholder": "The business also needed custom features…",
             "new_lines": ""
         },
         {
@@ -106,7 +126,7 @@
                     "maxlength": "",
                     "allow_in_bindings": 0,
                     "rows": 2,
-                    "placeholder": "integration with the national alerts API\u2026",
+                    "placeholder": "integration with the national alerts API…",
                     "new_lines": "",
                     "parent_repeater": "field_70d9883f0687b"
                 }
@@ -118,7 +138,7 @@
             "name": "b_case_work_meta",
             "aria-label": "",
             "type": "text",
-            "instructions": "Right side of the \u201cWhat I did\u201d head; shown when there is no challenge (the list then takes the full width).",
+            "instructions": "Right side of the “What I did” head; shown when there is no challenge (the list then takes the full width).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -139,7 +159,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/case-blocks-work"
+                "value": "acf/case-blocks-work"
             }
         ]
     ],
@@ -153,5 +173,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793527251
+    "modified": 1794061376
 }
