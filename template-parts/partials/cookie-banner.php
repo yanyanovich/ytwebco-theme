@@ -20,6 +20,7 @@ $categories = array(
         <?php if ($privacy_id) : ?>
             <a class="link-inline" href="<?php echo esc_url(get_permalink($privacy_id)); ?>"><?php echo esc_html(theme_t('Privacy policy')); ?></a>
         <?php endif; ?>
+        <a class="link-inline" href="<?php echo esc_url(theme_get_page_url('cookies')); ?>"><?php echo esc_html(theme_t('Cookie policy')); ?></a>
     </p>
     <div class="cookie-banner__actions">
         <button type="button" class="btn btn--ghost btn--sm cookie-banner__settings" data-cookie-settings><?php echo esc_html(theme_t('Settings')); ?></button>

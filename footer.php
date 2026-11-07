@@ -14,6 +14,7 @@ $contacts = theme_get_contacts();
 $socials = theme_get_socials();
 $contact_url = theme_get_page_url('contact');
 $privacy_url = get_privacy_policy_url() ?: theme_get_page_url('privacy');
+$cookie_policy_url = theme_get_page_url('cookies');
 $perf = theme_get_perf();
 
 // Services column = children of the menu item that has them; Site column = the other top-level items
@@ -118,6 +119,7 @@ $utc_label = 'UTC' . ($kyiv_offset >= 0 ? '+' : '−') . abs($kyiv_offset);
             <span class="footer__copy">© <?php echo esc_html(wp_date('Y')); ?> YT Web Co.</span>
             <span class="footer__legal-links">
                 <a class="link-muted" href="<?php echo esc_url($privacy_url); ?>"><?php echo esc_html(theme_t('Privacy policy')); ?></a>
+                <a class="link-muted" href="<?php echo esc_url($cookie_policy_url); ?>"><?php echo esc_html(theme_t('Cookie policy')); ?></a>
                 <button type="button" class="link-muted" data-cookie-settings><?php echo esc_html(theme_t('Cookie settings')); ?></button>
             </span>
             <span class="footer__built">

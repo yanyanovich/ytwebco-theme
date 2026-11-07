@@ -14,6 +14,9 @@ else :
     }));
     $line = get_field('b_case_results_line');
     $text = get_field('b_case_results_text');
+    $summary = get_field('b_case_results_summary');
+    $quote = get_field('b_case_results_quote');
+    $quote_author = get_field('b_case_results_quote_author');
     $points = array_values(array_filter(array_map('trim', preg_split('/\R/u', (string)get_field('b_case_results_points')))));
     $stack = array_values(array_filter(array_map('trim', preg_split('/\R/u', (string)get_field('b_case_results_stack')))));
     $stack = !empty($stack) ? $stack : theme_get_case_card($case_id)['stack'];
@@ -88,6 +91,20 @@ else :
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
+            <?php endif; ?>
+
+            <?php if ($has_results && $type !== 'outcome' && !empty($summary)) : ?>
+                <p class="case-results__summary" data-aos="drift-up"><?php echo esc_html($summary); ?></p>
+            <?php endif; ?>
+
+            <?php if (!empty($quote)) : ?>
+                <figure class="case-results__quote" data-aos="drift-up">
+                    <figcaption class="label"><?php echo esc_html(theme_t('Client feedback')); ?></figcaption>
+                    <blockquote><p><?php echo esc_html($quote); ?></p></blockquote>
+                    <?php if (!empty($quote_author)) : ?>
+                        <cite class="mono"><?php echo esc_html($quote_author); ?></cite>
+                    <?php endif; ?>
+                </figure>
             <?php endif; ?>
 
             <?php if (!empty($proof)) : ?>
