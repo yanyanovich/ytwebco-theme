@@ -60,7 +60,7 @@ class Tokaruk_Leads_CF7
         $fields = array();
 
         foreach ($posted as $name => $value) {
-            if (strpos($name, '_') === 0 || $name === Tokaruk_Leads_Guard::HONEYPOT) {
+            if (strpos($name, '_') === 0 || $name === Tokaruk_Leads_Guard::HONEYPOT || $name === 'yt_attr') {
                 continue;
             }
             $value = is_array($value) ? array_values(array_filter(array_map('sanitize_text_field', $value))) : sanitize_textarea_field((string)$value);
@@ -81,6 +81,7 @@ class Tokaruk_Leads_CF7
             'contact' => (string)($fields['Email'] ?? $fields['Phone / Telegram'] ?? ''),
             'fields' => $fields,
             'page' => $page_id ? get_permalink($page_id) : (string)$submission->get_meta('url'),
+            'attribution' => Tokaruk_Leads_Attribution::build($posted['yt_attr'] ?? ''),
         );
 
         self::$lead_id = Tokaruk_Leads::save($lead);

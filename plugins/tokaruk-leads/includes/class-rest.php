@@ -9,6 +9,7 @@ if (!defined('ABSPATH')) {
  *
  * Body (JSON): {
  *   language: "en" | "uk", ref?: string, page?: string, tl_website?: "" (honeypot),
+ *   attribution?: object (UTM, referrer, trail… see setup-attribution.js),
  *   design_path?: "express" | "designer" (Website design page),
  *   name: string, email?: string, contact?: string, project_type?: string,
  *   steps: [{ title: string, fields: { [label]: string | string[] } }]
@@ -96,6 +97,7 @@ class Tokaruk_Leads_Rest
             'fields' => $fields,
             'ref' => sanitize_key($body['ref'] ?? ''),
             'page' => esc_url_raw($body['page'] ?? ''),
+            'attribution' => Tokaruk_Leads_Attribution::build($body['attribution'] ?? array()),
         );
 
         $post_id = Tokaruk_Leads::save($lead);
