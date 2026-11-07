@@ -8,7 +8,7 @@
             "name": "b_case_results_meta",
             "aria-label": "",
             "type": "text",
-            "instructions": "Right side of the \u201cResults\u201d head.",
+            "instructions": "Right side of the “Results” head.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -94,7 +94,7 @@
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
-                    "placeholder": "\u221265%",
+                    "placeholder": "−65%",
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_56bd54e9f54c9"
@@ -138,7 +138,7 @@
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
-                    "placeholder": "Teacher \u00b7 students \u00b7 parents",
+                    "placeholder": "Teacher · students · parents",
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_56bd54e9f54c9"
@@ -147,11 +147,11 @@
         },
         {
             "key": "field_285341969d790",
-            "label": "Before \/ after",
+            "label": "Before / after",
             "name": "b_case_results_compare",
             "aria-label": "",
             "type": "group",
-            "instructions": "Optional bars under a single number. The \u201cafter\u201d bar is sized by the ratio of the two numbers.",
+            "instructions": "Optional bars under a single number. The “after” bar is sized by the ratio of the two numbers.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -228,7 +228,7 @@
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
-                    "placeholder": "\/ day",
+                    "placeholder": "/ day",
                     "prepend": "",
                     "append": ""
                 }
@@ -298,7 +298,7 @@
             "name": "b_case_results_points",
             "aria-label": "",
             "type": "textarea",
-            "instructions": "One per line, shown as a check list next to the outcome line or a single number (not with before \/ after bars).",
+            "instructions": "One per line, shown as a check list next to the outcome line or a single number (not with before / after bars).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -333,6 +333,78 @@
             "rows": 4,
             "placeholder": "WordPress\nWooCommerce (HPOS)",
             "new_lines": ""
+        },
+        {
+            "key": "field_c1a5f0e2d7b41",
+            "label": "Proof images",
+            "name": "b_case_results_proof",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Screenshots that back the results (e.g. Lighthouse reports), shown under the numbers.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 4,
+            "collapsed": "field_c1a5f0e2d7b43",
+            "button_label": "Add image",
+            "sub_fields": [
+                {
+                    "key": "field_c1a5f0e2d7b42",
+                    "label": "Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_c1a5f0e2d7b41"
+                },
+                {
+                    "key": "field_c1a5f0e2d7b43",
+                    "label": "Caption",
+                    "name": "caption",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_c1a5f0e2d7b41"
+                }
+            ]
         }
     ],
     "location": [
@@ -340,7 +412,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/case-blocks-results"
+                "value": "acf/case-blocks-results"
             }
         ]
     ],
@@ -354,5 +426,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793527251
+    "modified": 1793990779
 }
