@@ -277,10 +277,10 @@ function theme_og_render(array $data)
     // ---- footer rule, author line, stat or arrow box
     imageline($im, $left, (int)round($footer_top), $right, (int)round($footer_top), $line);
 
-    $minutes = (int)$data['minutes'];
-    $byline = $data['lang'] === 'en'
+    $minutes = (int)($data['minutes'] ?? 0);
+    $byline = isset($data['byline']) ? (string)$data['byline'] : ($data['lang'] === 'en'
         ? sprintf('Yan Tokaruk · %d min read', $minutes)
-        : sprintf('Ян Токарук · %d хв читання', $minutes);
+        : sprintf('Ян Токарук · %d хв читання', $minutes));
     $box_top = $content_bottom - 4 - 20 * $mono_content;
     theme_og_text($im, $mono400, 20, $left, $box_top + 20 * $mono_asc, $byline, $text2);
 
@@ -334,6 +334,40 @@ function theme_og_post_data($post_id)
         'lang' => $lang === 'en' ? 'en' : 'ua',
         'stat' => function_exists('get_field') ? trim((string)get_field('og_stat', $post_id)) : '',
     );
+}
+
+/**
+ * Default OG image of the blog archive (one per language), made on first use: uploads/og-{lang}-blog.png.
+ *
+ * @return string URL or '' when it cannot be made
+ */
+function theme_og_blog_image($lang)
+{
+    $lang = $lang === 'en' ? 'en' : 'ua';
+    $upload = wp_upload_dir();
+    $path = trailingslashit($upload['basedir']) . 'og-' . $lang . '-blog.png';
+    $url = trailingslashit($upload['baseurl']) . 'og-' . $lang . '-blog.png';
+
+    if (!file_exists($path)) {
+        $im = theme_og_render(array(
+            'title' => $lang === 'en' ? 'Notes on fast WordPress sites' : 'Блог про швидкі сайти на WordPress',
+            'category' => '',
+            'lang' => $lang,
+            'byline' => $lang === 'en' ? 'Yan Tokaruk · Blog' : 'Ян Токарук · Блог',
+            'stat' => '',
+        ));
+        if (is_wp_error($im)) {
+            return '';
+        }
+        wp_mkdir_p(dirname($path));
+        $ok = imagepng($im, $path, 6);
+        imagedestroy($im);
+        if (!$ok) {
+            return '';
+        }
+    }
+
+    return $url . '?v=' . filemtime($path);
 }
 
 function theme_og_file($post_id)
