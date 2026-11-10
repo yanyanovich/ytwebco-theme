@@ -122,6 +122,33 @@ function theme_is_blog_archive()
     return is_post_type_archive('post') && !is_category();
 }
 
+// On the live site Yoast does print tags for /blog/ (it takes the archive for the posts home: canonical = the homepage,
+// WebSite/CollectionPage schema). Its canonical, description, social and schema presenters are dropped for this page so the
+// tags printed below are the only ones (two different canonicals would be worse than none).
+add_filter('wpseo_frontend_presenters', function ($presenters) {
+    if (!theme_is_blog_archive() || !is_array($presenters)) {
+        return $presenters;
+    }
+
+    $drop = array('Canonical_Presenter', 'Meta_Description_Presenter', 'Schema_Presenter', 'Rel_Next_Presenter', 'Rel_Prev_Presenter');
+
+    return array_values(array_filter($presenters, function ($presenter) use ($drop) {
+        $class = is_object($presenter) ? get_class($presenter) : (string)$presenter;
+
+        if (strpos($class, '\\Open_Graph\\') !== false || strpos($class, '\\Twitter\\') !== false) {
+            return false;
+        }
+
+        foreach ($drop as $name) {
+            if (substr($class, -strlen($name)) === $name) {
+                return false;
+            }
+        }
+
+        return true;
+    }));
+});
+
 add_filter('pre_get_document_title', function ($title) {
     if (!theme_is_blog_archive()) {
         return $title;
