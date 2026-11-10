@@ -88,7 +88,7 @@ get_header();
                             </nav>
                             <div class="toc-cta" data-sticky-hide>
                                 <p class="toc-cta__title"><?php echo esc_html(theme_t('Site is slow and you can’t see why?')); ?></p>
-                                <a class="link-ul link-ul--line toc-cta__link" href="<?php echo esc_url(theme_get_page_url('bryf')); ?>" data-cta="post-cta-brief">
+                                <a class="link-ul link-ul--line toc-cta__link" href="<?php echo esc_url(theme_get_page_url('bryf')); ?>" data-cta="post-aside-brief">
                                     <?php echo esc_html(theme_t('Fill in the brief')); ?> <span class="arrow"><?php echo theme_icon('arrow-right', 14); ?></span>
                                 </a>
                             </div>
