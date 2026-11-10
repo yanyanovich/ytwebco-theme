@@ -18,7 +18,12 @@ get_header();
             $updated = theme_get_updated_date($post_id);
             $blog_url = theme_get_blog_url();
             $contacts = theme_get_contacts();
-            $has_full_cta = strpos($article['html'], 'cta-help--full') !== false;
+            // The full CTA card is written at the end of the post, but the design shows it after the author box
+            $full_cta = '';
+            if (preg_match('#<aside class="cta-help cta-help--full.*?</aside>#s', $article['html'], $cta_match)) {
+                $full_cta = $cta_match[0];
+                $article['html'] = str_replace($full_cta, '', $article['html']);
+            }
 
             $toc_items = array_map(function ($item, $index) {
                 $number = preg_match('/^\s*(\d+)[\.\)]\s*(.+)$/u', $item['title'], $m) ? sprintf('%02d', $m[1]) : '—';
@@ -92,14 +97,6 @@ get_header();
                             <?php echo $article['html']; // the_content output, ids added to H2 ?>
                         </div>
 
-                        <?php if (!$has_full_cta) : ?>
-                            <?php echo render_block(array('blockName' => 'acf/blog-blocks-cta-help', 'attrs' => array('name' => 'acf/blog-blocks-cta-help', 'data' => array(
-                                'b_blog_cta_help_variant' => 'full',
-                                'b_blog_cta_help_title' => theme_t('Need help?'),
-                                'b_blog_cta_help_text' => theme_t('Site is slow and you can’t see why?') . ' ' . theme_t('I’ll look at your site and give you a fixed price.'),
-                            )), 'innerBlocks' => array())); ?>
-                        <?php endif; ?>
-
                         <aside class="author-box">
                             <span class="author-box__avatar mono" aria-hidden="true"><?php echo esc_html(theme_t('YT')); ?></span>
                             <div class="author-box__text">
@@ -111,6 +108,14 @@ get_header();
                                 </p>
                             </div>
                         </aside>
+
+                        <?php if ($full_cta !== '') : echo $full_cta; // rendered cta-help block (full variant)
+                        else : echo render_block(array('blockName' => 'acf/blog-blocks-cta-help', 'attrs' => array('name' => 'acf/blog-blocks-cta-help', 'data' => array(
+                            'b_blog_cta_help_variant' => 'full',
+                            'b_blog_cta_help_title' => theme_t('Need help?'),
+                            'b_blog_cta_help_text' => theme_t('Site is slow and you can’t see why?') . ' ' . theme_t('I’ll look at your site and give you a fixed price.'),
+                        )), 'innerBlocks' => array()));
+                        endif; ?>
                     </div>
                 </div>
 

@@ -15,7 +15,11 @@ if ($text === '') {
 <aside class="<?php echo esc_attr(trim(implode(' ', array_filter($classes)))); ?>"<?php echo $variant === 'full' ? ' data-sticky-hide data-article-end' : ''; ?>>
     <div class="cta-help__body">
         <?php if ($variant === 'full') : ?>
-            <p class="cta-help__label label"><span class="cta-help__slash" aria-hidden="true">//</span> <?php echo esc_html($title ?: theme_t('Need help?')); ?></p>
+            <span class="status-pill cta-help__status">
+                <span class="dot dot--pulse" aria-hidden="true"></span>
+                <?php echo esc_html(theme_t('Available for new projects')); ?>
+            </span>
+            <h3 class="cta-help__title"><?php echo esc_html($title ?: theme_t('Need help?')); ?></h3>
         <?php endif; ?>
         <p class="cta-help__text"><?php echo esc_html($text); ?></p>
     </div>

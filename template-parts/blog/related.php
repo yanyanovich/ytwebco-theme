@@ -17,7 +17,10 @@ $is_ua = strpos($locale, 'uk') === 0;
 ?>
 <section class="blog-related bp" data-section>
     <div class="container">
-        <h2 class="blog-related__title"><?php echo esc_html(theme_t('Read next')); ?></h2>
+        <div class="blog-related__head">
+            <h2 class="blog-related__title"><?php echo esc_html(theme_t('Next articles')); ?></h2>
+            <a class="link-ul link-ul--line blog-related__all" href="<?php echo esc_url(theme_get_blog_url()); ?>"><?php echo esc_html(theme_t('All posts')); ?> <span class="arrow"><?php echo theme_icon('arrow-right', 14); ?></span></a>
+        </div>
         <div class="blog-grid blog-grid--related">
             <?php if ($service_id) :
                 $desc = (string)get_post_meta($service_id, '_yoast_wpseo_metadesc', true);

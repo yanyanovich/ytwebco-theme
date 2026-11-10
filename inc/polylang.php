@@ -136,6 +136,7 @@ function theme_get_translatable_strings()
         'Blog: sticky discuss' => 'Let’s talk',
         'Blog: sticky contents' => 'Contents',
         'Blog: close' => 'Close',
+        'Blog: all posts' => 'All posts',
     );
 }
 
@@ -274,6 +275,7 @@ function theme_get_string_translations()
             'Blog: sticky discuss' => 'Обговорити',
             'Blog: sticky contents' => 'Зміст',
             'Blog: close' => 'Закрити',
+            'Blog: all posts' => 'Усі статті',
         ),
     );
 }
