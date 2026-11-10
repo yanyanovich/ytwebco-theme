@@ -141,6 +141,8 @@ $utc_label = 'UTC' . ($kyiv_offset >= 0 ? '+' : '−') . abs($kyiv_offset);
     ));
 } ?>
 
+<?php get_template_part('template-parts/partials/sticky-cta'); ?>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

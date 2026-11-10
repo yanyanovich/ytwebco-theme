@@ -1,0 +1,112 @@
+{
+    "key": "group_a0a419861dc61",
+    "title": "Blog block: CTA help",
+    "fields": [
+        {
+            "key": "field_b98d74b792b66",
+            "label": "Variant",
+            "name": "b_blog_cta_help_variant",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "inline": "Inline (once, mid-article)",
+                "full": "Full (after the article)"
+            },
+            "default_value": "inline",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_8a676253f4ae4",
+            "label": "Title",
+            "name": "b_blog_cta_help_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Full variant only.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Потрібна допомога?",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_e7b5efcedc5e1",
+            "label": "Text",
+            "name": "b_blog_cta_help_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_0972c858f3e12",
+            "label": "Primary button",
+            "name": "b_blog_cta_help_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Empty = brief page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/blog-blocks-cta-help"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1794333361
+}

@@ -9,14 +9,14 @@ if ($privacy_id && function_exists('pll_get_post')) {
 }
 $categories = array(
     'necessary' => array(theme_t('Necessary'), theme_t('Keep the site and forms working.')),
-    'a' => array(theme_t('Analytics'), theme_t('Google Analytics 4 — helps me see which pages are useful.')),
+    'a' => array(theme_t('Analytics'), theme_t('Google Analytics 4 and Microsoft Clarity — help me see which pages are useful.')),
     'm' => array(theme_t('Marketing'), theme_t('Google Ads (conversion tracking).')),
 );
 ?>
 <div class="cookie-banner" data-cookie-banner role="region" aria-label="<?php echo esc_attr(theme_t('Cookies')); ?>">
     <span class="cookie-banner__icon mono" aria-hidden="true">{ }</span>
     <p class="cookie-banner__text">
-        <?php echo esc_html(theme_t('This site uses cookies. Necessary ones keep it working; analytics (Google Analytics 4) and marketing (Google Ads conversion tracking) only with your consent.')); ?>
+        <?php echo esc_html(theme_t('This site uses cookies. Necessary ones keep it working; analytics (Google Analytics 4, Microsoft Clarity) and marketing (Google Ads conversion tracking) only with your consent.')); ?>
         <?php if ($privacy_id) : ?>
             <a class="link-inline" href="<?php echo esc_url(get_permalink($privacy_id)); ?>"><?php echo esc_html(theme_t('Privacy policy')); ?></a>
         <?php endif; ?>

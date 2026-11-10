@@ -12,20 +12,27 @@ if (!defined('ABSPATH')) {
 function theme_get_faq_items($post_id)
 {
     $post = get_post($post_id);
-    if (!$post || !has_block('acf/home-page-blocks-faq', $post)) {
+    if (!$post) {
         return array();
     }
 
+    // block name => data key prefix of its repeater
+    $sources = array(
+        'acf/home-page-blocks-faq' => 'b_hp_faq_items',
+        'acf/blog-blocks-faq' => 'b_blog_faq_items',
+    );
+
     $items = array();
     foreach (parse_blocks($post->post_content) as $block) {
-        if ($block['blockName'] !== 'acf/home-page-blocks-faq' || empty($block['attrs']['data'])) {
+        if (!isset($sources[$block['blockName']]) || empty($block['attrs']['data'])) {
             continue;
         }
         $data = $block['attrs']['data'];
-        $count = (int)($data['b_hp_faq_items'] ?? 0);
+        $key = $sources[$block['blockName']];
+        $count = (int)($data[$key] ?? 0);
         for ($i = 0; $i < $count; $i++) {
-            $question = trim(wp_strip_all_tags((string)($data["b_hp_faq_items_{$i}_question"] ?? '')));
-            $answer = trim(wp_strip_all_tags((string)($data["b_hp_faq_items_{$i}_answer"] ?? '')));
+            $question = trim(wp_strip_all_tags((string)($data["{$key}_{$i}_question"] ?? '')));
+            $answer = trim(wp_strip_all_tags((string)($data["{$key}_{$i}_answer"] ?? '')));
             if ($question !== '' && $answer !== '') {
                 $items[] = array('question' => $question, 'answer' => $answer);
             }
@@ -111,6 +118,15 @@ function theme_get_breadcrumbs()
         'label' => $work_page_id ? get_the_title($work_page_id) : theme_t('Work'),
         'url' => (string)get_post_type_archive_link('case'),
     );
+
+    // Blog: archive and category archives = Home / Blog, article = Home / Blog / {post}
+    if (is_singular('post') || is_post_type_archive('post') || is_category()) {
+        $blog = array('label' => theme_t('Blog'), 'url' => function_exists('theme_get_blog_url') ? theme_get_blog_url() : home_url('/blog/'));
+
+        return is_singular('post')
+            ? array($home, $blog, array('label' => function_exists('theme_get_short_title') ? theme_get_short_title(get_queried_object_id()) : get_the_title(get_queried_object_id()), 'url' => get_permalink(get_queried_object_id())))
+            : array($home, $blog);
+    }
 
     if (is_singular('case')) {
         return array($home, $work, array('label' => get_the_title(get_queried_object_id()), 'url' => get_permalink(get_queried_object_id())));

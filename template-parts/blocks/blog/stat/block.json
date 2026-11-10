@@ -1,0 +1,34 @@
+{
+  "name": "acf/blog-blocks-stat",
+  "title": "Blog blocks Stat",
+  "description": "One to three big numbers with a label under each.",
+  "style": [],
+  "category": "blog-blocks",
+  "icon": "chart-bar",
+  "keywords": [
+    "number",
+    "metric"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": true,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

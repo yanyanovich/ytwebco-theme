@@ -344,6 +344,27 @@
             "placeholder": "AbCdEfGh123",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_c1a4172b9e0d3",
+            "label": "Microsoft Clarity project ID",
+            "name": "theme_settings_clarity_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Loaded only after the visitor accepts Analytics in the cookie banner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "abcde12345",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -365,5 +386,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1793569597
+    "modified": 1794000000
 }

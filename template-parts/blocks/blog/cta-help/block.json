@@ -1,0 +1,35 @@
+{
+  "name": "acf/blog-blocks-cta-help",
+  "title": "Blog blocks CTA help",
+  "description": "\"Need help?\" card: inline (once, mid-article) or full (after the article, brief + Telegram).",
+  "style": [],
+  "category": "blog-blocks",
+  "icon": "megaphone",
+  "keywords": [
+    "cta",
+    "help",
+    "brief"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": true,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

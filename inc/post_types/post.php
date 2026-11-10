@@ -20,9 +20,3 @@ function theme_order_post_type($query)
     return $query;
 }
 add_filter('pre_get_posts', 'theme_order_post_type');
-
-function theme_remove_posts_menu()
-{
-    remove_menu_page('edit.php');
-}
-add_action('admin_menu', 'theme_remove_posts_menu');

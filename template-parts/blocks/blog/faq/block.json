@@ -1,0 +1,34 @@
+{
+  "name": "acf/blog-blocks-faq",
+  "title": "Blog blocks FAQ",
+  "description": "Questions and answers for the end of the article (also FAQPage schema).",
+  "style": [],
+  "category": "blog-blocks",
+  "icon": "editor-help",
+  "keywords": [
+    "faq",
+    "questions"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": false,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}
