@@ -53,6 +53,10 @@ function theme_get_menu_tree($location)
             if (!$is_current && is_singular('case')) {
                 $is_current = untrailingslashit($item->url) === untrailingslashit((string)get_post_type_archive_link('case'));
             }
+            // Articles and category archives sit under "Blog" (/blog/)
+            if (!$is_current && (is_singular('post') || is_category()) && function_exists('theme_get_blog_url')) {
+                $is_current = untrailingslashit($item->url) === untrailingslashit(theme_get_blog_url());
+            }
             $has_current_child = in_array(true, array_column($children, 'current'), true);
 
             $branch[] = array(

@@ -230,6 +230,15 @@ function theme_prepare_article_content($html)
         return '<h2' . $attrs . ' id="' . esc_attr($id) . '">' . $match[2] . '</h2>';
     }, $html);
 
+    // Code blocks: a header with the language (class language-xxx) and a copy button
+    $html = preg_replace_callback('~<pre([^>]*class="[^"]*wp-block-code[^"]*"[^>]*)>(<code([^>]*)>)(.*?)</code></pre>~is', function ($match) {
+        $language = preg_match('/language-([a-z0-9+-]+)/i', $match[3], $lang) ? strtoupper($lang[1]) : 'CODE';
+
+        return '<div class="code-block"><div class="code-block__head mono"><span>' . esc_html($language) . '</span>'
+            . '<button type="button" class="code-block__copy" data-copy-code data-copied="' . esc_attr(theme_t('Copied')) . '">' . esc_html(theme_t('Copy')) . '</button></div>'
+            . '<pre' . $match[1] . ' tabindex="0">' . $match[2] . $match[4] . '</code></pre></div>';
+    }, $html);
+
     return array('html' => $html, 'toc' => $toc);
 }
 

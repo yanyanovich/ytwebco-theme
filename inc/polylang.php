@@ -137,6 +137,8 @@ function theme_get_translatable_strings()
         'Blog: sticky contents' => 'Contents',
         'Blog: close' => 'Close',
         'Blog: all posts' => 'All posts',
+        'Blog: copy' => 'Copy',
+        'Blog: copied' => 'Copied',
     );
 }
 
@@ -276,6 +278,8 @@ function theme_get_string_translations()
             'Blog: sticky contents' => 'Зміст',
             'Blog: close' => 'Закрити',
             'Blog: all posts' => 'Усі статті',
+            'Blog: copy' => 'Копіювати',
+            'Blog: copied' => 'Скопійовано',
         ),
     );
 }
