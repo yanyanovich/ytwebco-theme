@@ -16,8 +16,10 @@ const THEME_BLOG_PER_PAGE = 9;
  * The blog archive has no WordPress page: Polylang cannot serve two pages with the same slug ("blog") in two languages,
  * so /blog/ and /en/blog/ are post type archive rules (flush permalinks once after deploy).
  */
+// Only on the front end: is_post_type_archive('post') needs it, but in wp-admin Yoast's settings screen then expects
+// archive settings that do not exist for the built-in "post" type and crashes ("t.split is not a function").
 add_filter('register_post_type_args', function ($args, $post_type) {
-    if ($post_type === 'post') {
+    if ($post_type === 'post' && !is_admin()) {
         $args['has_archive'] = true;
     }
 
