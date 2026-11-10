@@ -15,7 +15,8 @@ function theme_allowed_block_types($allowed_blocks, $editor_context)
     $page_template = $post->ID ? basename(get_post_meta($post->ID, '_wp_page_template', true)) : '';
 
     if ($page_template === 'policy.php') {
-        $theme_blocks = theme_collect_block_groups($groups, 'core_min', 'acf_other');
+        // Policy pages are plain legal text: headings, lists, links, tables
+        $theme_blocks = theme_collect_block_groups($groups, 'core_full', 'acf_other');
     } else {
         switch ($post->post_type) {
             case 'post':

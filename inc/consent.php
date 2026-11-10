@@ -7,6 +7,7 @@ if (!defined('ABSPATH')) {
  * Cookie consent with Google Consent Mode v2.
  * - Default: everything denied except necessary storage; GA4 / Google Ads are not loaded at all.
  * - The choice lives in the yt_consent cookie for 6 months: {"a": analytics, "m": marketing, "v": 1}.
+ * - Microsoft Clarity loads only with Analytics consent (Clarity consent API v2 is told about the choice).
  * - window.ytConsent.set() (cookie banner JS) saves a choice, sends the consent update and loads gtag.js
  *   with only the products that were accepted. IDs come from Theme settings → Tracking.
  */
@@ -20,6 +21,7 @@ function theme_get_tracking_ids()
         'ga4' => preg_match('/^G-[A-Z0-9]+$/i', $get('ga4_id')) ? $get('ga4_id') : '',
         'ads' => preg_match('/^AW-\d+$/i', $get('ads_id')) ? $get('ads_id') : '',
         'label' => preg_replace('/[^A-Za-z0-9_-]/', '', $get('ads_label')),
+        'clarity' => preg_replace('/[^a-z0-9]/i', '', $get('clarity_id')),
     );
 }
 
@@ -50,7 +52,23 @@ add_action('wp_head', function () {
                     return null;
                 }
             }
+            function clarityLoad(choice) {
+                if (!ids.clarity) return;
+                if (!choice.a) {
+                    if (window.clarity) window.clarity('consent', false);
+                    return;
+                }
+                if (!window.clarity) {
+                    (function (c, l, a, r, i, t, y) {
+                        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+                        t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+                        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+                    })(window, document, 'clarity', 'script', ids.clarity);
+                }
+                window.clarity('consent', true);
+            }
             function apply(choice) {
+                clarityLoad(choice);
                 gtag('consent', 'update', {
                     analytics_storage: state(choice.a), ad_storage: state(choice.m),
                     ad_user_data: state(choice.m), ad_personalization: state(choice.m)
