@@ -26,6 +26,7 @@ require get_template_directory() . '/inc/blog.php';
 require get_template_directory() . '/inc/sticky_cta.php';
 require get_template_directory() . '/inc/og_image.php';
 require get_template_directory() . '/inc/blog_seo.php';
+require get_template_directory() . '/inc/search_author.php';
 require get_template_directory() . '/inc/schema.php';
 require get_template_directory() . '/inc/seo.php';
 require get_template_directory() . '/inc/a11y.php';
