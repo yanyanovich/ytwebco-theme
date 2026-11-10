@@ -30,6 +30,8 @@ get_header();
                 $title = isset($m[2]) && $number !== '—' ? $m[2] : $item['title'];
                 return array('id' => $item['id'], 'num' => $number, 'title' => $title);
             }, $toc, array_keys($toc));
+
+            $GLOBALS['theme_article_toc'] = count($toc_items) > 1 ? $toc_items : array(); // sticky bar + TOC sheet (footer)
             ?>
             <article class="article" id="post-<?php the_ID(); ?>">
                 <header class="article__head bp">
