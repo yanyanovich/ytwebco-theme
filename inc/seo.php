@@ -51,11 +51,12 @@ foreach (array('wpseo_opengraph_title', 'wpseo_twitter_title') as $filter) {
 }
 
 /**
- * Archives nobody needs: the site has no blog. Author pages would also expose the login name in their URL.
+ * Archives nobody needs: date archives and post formats. The author page is a designed profile of the single author
+ * (author.php); its URL carries the slug "yan-tokaruk" (inc/search_author.php), not the login e-mail.
  */
 add_filter('option_wpseo_titles', function ($titles) {
     if (is_array($titles)) {
-        $titles['disable-author'] = true;
+        $titles['disable-author'] = false;
         $titles['disable-date'] = true;
         $titles['disable-post_format'] = true;
     }

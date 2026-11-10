@@ -18,6 +18,7 @@ get_header();
             $updated = theme_get_updated_date($post_id);
             $blog_url = theme_get_blog_url();
             $contacts = theme_get_contacts();
+            $author_url = get_author_posts_url((int)get_post_field('post_author', $post_id));
             // The full CTA card is written at the end of the post, but the design shows it after the author box
             $full_cta = '';
             if (preg_match('#<aside class="cta-help cta-help--full.*?</aside>#s', $article['html'], $cta_match)) {
@@ -50,7 +51,7 @@ get_header();
 
                             <div class="article__meta">
                                 <span class="article__avatar mono" aria-hidden="true"><?php echo esc_html(theme_t('YT')); ?></span>
-                                <span class="article__author mono"><?php echo esc_html(theme_t('Yan Tokaruk')); ?></span>
+                                <a class="article__author mono" href="<?php echo esc_url($author_url); ?>" rel="author"><?php echo esc_html(theme_t('Yan Tokaruk')); ?></a>
                                 <span class="article__meta-item mono"><?php echo esc_html(theme_t('Published')); ?> <time datetime="<?php echo esc_attr($card['iso']); ?>"><?php echo esc_html($card['date']); ?></time></span>
                                 <?php if ($updated) : ?>
                                     <span class="article__meta-item mono"><?php echo esc_html(theme_t('Updated')); ?> <time datetime="<?php echo esc_attr($updated); ?>"><?php echo esc_html(theme_blog_date(strtotime($updated))); ?></time></span>
@@ -103,7 +104,7 @@ get_header();
                         <aside class="author-box">
                             <span class="author-box__avatar mono" aria-hidden="true"><?php echo esc_html(theme_t('YT')); ?></span>
                             <div class="author-box__text">
-                                <p class="author-box__name"><strong><?php echo esc_html(theme_t('Yan Tokaruk')); ?></strong> <span class="mono"><?php echo esc_html(theme_t('WordPress developer · Lutsk')); ?></span></p>
+                                <p class="author-box__name"><strong><a href="<?php echo esc_url($author_url); ?>" rel="author"><?php echo esc_html(theme_t('Yan Tokaruk')); ?></a></strong> <span class="mono"><?php echo esc_html(theme_t('WordPress developer · Lutsk')); ?></span></p>
                                 <p class="author-box__bio"><?php echo esc_html(theme_t('Building WordPress sites since 2020. I write about speed, WooCommerce and integrations.')); ?></p>
                                 <p class="author-box__links">
                                     <a class="link-ul link-ul--line" href="<?php echo esc_url(theme_get_page_url('process')); ?>"><?php echo esc_html(theme_t('Process')); ?> <span class="arrow"><?php echo theme_icon('arrow-right', 14); ?></span></a>
