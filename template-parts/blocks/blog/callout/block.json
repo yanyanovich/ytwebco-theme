@@ -1,0 +1,34 @@
+{
+  "name": "acf/blog-blocks-callout",
+  "title": "Blog blocks Callout",
+  "description": "Highlighted note with a bold lime lead word.",
+  "style": [],
+  "category": "blog-blocks",
+  "icon": "warning",
+  "keywords": [
+    "note",
+    "important"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": true,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "acf/blog-blocks-quote",
+  "title": "Blog blocks Quote",
+  "description": "Client testimonial. Not shown unless quote, author and company are all filled.",
+  "style": [],
+  "category": "blog-blocks",
+  "icon": "format-quote",
+  "keywords": [
+    "testimonial"
+  ],
+  "mode": "edit",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "template.php",
+    "blockVersion": 3,
+    "hideFieldsInSidebar": true
+  },
+  "supports": {
+    "multiple": true,
+    "anchor": true,
+    "align": false,
+    "html": false,
+    "className": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_example": true
+      }
+    }
+  }
+}

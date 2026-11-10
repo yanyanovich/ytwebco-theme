@@ -124,7 +124,11 @@ function theme_get_block_groups()
             'acf/case-blocks-screens',
         ),
         'acf_blog' => array(
-            // 'acf/blog-blocks-faq',
+            'acf/blog-blocks-callout',
+            'acf/blog-blocks-stat',
+            'acf/blog-blocks-cta-help',
+            'acf/blog-blocks-quote',
+            'acf/blog-blocks-faq',
         ),
         'acf_other' => array(
             'acf/other-blocks-example1',

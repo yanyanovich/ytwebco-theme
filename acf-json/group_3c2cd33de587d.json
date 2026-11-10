@@ -1,0 +1,223 @@
+{
+    "key": "group_3c2cd33de587d",
+    "title": "Blog post",
+    "fields": [
+        {
+            "key": "field_07f625119767a",
+            "label": "Lead",
+            "name": "lead",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "One line under the H1 and on the card.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_0aaf262a3409b",
+            "label": "Updated date",
+            "name": "updated_date",
+            "aria-label": "",
+            "type": "date_picker",
+            "instructions": "Optional. \"Updated\" is shown only when it differs from the published date. Also used for dateModified.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d/m/Y",
+            "return_format": "Y-m-d",
+            "first_day": 1,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_13f677392c86f",
+            "label": "Reading time (min)",
+            "name": "reading_time",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Empty = counted from the text (200 words/min).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_3d8372d6012fc",
+            "label": "Cover text",
+            "name": "cover_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Typographic cover, up to 12 characters. Empty = category name.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "AJAX_",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_af0727153477c",
+            "label": "Cover caption",
+            "name": "cover_caption",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small mono line under the cover text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "cart → checkout",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_c054187429031",
+            "label": "Featured number",
+            "name": "featured_number",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Big lime number on the featured card. Empty = cover text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "99",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_19a6093663af9",
+            "label": "Related service",
+            "name": "related_service",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Service page for the related block.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_f1d75d357113e",
+            "label": "OG title",
+            "name": "og_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Optional shorter title for the OG image. \"|\" forces a line break.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_68fcae850d724",
+            "label": "OG stat",
+            "name": "og_stat",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Optional, shown bottom-right on the OG image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "99 / 100 PageSpeed",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1794334256
+}
