@@ -24,9 +24,9 @@ sort($pages);
 ?>
 <nav class="blog-pagination" aria-label="<?php echo esc_attr(theme_t('Pages')); ?>">
     <?php if ($current > 1) : ?>
-        <a class="blog-pagination__step mono" rel="prev" href="<?php echo esc_url($link($current - 1)); ?>">← <?php echo esc_html(theme_t('Newer')); ?></a>
+        <a class="blog-pagination__step" rel="prev" href="<?php echo esc_url($link($current - 1)); ?>">← <?php echo esc_html(theme_t('Newer posts')); ?></a>
     <?php else : ?>
-        <span class="blog-pagination__step blog-pagination__step--off mono" aria-hidden="true">← <?php echo esc_html(theme_t('Newer')); ?></span>
+        <span class="blog-pagination__step blog-pagination__step--off" aria-hidden="true">← <?php echo esc_html(theme_t('Newer posts')); ?></span>
     <?php endif; ?>
 
     <ol class="blog-pagination__numbers mono">
@@ -34,9 +34,9 @@ sort($pages);
             if ($prev && $n - $prev > 1) : ?><li class="blog-pagination__gap" aria-hidden="true">…</li><?php endif; ?>
             <li>
                 <?php if ($n === $current) : ?>
-                    <span class="blog-pagination__num is-current" aria-current="page"><?php echo esc_html($n); ?></span>
+                    <span class="blog-pagination__num is-current" aria-current="page"><?php echo esc_html(sprintf('%02d', $n)); ?></span>
                 <?php else : ?>
-                    <a class="blog-pagination__num" href="<?php echo esc_url($link($n)); ?>"><?php echo esc_html($n); ?></a>
+                    <a class="blog-pagination__num" href="<?php echo esc_url($link($n)); ?>"><?php echo esc_html(sprintf('%02d', $n)); ?></a>
                 <?php endif; ?>
             </li>
         <?php $prev = $n; endforeach; ?>
@@ -44,8 +44,8 @@ sort($pages);
     <p class="blog-pagination__of mono"><?php echo esc_html(sprintf(theme_t('Page %1$s of %2$s'), $current, $total)); ?></p>
 
     <?php if ($current < $total) : ?>
-        <a class="blog-pagination__step mono" rel="next" href="<?php echo esc_url($link($current + 1)); ?>"><?php echo esc_html(theme_t('Older')); ?> →</a>
+        <a class="blog-pagination__step" rel="next" href="<?php echo esc_url($link($current + 1)); ?>"><?php echo esc_html(theme_t('Older posts')); ?> →</a>
     <?php else : ?>
-        <span class="blog-pagination__step blog-pagination__step--off mono" aria-hidden="true"><?php echo esc_html(theme_t('Older')); ?> →</span>
+        <span class="blog-pagination__step blog-pagination__step--off" aria-hidden="true"><?php echo esc_html(theme_t('Older posts')); ?> →</span>
     <?php endif; ?>
 </nav>

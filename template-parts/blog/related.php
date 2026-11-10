@@ -18,7 +18,10 @@ $is_ua = strpos($locale, 'uk') === 0;
 <section class="blog-related bp" data-section>
     <div class="container">
         <div class="blog-related__head">
-            <h2 class="blog-related__title"><?php echo esc_html(theme_t('Next articles')); ?></h2>
+            <div class="blog-related__titles">
+                <p class="label blog-related__eyebrow"><span class="accent" aria-hidden="true">//</span> <?php echo esc_html(theme_t('Keep reading')); ?></p>
+                <h2 class="blog-related__title"><?php echo esc_html(theme_t('Related reading')); ?></h2>
+            </div>
             <a class="link-ul link-ul--line blog-related__all" href="<?php echo esc_url(theme_get_blog_url()); ?>"><?php echo esc_html(theme_t('All posts')); ?> <span class="arrow"><?php echo theme_icon('arrow-right', 14); ?></span></a>
         </div>
         <div class="blog-grid blog-grid--related">

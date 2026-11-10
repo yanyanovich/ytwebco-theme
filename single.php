@@ -37,17 +37,18 @@ get_header();
                         <?php get_template_part('template-parts/partials/breadcrumbs', null, array('items' => array(
                             array('label' => theme_t('Home'), 'url' => function_exists('pll_home_url') ? pll_home_url() : home_url('/')),
                             array('label' => theme_t('Blog'), 'url' => $blog_url),
-                            array('label' => get_the_title()),
+                            array('label' => theme_get_short_title($post_id)),
                         ))); ?>
 
                         <div class="article__intro">
                             <?php if ($card['category']) : ?><span class="article__cat mono"><?php echo esc_html($card['category']); ?></span><?php endif; ?>
                             <h1 class="article__title"><?php the_title(); ?></h1>
-                            <?php if ($card['lead']) : ?><p class="article__lead"><?php echo esc_html($card['lead']); ?></p><?php endif; ?>
+                            <?php $article_lead = trim((string)get_field('lead', $post_id)) ?: $card['lead']; ?>
+                            <?php if ($article_lead) : ?><p class="article__lead"><?php echo esc_html($article_lead); ?></p><?php endif; ?>
 
                             <div class="article__meta">
                                 <span class="article__avatar mono" aria-hidden="true"><?php echo esc_html(theme_t('YT')); ?></span>
-                                <span class="article__author"><?php echo esc_html(theme_t('Yan Tokaruk')); ?></span>
+                                <span class="article__author mono"><?php echo esc_html(theme_t('Yan Tokaruk')); ?></span>
                                 <span class="article__meta-item mono"><?php echo esc_html(theme_t('Published')); ?> <time datetime="<?php echo esc_attr($card['iso']); ?>"><?php echo esc_html($card['date']); ?></time></span>
                                 <?php if ($updated) : ?>
                                     <span class="article__meta-item mono"><?php echo esc_html(theme_t('Updated')); ?> <time datetime="<?php echo esc_attr($updated); ?>"><?php echo esc_html(theme_blog_date(strtotime($updated))); ?></time></span>
@@ -58,9 +59,9 @@ get_header();
 
                         <?php if (count($toc_items) > 1) : ?>
                             <details class="toc-mobile" data-toc-inline>
-                                <summary class="toc-mobile__summary mono">
-                                    <span><?php echo esc_html(theme_t('Contents')); ?> · <?php echo esc_html(sprintf(theme_t('%s sections'), count($toc_items))); ?></span>
-                                    <span class="toc-mobile__icon" aria-hidden="true"><?php echo theme_icon('plus', 14); ?></span>
+                                <summary class="toc-mobile__summary">
+                                    <span class="toc-mobile__label"><strong><?php echo esc_html(theme_t('Contents')); ?></strong> <span class="mono"><?php echo esc_html(sprintf(theme_t('%s sections'), count($toc_items))); ?></span></span>
+                                    <span class="icon-btn toc-mobile__icon" aria-hidden="true"><?php echo theme_icon('plus', 14); ?></span>
                                 </summary>
                                 <ol class="toc-mobile__list">
                                     <?php foreach ($toc_items as $item) : ?>

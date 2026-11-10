@@ -124,7 +124,7 @@ function theme_get_breadcrumbs()
         $blog = array('label' => theme_t('Blog'), 'url' => function_exists('theme_get_blog_url') ? theme_get_blog_url() : home_url('/blog/'));
 
         return is_singular('post')
-            ? array($home, $blog, array('label' => get_the_title(get_queried_object_id()), 'url' => get_permalink(get_queried_object_id())))
+            ? array($home, $blog, array('label' => function_exists('theme_get_short_title') ? theme_get_short_title(get_queried_object_id()) : get_the_title(get_queried_object_id()), 'url' => get_permalink(get_queried_object_id())))
             : array($home, $blog);
     }
 

@@ -5,7 +5,7 @@
 $contacts = theme_get_contacts();
 ?>
 <aside class="post-cta-card" data-sticky-hide>
-    <p class="post-cta-card__label label"><span aria-hidden="true">//</span> <?php echo esc_html(theme_t('Need help?')); ?></p>
+    <p class="post-cta-card__label label"><span aria-hidden="true">//</span> <?php echo esc_html(theme_t('Need help')); ?></p>
     <h2 class="post-cta-card__title"><?php echo esc_html(theme_t('Site is slow and you can’t see why?')); ?></h2>
     <p class="post-cta-card__text"><?php echo esc_html(theme_t('I’ll look at your site and give you a fixed price.')); ?></p>
     <div class="post-cta-card__actions">

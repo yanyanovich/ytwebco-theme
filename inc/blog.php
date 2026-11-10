@@ -189,7 +189,8 @@ function theme_get_post_card($post_id)
         'id' => $post_id,
         'title' => get_the_title($post_id),
         'url' => get_permalink($post_id),
-        'lead' => $field('lead'),
+        // The card text can differ from the article lead: the post excerpt wins when it is filled in
+        'lead' => trim((string)get_post_field('post_excerpt', $post_id)) ?: $field('lead'),
         'date' => theme_blog_date(get_post_timestamp($post_id)),
         'iso' => get_the_date('c', $post_id),
         'minutes' => theme_get_reading_time($post_id),
@@ -199,6 +200,17 @@ function theme_get_post_card($post_id)
         'cover_caption' => $field('cover_caption'),
         'featured_number' => $field('featured_number'),
     );
+}
+
+/**
+ * Short title for breadcrumbs: the part before the first colon ("How to speed up a WordPress site: 10 steps…").
+ */
+function theme_get_short_title($post_id)
+{
+    $title = get_the_title($post_id);
+    $pos = strpos($title, ':');
+
+    return $pos !== false && $pos > 12 ? trim(substr($title, 0, $pos)) : $title;
 }
 
 /**

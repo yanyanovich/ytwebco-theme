@@ -84,10 +84,12 @@ $work_url = get_post_type_archive_link('case');
 
                 <?php if ($launch) : ?>
                     <div class="blog-next">
-                        <h2 class="blog-next__title"><?php echo esc_html(theme_t('Next articles')); ?></h2>
-                        <p class="blog-next__text"><?php echo esc_html(theme_t('A new article every few weeks. Meanwhile, see what I have already built.')); ?></p>
+                        <div class="blog-next__text">
+                            <p class="blog-next__label label"><?php echo esc_html(theme_t('Next articles')); ?></p>
+                            <p class="blog-next__lead"><?php echo esc_html(theme_t('A new article every few weeks. Meanwhile, see what I have already built.')); ?></p>
+                        </div>
                         <?php if ($work_url) : ?>
-                            <a class="link-ul link-ul--line" href="<?php echo esc_url($work_url); ?>"><?php echo esc_html(theme_t('See the work')); ?> <span class="arrow"><?php echo theme_icon('arrow-right', 14); ?></span></a>
+                            <a class="blog-next__link" href="<?php echo esc_url($work_url); ?>"><?php echo esc_html(theme_t('See the work')); ?> <span aria-hidden="true">→</span></a>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
