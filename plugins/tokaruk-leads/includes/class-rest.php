@@ -100,9 +100,16 @@ class Tokaruk_Leads_Rest
             'attribution' => Tokaruk_Leads_Attribution::build($body['attribution'] ?? array()),
         );
 
+        $lead['spam'] = Tokaruk_Leads_Guard::analyze($lead);
         $post_id = Tokaruk_Leads::save($lead);
         if (!$post_id) {
             return new WP_Error('tl_failed', 'Could not save', array('status' => 500));
+        }
+
+        // Spam is kept for review but never delivered; the sender still gets "ok"
+        if ($lead['spam']['score'] >= Tokaruk_Leads_Guard::SPAM_SCORE) {
+            Tokaruk_Leads::set_delivery($post_id, 'spam');
+            return rest_ensure_response(array('ok' => true));
         }
 
         Tokaruk_Leads::set_delivery($post_id, Tokaruk_Leads_Telegram::deliver($post_id, $lead, $sections));
