@@ -4,12 +4,16 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Cookie consent with Google Consent Mode v2.
- * - Default: everything denied except necessary storage; GA4 / Google Ads are not loaded at all.
+ * Cookie consent with Google Consent Mode v2, by region.
+ * - Outside the EEA, the UK and Switzerland, analytics (GA4 + Clarity) and Ads tags run from the first page view; the
+ *   banner still lets a visitor refuse, and an explicit choice always wins.
+ * - Inside those regions the default is "denied": gtag.js is loaded in Advanced Consent Mode (cookieless pings, no
+ *   cookies), Clarity stays off, and nothing more happens until the visitor accepts.
+ * - GA4 / Ads decide the region from the visitor's IP (Consent Mode `region`); Clarity has no such switch, so it uses the
+ *   browser time zone (a Europe/* zone other than Kyiv, Moscow, Minsk, Istanbul, Chisinau counts as strict).
  * - The choice lives in the yt_consent cookie for 6 months: {"a": analytics, "m": marketing, "v": 1}.
- * - Microsoft Clarity loads only with Analytics consent (Clarity consent API v2 is told about the choice).
- * - window.ytConsent.set() (cookie banner JS) saves a choice, sends the consent update and loads gtag.js
- *   with only the products that were accepted. IDs come from Theme settings → Tracking.
+ * - window.ytConsent.analytics() tells the rest of the JS whether analytics events may be sent.
+ * IDs come from Theme settings → Tracking.
  */
 function theme_get_tracking_ids()
 {
@@ -34,13 +38,19 @@ add_action('wp_head', function () {
     <script id="consent-mode">
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
+        // Specific region first, then the worldwide default (Google applies the most specific match)
         gtag('consent', 'default', {
             ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied',
-            functionality_storage: 'granted', security_storage: 'granted', wait_for_update: 500
+            functionality_storage: 'granted', security_storage: 'granted', wait_for_update: 500,
+            region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH']
+        });
+        gtag('consent', 'default', {
+            ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted',
+            functionality_storage: 'granted', security_storage: 'granted'
         });
         gtag('set', 'ads_data_redaction', true);
         (function () {
-            var ids = <?php echo wp_json_encode(theme_get_tracking_ids()); ?>, loaded = false, configured = {};
+            var ids = <?php echo wp_json_encode(theme_get_tracking_ids()); ?>, loaded = false;
             var state = function (on) { return on ? 'granted' : 'denied'; };
             function read() {
                 var match = document.cookie.match(/(?:^|; )yt_consent=([^;]*)/);
@@ -52,9 +62,16 @@ add_action('wp_head', function () {
                     return null;
                 }
             }
-            function clarityLoad(choice) {
+            // Strict (GDPR / ePrivacy) visitor guess from the time zone, for tags that cannot ask Google for the region
+            function strictZone() {
+                var zone = '';
+                try { zone = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+                if (/^(Europe\/(Kyiv|Kiev|Uzhgorod|Zaporozhye|Simferopol|Moscow|Minsk|Istanbul|Chisinau|Samara|Volgograd|Kirov|Astrakhan|Saratov|Ulyanovsk))$/.test(zone)) return false;
+                return /^(Europe\/|Atlantic\/(Reykjavik|Madeira|Azores|Canary|Faroe)|Arctic\/Longyearbyen|Africa\/Ceuta)/.test(zone) || zone === '';
+            }
+            function clarityLoad(allowed) {
                 if (!ids.clarity) return;
-                if (!choice.a) {
+                if (!allowed) {
                     if (window.clarity) window.clarity('consent', false);
                     return;
                 }
@@ -67,33 +84,39 @@ add_action('wp_head', function () {
                 }
                 window.clarity('consent', true);
             }
+            // gtag.js is always loaded (Advanced Consent Mode): the consent state decides what it may store or send
+            function loadGoogle() {
+                var first = ids.ga4 || ids.ads;
+                if (loaded || !first) return;
+                loaded = true;
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + first;
+                document.head.appendChild(script);
+                gtag('js', new Date());
+                if (ids.ga4) gtag('config', ids.ga4);
+                if (ids.ads) gtag('config', ids.ads);
+            }
             function apply(choice) {
-                clarityLoad(choice);
+                clarityLoad(!!choice.a);
                 gtag('consent', 'update', {
                     analytics_storage: state(choice.a), ad_storage: state(choice.m),
                     ad_user_data: state(choice.m), ad_personalization: state(choice.m)
                 });
-                var products = [];
-                if (choice.a && ids.ga4) products.push(['ga4', ids.ga4]);
-                if (choice.m && ids.ads) products.push(['ads', ids.ads]);
-                if (!products.length) return;
-                if (!loaded) {
-                    loaded = true;
-                    var script = document.createElement('script');
-                    script.async = true;
-                    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + products[0][1];
-                    document.head.appendChild(script);
-                    gtag('js', new Date());
-                }
-                products.forEach(function (product) {
-                    if (configured[product[0]]) return;
-                    configured[product[0]] = true;
-                    gtag('config', product[1]);
-                });
+                loadGoogle();
             }
             window.ytConsent = {
                 ids: ids,
                 get: read,
+                // May analytics events be sent? An explicit choice wins; otherwise only outside the strict regions
+                analytics: function () {
+                    var choice = read();
+                    return choice ? !!choice.a : !strictZone();
+                },
+                marketing: function () {
+                    var choice = read();
+                    return choice ? !!choice.m : !strictZone();
+                },
                 set: function (choice) {
                     choice = {a: choice.a ? 1 : 0, m: choice.m ? 1 : 0, v: 1};
                     document.cookie = 'yt_consent=' + encodeURIComponent(JSON.stringify(choice)) + '; max-age=15552000; path=/; SameSite=Lax' + (location.protocol === 'https:' ? '; Secure' : '');
@@ -103,7 +126,12 @@ add_action('wp_head', function () {
             };
             var saved = read();
             if (saved) apply(saved);
-            else document.documentElement.classList.add('needs-consent');
+            else {
+                document.documentElement.classList.add('needs-consent');
+                // No choice yet: Google follows the region defaults above; Clarity only outside the strict zones
+                clarityLoad(!strictZone());
+                loadGoogle();
+            }
         })();
     </script>
     <?php
