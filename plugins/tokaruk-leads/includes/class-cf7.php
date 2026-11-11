@@ -84,11 +84,18 @@ class Tokaruk_Leads_CF7
             'attribution' => Tokaruk_Leads_Attribution::build($posted['yt_attr'] ?? ''),
         );
 
+        $lead['spam'] = Tokaruk_Leads_Guard::analyze($lead);
         self::$lead_id = Tokaruk_Leads::save($lead);
 
         if (!self::$lead_id) {
             $abort = true;
             $submission->set_response($contact_form->message('mail_sent_ng'));
+            return;
+        }
+
+        // Spam is kept for review but never delivered; the sender still sees "sent" and learns nothing
+        if ($lead['spam']['score'] >= Tokaruk_Leads_Guard::SPAM_SCORE) {
+            Tokaruk_Leads::set_delivery(self::$lead_id, 'spam');
             return;
         }
 

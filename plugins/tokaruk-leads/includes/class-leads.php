@@ -69,7 +69,9 @@ class Tokaruk_Leads
     public static function save(array $lead)
     {
         $type = $lead['type'] === 'brief' ? 'brief' : 'contact';
-        $title = sprintf('%s · %s', $type === 'brief' ? 'Brief' : 'Contact', $lead['name'] ?: $lead['contact'] ?: '—');
+        $spam = (array)($lead['spam'] ?? array());
+        $is_spam = !empty($spam['score']) && $spam['score'] >= Tokaruk_Leads_Guard::SPAM_SCORE;
+        $title = sprintf('%s%s · %s', $is_spam ? '[spam] ' : '', $type === 'brief' ? 'Brief' : 'Contact', $lead['name'] ?: $lead['contact'] ?: '—');
 
         $post_id = wp_insert_post(array(
             'post_type' => self::POST_TYPE,
@@ -87,6 +89,10 @@ class Tokaruk_Leads
         update_post_meta($post_id, '_lead_ref', sanitize_key($lead['ref'] ?? ''));
         update_post_meta($post_id, '_lead_page', esc_url_raw($lead['page'] ?? ''));
         update_post_meta($post_id, '_lead_attr', (array)($lead['attribution'] ?? array()));
+        if (!empty($spam['score'])) {
+            update_post_meta($post_id, '_lead_spam_score', (int)$spam['score']);
+            update_post_meta($post_id, '_lead_spam_reasons', (array)($spam['reasons'] ?? array()));
+        }
 
         return (int)$post_id;
     }
@@ -110,6 +116,8 @@ class Tokaruk_Leads
             __('Source (ref)', 'tokaruk-leads') => get_post_meta($post->ID, '_lead_ref', true),
             __('Page', 'tokaruk-leads') => get_post_meta($post->ID, '_lead_page', true),
             __('Delivered', 'tokaruk-leads') => get_post_meta($post->ID, '_lead_delivery', true),
+            __('Spam score', 'tokaruk-leads') => get_post_meta($post->ID, '_lead_spam_score', true),
+            __('Spam signals', 'tokaruk-leads') => implode("\n", (array)get_post_meta($post->ID, '_lead_spam_reasons', true)),
         );
 
         echo '<table class="widefat striped"><tbody>';

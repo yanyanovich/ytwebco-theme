@@ -93,6 +93,12 @@ class Tokaruk_Leads_Telegram
             $lines[] = $escape($lead['page']);
         }
 
+        // A lead that looks a little like spam but was delivered anyway: say why
+        if (!empty($lead['spam']['score'])) {
+            $lines[] = '';
+            $lines[] = '⚠️ Spam score ' . (int)$lead['spam']['score'] . ': ' . $escape(implode('; ', (array)($lead['spam']['reasons'] ?? array())));
+        }
+
         return implode("\n", $lines);
     }
 }
