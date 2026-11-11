@@ -97,13 +97,25 @@ add_action('wp_head', function () {
                 if (ids.ga4) gtag('config', ids.ga4);
                 if (ids.ads) gtag('config', ids.ads);
             }
+            // The heavy tag scripts wait for the first interaction (or 10 s) so they never count against PageSpeed / LCP;
+            // the consent state above is set at once, and gtag() calls made earlier are queued in dataLayer
+            var ready = false, queue = [];
+            function whenReady(fn) { if (ready) fn(); else queue.push(fn); }
+            function release() {
+                if (ready) return;
+                ready = true;
+                queue.splice(0).forEach(function (fn) { fn(); });
+            }
+            ['pointerdown', 'keydown', 'touchstart', 'scroll', 'mousemove'].forEach(function (name) {
+                window.addEventListener(name, release, {passive: true, once: true, capture: true});
+            });
+            setTimeout(release, 10000);
             function apply(choice) {
-                clarityLoad(!!choice.a);
                 gtag('consent', 'update', {
                     analytics_storage: state(choice.a), ad_storage: state(choice.m),
                     ad_user_data: state(choice.m), ad_personalization: state(choice.m)
                 });
-                loadGoogle();
+                whenReady(function () { clarityLoad(!!choice.a); loadGoogle(); });
             }
             window.ytConsent = {
                 ids: ids,
@@ -129,8 +141,7 @@ add_action('wp_head', function () {
             else {
                 document.documentElement.classList.add('needs-consent');
                 // No choice yet: Google follows the region defaults above; Clarity only outside the strict zones
-                clarityLoad(!strictZone());
-                loadGoogle();
+                whenReady(function () { clarityLoad(!strictZone()); loadGoogle(); });
             }
         })();
     </script>
