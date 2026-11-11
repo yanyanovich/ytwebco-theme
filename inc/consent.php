@@ -97,7 +97,7 @@ add_action('wp_head', function () {
                 if (ids.ga4) gtag('config', ids.ga4);
                 if (ids.ads) gtag('config', ids.ads);
             }
-            // The heavy tag scripts wait for the first interaction (or 10 s) so they never count against PageSpeed / LCP;
+            // The heavy tag scripts wait for the theme's first-interaction hook (main.js → initOnUserInteraction → ytConsent.start) or 10 s so they never count against PageSpeed / LCP;
             // the consent state above is set at once, and gtag() calls made earlier are queued in dataLayer
             var ready = false, queue = [];
             function whenReady(fn) { if (ready) fn(); else queue.push(fn); }
@@ -106,9 +106,6 @@ add_action('wp_head', function () {
                 ready = true;
                 queue.splice(0).forEach(function (fn) { fn(); });
             }
-            ['pointerdown', 'keydown', 'touchstart', 'scroll', 'mousemove'].forEach(function (name) {
-                window.addEventListener(name, release, {passive: true, once: true, capture: true});
-            });
             setTimeout(release, 10000);
             function apply(choice) {
                 gtag('consent', 'update', {
@@ -119,6 +116,7 @@ add_action('wp_head', function () {
             }
             window.ytConsent = {
                 ids: ids,
+                start: release,
                 get: read,
                 // May analytics events be sent? An explicit choice wins; otherwise only outside the strict regions
                 analytics: function () {
